@@ -98,7 +98,7 @@ const AchievementsSection = () => {
           <p className="text-gray-600 text-lg">
             For 10+ years, I’ve been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             I stay close to the tech, actively leveraging emerging tools like AI to drive real results. 
-            My clients range from VC-backed startups to Fortune 500 companies.
+            My clients range from fast-moving <b>startups</b> over <b>SMEs</b> to <b>Fortune 500 companies</b>
           </p>
         </div>
 
