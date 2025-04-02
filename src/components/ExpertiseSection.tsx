@@ -5,20 +5,12 @@ import { Button } from "@/components/ui/button";
 const ExpertiseSection = () => {
   const expertisePoints = [
     {
-      text: "IT Project Management in Regulated Environments",
+      text: "IT Project Management in Regulated Industries",
       icon: <FileCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
       text: "In-depth Knowledge of Pharma & Healthcare Value Chains",
       icon: <Lock className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-    },
-    {
-      text: "Cross-functional Team Leadership",
-      icon: <ShieldCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-    },
-     {
-      text: "Ability to align diverse stakeholder groups",
-      icon: <ShieldCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
       text: "Computer System Validation (CSV) & GxP Expertise",
