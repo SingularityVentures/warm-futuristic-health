@@ -29,7 +29,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-20 text-center">
         <div className="animate-fade-in-up max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-oswald font-bold mb-6 text-white tracking-tight">
-            <span className="block">Singularity Ventures</span>
+            <span className="block">SINGULARITY VENTURES</span>
           </h1>
           <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <h2 className="text-2xl md:text-4xl font-medium mb-8 text-white font-oswald tracking-wide">
