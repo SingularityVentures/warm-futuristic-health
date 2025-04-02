@@ -1,5 +1,6 @@
 
 import { useEffect, useState, useRef } from "react";
+import { Clock, CheckCircle, BarChart3 } from "lucide-react";
 
 interface CounterProps {
   end: number;
@@ -55,7 +56,7 @@ const Counter = ({ end, suffix = "", prefix = "", duration = 2000 }: CounterProp
   }, [end, duration, isVisible]);
 
   return (
-    <div ref={countRef} className="text-4xl md:text-5xl font-bold text-green-700">
+    <div ref={countRef} className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent">
       {prefix}{count}{suffix}
     </div>
   );
@@ -67,42 +68,34 @@ const AchievementsSection = () => {
       value: 10,
       suffix: "+",
       label: "Years Experience",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
+      icon: <Clock className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
+      description: "Dedicated to digital transformation in regulated industries"
     },
     {
       value: 100,
       suffix: "%",
       label: "Client Satisfaction",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-        </svg>
-      ),
+      icon: <CheckCircle className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
+      description: "Delivering exceptional results that exceed expectations"
     },
     {
       value: 20,
       suffix: "+",
       label: "Projects Completed",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-        </svg>
-      ),
+      icon: <BarChart3 className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
+      description: "From implementation to strategic consulting and beyond"
     },
   ];
 
   return (
-    <section id="achievements" className="section bg-gray-50 py-20">
+    <section id="achievements" className="section bg-gradient-to-b from-white to-gray-50 py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Proven Track Record
           </h2>
-          <p className="text-gray-600">
+          <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
+          <p className="text-gray-600 text-lg">
             With a decade of experience in digital transformation for pharma and healthcare, 
             we deliver exceptional results for our clients.
           </p>
@@ -110,14 +103,25 @@ const AchievementsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
-            <div key={index} className="bg-white rounded-lg p-8 shadow-md text-center card-hover">
-              <div className="mb-4 flex justify-center">{achievement.icon}</div>
+            <div 
+              key={index} 
+              className="relative bg-white rounded-lg p-8 shadow-lg text-center card-hover overflow-hidden border border-gray-100"
+            >
+              {/* Hexagonal background pattern */}
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 opacity-5">
+                <svg viewBox="0 0 100 100" fill="currentColor" className="text-green-900">
+                  <path d="M50 0L93.3 25V75L50 100L6.7 75V25L50 0z" />
+                </svg>
+              </div>
+              
+              <div className="mb-6 flex justify-center">{achievement.icon}</div>
               <Counter
                 end={achievement.value}
                 suffix={achievement.suffix}
                 duration={2000}
               />
-              <div className="mt-2 text-gray-600 font-medium">{achievement.label}</div>
+              <div className="mt-3 text-gray-800 font-semibold text-lg">{achievement.label}</div>
+              <p className="mt-2 text-gray-600 text-sm">{achievement.description}</p>
             </div>
           ))}
         </div>
