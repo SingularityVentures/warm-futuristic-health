@@ -97,7 +97,7 @@ const AchievementsSection = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
             For 10+ years, I’ve been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
-            I stay close to the tech, actively leveraging emerging tools like AI to drive real results. 
+            I stay close to the tech, actively leveraging emerging tools like AI to drive real results.<br /> 
             My clients range from fast-moving <b>startups</b> over <b>SMEs</b> to <b>Fortune 500 companies</b>
           </p>
         </div>
