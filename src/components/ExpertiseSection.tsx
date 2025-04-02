@@ -9,15 +9,19 @@ const ExpertiseSection = () => {
       icon: <FileCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Deep Understanding of Pharma & Healthcare Value Chains",
+      text: "In-depth Knowledge of Pharma & Healthcare Value Chains",
       icon: <Lock className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Cross-functional Team Leadership and Stakeholder Alignment",
+      text: "Cross-functional Team Leadership",
+      icon: <ShieldCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    },
+     {
+      text: "Ability to align diverse stakeholder groups",
       icon: <ShieldCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Computer System Validation (CSV) & GxP Knowledge",
+      text: "Computer System Validation (CSV) & GxP Expertise",
       icon: <Microscope className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
@@ -31,7 +35,7 @@ const ExpertiseSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            My Expertise - Pharma and Healthcare
+            My Focus - IT in Pharma and Healthcare
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
         </div>
@@ -42,7 +46,7 @@ const ExpertiseSection = () => {
               <p className="text-lg text-gray-700 mb-6">
                 Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
                <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
-               <li>Critical patient safety concerns</li>
+               <li>Patient safety concerns</li>
                <li>Constant pressure to innovate and deliver faster</li>
               </p>
               
