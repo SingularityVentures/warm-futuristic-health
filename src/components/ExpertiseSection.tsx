@@ -17,7 +17,7 @@ const ExpertiseSection = () => {
       icon: <ShieldCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Computer System Validation (CSV) & GxP Compliance Implementation",
+      text: "Computer System Validation (CSV) & GxP Knowledge",
       icon: <Microscope className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
@@ -40,11 +40,14 @@ const ExpertiseSection = () => {
           <div className="order-2 lg:order-1">
             <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm">
               <p className="text-lg text-gray-700 mb-6">
-                Pharma and healthcare industries operate under unique constraints, facing intense regulatory scrutiny and compliance requirements. My specialized expertise ensures your digital transformation initiatives remain compliant while driving innovation.
+                Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
+               <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
+               <li>Critical patient safety concerns</li>
+               <li>Constant pressure to innovate and deliver faster</li>
               </p>
               
               <p className="text-lg text-gray-700 mb-8">
-                With comprehensive knowledge of regulatory frameworks including GxP and GDPR, we provide solutions that balance technological advancement with strict compliance standards essential to these highly regulated sectors.
+               This combination of importance and complexity makes these projects both challenging and deeply meaningful. With my extensive experience in both domains, I help teams navigate these complexities.
               </p>
               
               <div className="mb-8">
@@ -52,7 +55,7 @@ const ExpertiseSection = () => {
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
                     <ShieldCheck className="h-5 w-5 text-green-700" />
                   </div>
-                  Regulatory Expertise
+                  My Expertise
                 </h3>
                 <ul className="space-y-4 pl-2">
                   {expertisePoints.map((point, index) => (
