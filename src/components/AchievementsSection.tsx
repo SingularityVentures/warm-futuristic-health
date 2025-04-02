@@ -77,7 +77,7 @@ const AchievementsSection = () => {
       label: "Client Satisfaction",
       icon: <CheckCircle className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
       description: [
-        "Delivering results that exceed expectations",
+        "Delivering results that exceed expectations ",
         "(References available)"
     ]
     },
