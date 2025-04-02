@@ -45,7 +45,7 @@ const HeroSection = () => {
               <a href="#services">My Services</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white/20 text-lg font-raleway">
-              <a href="#contact">Contact Us</a>
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
         </div>
