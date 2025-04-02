@@ -76,7 +76,7 @@ const AchievementsSection = () => {
       suffix: "%",
       label: "Client Satisfaction",
       icon: <CheckCircle className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
-      description: "Delivering exceptional results that exceed expectations"
+      description: "Delivering exceptional results that exceed expectations (references available)"
     },
     {
       value: 20,
@@ -98,7 +98,7 @@ const AchievementsSection = () => {
           <p className="text-gray-600 text-lg">
             For 10+ years, I’ve been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             I stay close to the tech, actively leveraging emerging tools like AI to drive real results.<br /> 
-            My clients range from fast-moving <b>startups</b> over <b>SMEs</b> to <b>Fortune 500 companies</b>
+            My clients span <b>startups</b>, <b>SMEs</b> and global <b>Fortune 500 companies</b>
           </p>
         </div>
 
