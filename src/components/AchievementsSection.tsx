@@ -96,7 +96,7 @@ const AchievementsSection = () => {
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
-            For 10+ years, I’ve been delivering digital solutions that actually ship — as both an entrepreneur and freelance project manager.
+            For 10+ years, I’ve been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             I stay close to the tech, actively leveraging emerging tools like AI to drive real results. 
             My clients range from VC-backed startups to Fortune 500 companies.
           </p>
