@@ -76,14 +76,14 @@ const AchievementsSection = () => {
       suffix: "%",
       label: "Client Satisfaction",
       icon: <CheckCircle className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
-      description: "Delivering results that exceed expectations"
+      description: "Delivering exceptional results that exceed expectations"
     },
     {
       value: 20,
       suffix: "+",
       label: "Projects Completed",
       icon: <BarChart3 className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
-      description: "From idea to implementation and beyond"
+      description: "From implementation to strategic consulting and beyond"
     },
   ];
 
@@ -96,9 +96,9 @@ const AchievementsSection = () => {
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
-            For 10+ years, I’ve been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
-            I stay close to the tech, actively leveraging emerging tools like AI to drive real results. <br> </br>
-            My clients range from fast-moving <b>startups</b> over <b>SMEs</b> to <b>Fortune 500 companies</b>.
+            For 10+ years, I’ve been delivering digital solutions that actually ship — as both an entrepreneur and freelance project manager.
+            I stay close to the tech, actively leveraging emerging tools like AI to drive real results. 
+            My clients range from VC-backed startups to Fortune 500 companies.
           </p>
         </div>
 
