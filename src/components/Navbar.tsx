@@ -44,7 +44,7 @@ const Navbar = () => {
               alt="Singularity Ventures Logo" 
               className="h-10 w-10"
             />
-            <div className="font-oswald font-bold text-2xl text-green-700 tracking-wide">Singularity Ventures</div>
+            <div className="font-oswald font-bold text-2xl text-green-700 tracking-wide">SINGULARITY VENTURES</div>
           </a>
 
           {/* Desktop Navigation */}
