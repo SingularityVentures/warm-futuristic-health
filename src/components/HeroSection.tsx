@@ -42,7 +42,7 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg shadow-lg shadow-green-700/30 font-raleway">
-              <a href="#services">Our Services</a>
+              <a href="#services">My Services</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white/20 text-lg font-raleway">
               <a href="#contact">Contact Us</a>
