@@ -42,7 +42,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/bc6e2537-9ddc-4599-a096-bae35e651555.png" 
               alt="Singularity Ventures Logo" 
-              className="h-10 w-10 filter brightness-0 sepia-100 hue-rotate-110 saturate-200"
+              className="h-10 w-10"
             />
             <div className="font-oswald font-bold text-2xl text-green-700 tracking-wide">Singularity Ventures</div>
           </a>
