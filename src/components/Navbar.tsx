@@ -39,6 +39,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center space-x-2">
+            <img 
+              src="/lovable-uploads/bc6e2537-9ddc-4599-a096-bae35e651555.png" 
+              alt="Singularity Ventures Logo" 
+              className="h-10 w-10"
+            />
             <div className="font-oswald font-bold text-2xl text-green-700 tracking-wide">Singularity Ventures</div>
           </a>
 
