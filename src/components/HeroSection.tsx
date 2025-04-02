@@ -36,8 +36,8 @@ const HeroSection = () => {
             Digital Transformation for Pharma and Healthcare
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-gray-100 font-light">
-            <span className="border-b-2 border-green-500 pb-1">Project Manager</span> • 
-            <span className="mx-3 border-b-2 border-green-500 pb-1">PMO</span> • 
+            <span className="border-b-2 border-green-500 pb-1">Project Manager</span>
+            <span className="mx-3 border-b-2 border-green-500 pb-1">PMO</span>
             <span className="border-b-2 border-green-500 pb-1">Consultant</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
