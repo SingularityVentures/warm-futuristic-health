@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BrainCircuit, Flask, Users, Rocket } from "lucide-react";
+import { BrainCircuit, Beaker, Users, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -13,7 +13,7 @@ const services = [
   {
     title: "(GxP) Software Implementation",
     description: "Specialized support for implementing and validating GxP-compliant systems. From vendor selection to deployment, I ensure alignment with regulatory standards.",
-    icon: <Flask className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
+    icon: <Beaker className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
     pills: ["Validation", "Qualification", "Compliance"]
   },
   {

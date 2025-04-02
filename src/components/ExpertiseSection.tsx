@@ -1,5 +1,5 @@
 
-import { Check, Flask, ShieldCheck, FileCheck, Lock, Microscope } from "lucide-react";
+import { Check, Beaker, ShieldCheck, FileCheck, Lock, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ExpertiseSection = () => {
@@ -22,7 +22,7 @@ const ExpertiseSection = () => {
     },
     {
       text: "Specialized in pharma and medical device regulations",
-      icon: <Flask className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+      icon: <Beaker className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     }
   ];
   
