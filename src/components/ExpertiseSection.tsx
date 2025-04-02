@@ -5,23 +5,23 @@ import { Button } from "@/components/ui/button";
 const ExpertiseSection = () => {
   const expertisePoints = [
     {
-      text: "Deep understanding of GxP compliance requirements",
+      text: "IT Project Management in Regulated Environments",
       icon: <FileCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "GDPR data protection expertise for sensitive health data",
+      text: "Deep Understanding of Pharma & Healthcare Value Chains",
       icon: <Lock className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Experience with regulatory submissions and audits",
+      text: "Cross-functional Team Leadership and Stakeholder Alignment",
       icon: <ShieldCheck className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Knowledge of healthcare IT security frameworks",
+      text: "Computer System Validation (CSV) & GxP Compliance Implementation",
       icon: <Microscope className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     },
     {
-      text: "Specialized in pharma and medical device regulations",
+      text: "Healthcare Data Protection & GDPR Compliance",
       icon: <Beaker className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
     }
   ];
@@ -31,7 +31,7 @@ const ExpertiseSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Our Expertise - Pharma and Healthcare
+            My Expertise - Pharma and Healthcare
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
         </div>
@@ -40,7 +40,7 @@ const ExpertiseSection = () => {
           <div className="order-2 lg:order-1">
             <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm">
               <p className="text-lg text-gray-700 mb-6">
-                Pharma and healthcare industries operate under unique constraints, facing intense regulatory scrutiny and compliance requirements. Our specialized expertise ensures your digital transformation initiatives remain compliant while driving innovation.
+                Pharma and healthcare industries operate under unique constraints, facing intense regulatory scrutiny and compliance requirements. My specialized expertise ensures your digital transformation initiatives remain compliant while driving innovation.
               </p>
               
               <p className="text-lg text-gray-700 mb-8">
@@ -65,7 +65,7 @@ const ExpertiseSection = () => {
               </div>
               
               <Button asChild className="bg-green-600 hover:bg-green-700 shadow-lg shadow-green-700/20">
-                <a href="#services">Explore Our Services</a>
+                <a href="#services">Explore My Services</a>
               </Button>
             </div>
           </div>
