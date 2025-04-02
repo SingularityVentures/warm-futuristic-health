@@ -92,12 +92,13 @@ const AchievementsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Proven Track Record
+            Results-as-a-Service
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
-            With a decade of experience in digital transformation for pharma and healthcare, 
-            we deliver exceptional results for our clients.
+            For 10+ years, I’ve been delivering digital solutions that actually ship — as both an entrepreneur and freelance project manager.
+            I stay close to the tech, actively leveraging emerging tools like AI to drive real results. 
+            My clients range from VC-backed startups to Fortune 500 companies.
           </p>
         </div>
 
