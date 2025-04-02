@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center space-x-2">
-            <div className="font-bold text-2xl text-green-700">Singularity Ventures</div>
+            <div className="font-oswald font-bold text-2xl text-green-700 tracking-wide">Singularity Ventures</div>
           </a>
 
           {/* Desktop Navigation */}
@@ -48,12 +48,12 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-green-700 transition-colors text-sm font-medium"
+                className="font-raleway text-gray-700 hover:text-green-700 transition-colors text-sm font-medium"
               >
                 {item.name}
               </a>
             ))}
-            <Button asChild className="bg-green-600 hover:bg-green-700">
+            <Button asChild className="bg-green-600 hover:bg-green-700 font-raleway">
               <a href="#contact">Contact</a>
             </Button>
           </nav>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-green-700 transition-colors py-2 text-sm font-medium"
+                  className="font-raleway text-gray-700 hover:text-green-700 transition-colors py-2 text-sm font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -87,7 +87,7 @@ const Navbar = () => {
               ))}
               <Button 
                 asChild 
-                className="bg-green-600 hover:bg-green-700 w-full"
+                className="bg-green-600 hover:bg-green-700 w-full font-raleway"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <a href="#contact">Contact</a>
