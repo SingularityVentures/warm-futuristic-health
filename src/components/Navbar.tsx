@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-green-950/90 shadow-md backdrop-blur-sm" : "bg-green-950/80"
+        isScrolled ? "bg-gradient-to-r from-black/70 to-green-950/70 shadow-md backdrop-blur-sm" : "bg-gradient-to-r from-black/70 to-green-950/70"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -80,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-green-950 shadow-lg animate-fade-in">
+        <div className="md:hidden bg-gradient-to-r from-black/70 to-green-950/70 shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
