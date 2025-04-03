@@ -93,12 +93,12 @@ const AchievementsSection = () => {
   return (
     <section id="achievements" className="section bg-gradient-to-b from-white to-gray-50 py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Results-as-a-Service
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg max-w-5xl mx-auto">
+          <p className="text-gray-600 text-lg mx-auto px-4 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
             For 10+ years, I've been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             I stay close to the tech, actively leveraging emerging tools like AI to drive real results.<br /> 
             My clients span <b>startups</b>, <b>SMEs</b> and <b>global Fortune 500 companies</b>
