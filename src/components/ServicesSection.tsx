@@ -36,11 +36,11 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Core Service - Digital Transformation
+            What I Do - Helping You to Get Digital Done
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
-            We offer comprehensive digital transformation services tailored specifically for pharmaceutical and healthcare organizations.
+            I offer comprehensive digital transformation and IT Project Management services tailored specifically to pharmaceutical and healthcare organizations.
           </p>
         </div>
 
