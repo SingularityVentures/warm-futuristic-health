@@ -32,7 +32,7 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-oswald font-bold mb-6 text-white tracking-wider">
             <span className="block">
               <span className="text-green-600">S</span>
-              <span>INGULARITY</span> 
+              <span>INGULARITY </span> 
               <span className="text-green-600">V</span>
               <span>ENTURES</span>
             </span>
