@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const HeroSection = () => {
   return (
@@ -28,17 +29,20 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-20 text-center">
         <div className="animate-fade-in-up max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-oswald font-bold mb-6 text-white tracking-tight">
-            <span className="block">SINGULARITY VENTURES</span>
+          <h1 className="text-5xl md:text-7xl font-oswald font-bold mb-6 text-white tracking-wider">
+            <span className="block">
+              <span className="text-green-600">S</span>
+              <span>INGULARITY</span> 
+              <span className="text-green-600">V</span>
+              <span>ENTURES</span>
+            </span>
           </h1>
-          <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
-          <h2 className="text-2xl md:text-4xl font-medium mb-8 text-white font-oswald tracking-wide">
+          <h2 className="text-2xl md:text-4xl font-medium mb-6 text-white font-oswald tracking-wide">
             Digital Transformation for Pharma and Healthcare
           </h2>
+          <Separator className="h-1 w-24 md:w-32 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6" />
           <p className="text-xl md:text-2xl mb-12 text-gray-100 font-light font-raleway">
-            <span className="border-b-2 border-green-500 pb-1">Project Manager</span>
-            <span className="mx-3 border-b-2 border-green-500 pb-1">Consultant</span>
-            <span className="border-b-2 border-green-500 pb-1">Technologist</span>
+            Project Manager | Consultant | Technologist
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg shadow-lg shadow-green-700/30 font-raleway">

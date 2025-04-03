@@ -44,7 +44,12 @@ const Navbar = () => {
               alt="Singularity Ventures Logo" 
               className="h-10 w-10"
             />
-            <div className="font-oswald font-bold text-2xl text-green-700 tracking-wide">SINGULARITY VENTURES</div>
+            <div className={`font-oswald font-bold text-2xl ${isScrolled ? 'text-green-700' : 'text-white'} tracking-wider`}>
+              <span className="text-green-600">S</span>
+              <span>INGULARITY</span> 
+              <span className="text-green-600">V</span>
+              <span>ENTURES</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
