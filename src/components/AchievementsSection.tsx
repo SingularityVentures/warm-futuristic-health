@@ -77,9 +77,9 @@ const AchievementsSection = () => {
       label: "Client Satisfaction",
       icon: <CheckCircle className="h-12 w-12 text-green-500" strokeWidth={1.5} />,
       description: [
-        "Delivering results that exceed expectations ",
+        "Delivering results that exceed expectations",
         "(References available)"
-    ]
+      ]
     },
     {
       value: 20,
@@ -91,15 +91,15 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section id="achievements" className="section bg-gradient-to-b from-white to-gray-50 py-24">
+    <section id="achievements" className="section bg-gradient-to-b from-white to-gray-50 py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Results-as-a-Service
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg">
-            For 10+ years, I’ve been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
+          <p className="text-gray-600 text-lg max-w-5xl mx-auto">
+            For 10+ years, I've been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             I stay close to the tech, actively leveraging emerging tools like AI to drive real results.<br /> 
             My clients span <b>startups</b>, <b>SMEs</b> and <b>global Fortune 500 companies</b>
           </p>
@@ -125,7 +125,18 @@ const AchievementsSection = () => {
                 duration={2000}
               />
               <div className="mt-3 text-gray-800 font-semibold text-lg">{achievement.label}</div>
-              <p className="mt-2 text-gray-600 text-sm">{achievement.description}</p>
+              <p className="mt-2 text-gray-600 text-sm">
+                {Array.isArray(achievement.description) ? (
+                  achievement.description.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < achievement.description.length - 1 && <br />}
+                    </span>
+                  ))
+                ) : (
+                  achievement.description
+                )}
+              </p>
             </div>
           ))}
         </div>
