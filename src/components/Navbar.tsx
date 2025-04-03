@@ -44,7 +44,7 @@ const Navbar = () => {
             />
             <div className={`font-oswald font-bold text-2xl text-white tracking-wider letter-spacing-wide`}>
               <span className="text-green-600">S</span>
-              <span>INGULARITY</span> 
+              <span>INGULARITY </span>
               <span className="text-green-600">V</span>
               <span>ENTURES</span>
             </div>
