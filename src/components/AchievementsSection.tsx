@@ -100,7 +100,7 @@ const AchievementsSection = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg mx-auto px-4 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
             For 10+ years, I've been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
-            I stay close to the tech, actively leveraging emerging tools like AI to drive real results.<br /> 
+            <br /> 
             My clients span <b>startups</b>, <b>SMEs</b> and <b>global Fortune 500 companies</b>
           </p>
         </div>
