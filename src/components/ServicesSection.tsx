@@ -1,5 +1,7 @@
 
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight } from "lucide-react";
 
 // First section content - Transform existing business
@@ -60,7 +62,7 @@ const newBusinessServices = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section bg-gradient-to-b from-gray-50 to-white py-12 md:py-16">
+    <section id="services" className="section bg-gradient-to-b from-gray-50 to-white py-16 md:py-20">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
@@ -73,34 +75,32 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Digital transformation diagram */}
-        <div className="relative mb-16 mt-10">
-          {/* First transformation section header */}
-          <div className="text-center max-w-4xl mx-auto mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-green-700 mb-4">
-              How I help you to transform your existing business
+        {/* First transformation section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-green-700 mb-3">
+              Transforming Your Existing Business
             </h3>
-            <p className="text-gray-600">
-              Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
-              I offer services to do each individual section or all of the three combined.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Successful digital transformation needs to encompass all three dimensions: Technology, Processes and People.
             </p>
           </div>
 
-          {/* Services layout with diagram */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Services cards */}
-            <div className="space-y-6">
+          {/* Services cards and diagram in flex layout */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left side: Services cards */}
+            <div className="lg:w-7/12 space-y-4">
               {existingBusinessServices.map((service, idx) => (
-                <div key={idx} className="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                  <div className="flex items-center p-4 border-b border-gray-100">
-                    <div className={`py-1.5 px-3 rounded text-white font-medium bg-${service.color} mr-4 text-sm`}>
+                <Card key={idx} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
+                  <div className="flex items-center p-4 border-b border-gray-100 bg-gradient-to-r from-green-50 to-white">
+                    <Badge className={`bg-green-${service.color.split('-')[1]} hover:bg-green-${parseInt(service.color.split('-')[1])-100} mr-3`}>
                       {service.category}
-                    </div>
+                    </Badge>
                     <h4 className="font-bold text-xl text-green-800">
                       {service.title}
                     </h4>
                   </div>
-                  <div className="p-4">
+                  <CardContent className="p-4">
                     <p className="text-gray-600 mb-4">
                       {service.description}
                     </p>
@@ -108,42 +108,59 @@ const ServicesSection = () => {
                       {service.pills.map((pill, i) => (
                         <span 
                           key={i} 
-                          className="px-3 py-1 bg-green-100/50 text-green-700 text-xs font-medium rounded-full"
+                          className="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center gap-1"
                         >
+                          <Check size={12} className="text-green-700" />
                           {pill}
                         </span>
                       ))}
                     </div>
-                    <div className="pt-2">
-                      <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 group">
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                    <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 group">
+                      Learn more
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </CardContent>
+                </Card>
               ))}
             </div>
 
-            {/* Venn diagram */}
-            <div className="flex items-center justify-center p-4">
+            {/* Right side: Interactive Venn diagram */}
+            <div className="lg:w-5/12 flex items-center justify-center p-4">
               <div className="relative w-full max-w-md">
-                <svg viewBox="0 0 500 500" className="w-full h-auto">
+                <svg viewBox="0 0 500 500" className="w-full h-auto drop-shadow-md">
                   {/* Technology circle */}
-                  <circle cx="250" cy="170" r="120" fill="none" stroke="#166534" strokeWidth="2" />
-                  <text x="250" y="170" textAnchor="middle" fill="#166534" fontSize="24" fontWeight="bold">TECHNOLOGY</text>
+                  <circle 
+                    cx="250" cy="170" r="120" 
+                    fill="rgba(240, 253, 244, 0.8)" 
+                    stroke="#166534" 
+                    strokeWidth="2" 
+                    className="transition-all hover:fill-green-100"
+                  />
+                  <text x="250" y="170" textAnchor="middle" fill="#166534" fontSize="22" fontWeight="bold">TECHNOLOGY</text>
                   
                   {/* Processes circle */}
-                  <circle cx="170" cy="330" r="120" fill="none" stroke="#166534" strokeWidth="2" />
-                  <text x="170" y="330" textAnchor="middle" fill="#166534" fontSize="24" fontWeight="bold">PROCESSES</text>
+                  <circle 
+                    cx="170" cy="330" r="120" 
+                    fill="rgba(240, 253, 244, 0.8)" 
+                    stroke="#166534" 
+                    strokeWidth="2" 
+                    className="transition-all hover:fill-green-100"
+                  />
+                  <text x="170" y="330" textAnchor="middle" fill="#166534" fontSize="22" fontWeight="bold">PROCESSES</text>
                   
                   {/* People circle */}
-                  <circle cx="330" cy="330" r="120" fill="none" stroke="#166534" strokeWidth="2" />
-                  <text x="330" y="330" textAnchor="middle" fill="#166534" fontSize="24" fontWeight="bold">PEOPLE</text>
+                  <circle 
+                    cx="330" cy="330" r="120" 
+                    fill="rgba(240, 253, 244, 0.8)" 
+                    stroke="#166534" 
+                    strokeWidth="2" 
+                    className="transition-all hover:fill-green-100"
+                  />
+                  <text x="330" y="330" textAnchor="middle" fill="#166534" fontSize="22" fontWeight="bold">PEOPLE</text>
                   
                   {/* Center text */}
-                  <text x="250" y="250" textAnchor="middle" fill="#166534" fontSize="20" fontWeight="bold">DIGITAL</text>
-                  <text x="250" y="280" textAnchor="middle" fill="#166534" fontSize="20" fontWeight="bold">TRANSFORMATION</text>
+                  <text x="250" y="250" textAnchor="middle" fill="#166534" fontSize="24" fontWeight="bold">DIGITAL</text>
+                  <text x="250" y="280" textAnchor="middle" fill="#166534" fontSize="24" fontWeight="bold">TRANSFORMATION</text>
                 </svg>
               </div>
             </div>
@@ -151,49 +168,51 @@ const ServicesSection = () => {
         </div>
 
         {/* Second transformation section */}
-        <div className="mt-20 pt-8 border-t border-gray-100">
-          {/* Second transformation section header */}
-          <div className="text-center max-w-4xl mx-auto mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-green-700 mb-4">
-              How I help you to create new business
+        <div className="pt-8 border-t border-gray-100">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-green-700 mb-3">
+              Creating New Business
             </h3>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 max-w-3xl mx-auto">
               Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
             </p>
           </div>
 
-          {/* New business services layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Steps visualization */}
-            <div className="flex flex-col items-center justify-center space-y-8">
+          {/* Services journey layout */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left side: Journey visualization */}
+            <div className="lg:w-4/12 flex flex-col items-center justify-center space-y-0 relative">
+              {/* Vertical path */}
+              <div className="absolute h-full w-1 bg-gradient-to-b from-green-200 via-green-400 to-green-600 left-1/2 transform -translate-x-1/2 rounded-full"></div>
+              
               {[1, 2, 3].map((step, idx) => (
-                <div key={idx} className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-green-700 flex items-center justify-center text-white text-2xl font-bold mb-2">
+                <div key={idx} className="relative z-10 flex flex-col items-center justify-center h-1/3 w-full">
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-green-${600 - idx * 100} to-green-${700 - idx * 100} shadow-lg flex items-center justify-center text-white text-2xl font-bold`}>
                     {step}
                   </div>
-                  <h4 className="text-xl font-bold text-green-700">
+                  <h4 className="text-xl font-bold text-green-700 mt-2">
                     {idx === 0 ? "Ideation" : idx === 1 ? "Validation" : "Go-to-Market"}
                   </h4>
-                  {idx < 2 && (
-                    <div className="h-10 border-l-2 border-green-500 my-2"></div>
-                  )}
                 </div>
               ))}
             </div>
 
-            {/* Service details */}
-            <div className="space-y-6">
+            {/* Right side: Service details */}
+            <div className="lg:w-8/12 space-y-4">
               {newBusinessServices.map((service, idx) => (
-                <div key={idx} className="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                  <div className="flex items-center p-4 border-b border-gray-100">
-                    <div className={`py-1.5 px-3 rounded text-white font-medium bg-${service.color} mr-4 text-sm`}>
-                      {service.category}
-                    </div>
+                <Card 
+                  key={idx} 
+                  className={`overflow-hidden border-l-4 border-l-green-${600 - idx * 100} shadow-md hover:shadow-lg transition-shadow`}
+                >
+                  <div className="flex items-center p-4 border-b border-gray-100 bg-gradient-to-r from-green-50 to-white">
+                    <Badge className={`bg-green-${600 - idx * 100} hover:bg-green-${500 - idx * 100} mr-3`}>
+                      Step {service.step}: {service.category}
+                    </Badge>
                     <h4 className="font-bold text-xl text-green-800">
                       {service.title}
                     </h4>
                   </div>
-                  <div className="p-4">
+                  <CardContent className="p-4">
                     <p className="text-gray-600 mb-4">
                       {service.description}
                     </p>
@@ -201,20 +220,19 @@ const ServicesSection = () => {
                       {service.pills.map((pill, i) => (
                         <span 
                           key={i} 
-                          className="px-3 py-1 bg-green-100/50 text-green-700 text-xs font-medium rounded-full"
+                          className="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full flex items-center gap-1"
                         >
+                          <Check size={12} className="text-green-700" />
                           {pill}
                         </span>
                       ))}
                     </div>
-                    <div className="pt-2">
-                      <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 group">
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                    <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 group">
+                      Learn more
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
