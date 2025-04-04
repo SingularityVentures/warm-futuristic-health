@@ -3,11 +3,10 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { BrainCircuit, Beaker, Users, Rocket, ArrowRight, CheckCircle } from "lucide-react";
 
 const ServicesSection = () => {
-  const [activeTab, setActiveTab] = useState("transform");
-  
   const transformServices = [
     {
       icon: <Beaker className="h-8 w-8 text-green-600" strokeWidth={1.5} />,
@@ -59,34 +58,26 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-green-50 p-1 rounded-lg">
-            <button
-              onClick={() => setActiveTab("transform")}
-              className={`px-6 py-2.5 rounded-md transition-all text-sm font-medium ${
-                activeTab === "transform" 
-                  ? "bg-green-600 text-white shadow-md" 
-                  : "text-green-700 hover:bg-green-100"
-              }`}
-            >
-              Transform Existing Business
-            </button>
-            <button
-              onClick={() => setActiveTab("create")}
-              className={`px-6 py-2.5 rounded-md transition-all text-sm font-medium ${
-                activeTab === "create" 
-                  ? "bg-green-600 text-white shadow-md" 
-                  : "text-green-700 hover:bg-green-100"
-              }`}
-            >
-              Create New Business
-            </button>
+        {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
+        <Tabs defaultValue="transform" className="w-full">
+          <div className="flex justify-center mb-12">
+            <TabsList className="bg-green-50 p-2 gap-4 h-auto">
+              <TabsTrigger 
+                value="transform" 
+                className="px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 min-w-[240px]"
+              >
+                Transform Existing Business
+              </TabsTrigger>
+              <TabsTrigger 
+                value="create" 
+                className="px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 min-w-[240px]"
+              >
+                Create New Business
+              </TabsTrigger>
+            </TabsList>
           </div>
-        </div>
 
-        {activeTab === "transform" && (
-          <div className="animate-fade-in">
+          <TabsContent value="transform" className="animate-fade-in mt-0">
             <div className="mb-12">
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to transform your existing business
@@ -96,87 +87,89 @@ const ServicesSection = () => {
                 I offer services to do each individual section or all of the three combined.
               </p>
 
-              {/* Venn Diagram */}
-              <div className="flex justify-center mb-16">
-                <div className="relative w-full max-w-2xl h-[400px]">
-                  {/* Digital Transformation Center */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 bg-white rounded-full h-40 w-40 flex items-center justify-center shadow-lg border-4 border-green-600">
-                    <div className="text-center p-2">
-                      <h4 className="text-green-700 font-bold text-lg">DIGITAL</h4>
-                      <h4 className="text-green-700 font-bold text-lg">TRANSFORMATION</h4>
-                    </div>
-                  </div>
+              {/* Two-column layout: Service Cards on left, Venn diagram on right */}
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left column: Service Cards */}
+                <div className="space-y-6">
+                  {transformServices.map((service, index) => (
+                    <Card key={index} className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
+                      <CardContent className="p-0">
+                        <div className="grid md:grid-cols-[160px_1fr] items-center">
+                          <div className="bg-green-50 p-4 flex flex-col items-center justify-center h-full border-r border-green-100">
+                            <div className="bg-white rounded-full p-3 shadow-sm mb-3">
+                              {service.icon}
+                            </div>
+                            <h4 className="font-bold text-xl text-green-800">{service.title}</h4>
+                          </div>
+                          <div className="p-5">
+                            <h4 className="font-bold text-lg text-green-700 mb-2">{service.subtitle}</h4>
+                            <p className="text-gray-600 mb-3 text-sm">{service.description}</p>
+                            <div className="flex flex-wrap gap-1.5 mb-3">
+                              {service.badges.map((badge, i) => (
+                                <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
+                                  {badge}
+                                </Badge>
+                              ))}
+                            </div>
+                            <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 mt-1 text-sm">
+                              Learn more
+                              <ArrowRight className="ml-1 h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
 
-                  {/* Technology Circle */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 
-                                 bg-gradient-to-b from-green-50 to-green-100 
-                                 border-2 border-green-300 rounded-full h-64 w-64 
-                                 flex items-center justify-center opacity-90">
-                    <div className="absolute top-10 text-center">
-                      <h4 className="text-green-800 font-bold text-2xl">TECHNOLOGY</h4>
+                {/* Right column: Venn Diagram */}
+                <div className="flex justify-center items-center">
+                  <div className="relative w-full max-w-md h-[500px]">
+                    {/* Pill shaped header */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-40 bg-green-700 text-white font-bold rounded-full py-3 px-8 shadow-lg text-center w-64">
+                      <p className="text-lg">DIGITAL TRANSFORMATION</p>
                     </div>
-                  </div>
+                    
+                    {/* Technology Circle */}
+                    <div className="absolute top-[80px] left-1/2 transform -translate-x-1/2 z-10 
+                                   bg-gradient-to-b from-green-50 to-green-100 
+                                   border-2 border-green-300 rounded-full h-64 w-64 
+                                   flex items-center justify-center opacity-90">
+                      <div className="absolute top-8 text-center">
+                        <h4 className="text-green-800 font-bold text-xl">TECHNOLOGY</h4>
+                      </div>
+                    </div>
 
-                  {/* Process Circle */}
-                  <div className="absolute bottom-0 left-[25%] transform -translate-x-1/2 z-10 
-                                 bg-gradient-to-b from-green-50 to-green-100 
-                                 border-2 border-green-300 rounded-full h-64 w-64 
-                                 flex items-center justify-center opacity-90">
-                    <div className="absolute bottom-10 text-center">
-                      <h4 className="text-green-800 font-bold text-2xl">PROCESSES</h4>
+                    {/* Process Circle */}
+                    <div className="absolute top-[220px] left-[25%] transform -translate-x-1/3 z-10 
+                                   bg-gradient-to-b from-green-50 to-green-100 
+                                   border-2 border-green-300 rounded-full h-64 w-64 
+                                   flex items-center justify-center opacity-90">
+                      <div className="absolute left-8 text-center">
+                        <h4 className="text-green-800 font-bold text-xl">PROCESSES</h4>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* People Circle */}
-                  <div className="absolute bottom-0 left-[75%] transform -translate-x-1/2 z-10 
-                                 bg-gradient-to-b from-green-50 to-green-100 
-                                 border-2 border-green-300 rounded-full h-64 w-64 
-                                 flex items-center justify-center opacity-90">
-                    <div className="absolute bottom-10 text-center">
-                      <h4 className="text-green-800 font-bold text-2xl">PEOPLE</h4>
+                    {/* People Circle */}
+                    <div className="absolute top-[220px] left-[75%] transform -translate-x-2/3 z-10 
+                                   bg-gradient-to-b from-green-50 to-green-100 
+                                   border-2 border-green-300 rounded-full h-64 w-64 
+                                   flex items-center justify-center opacity-90">
+                      <div className="absolute right-8 text-center">
+                        <h4 className="text-green-800 font-bold text-xl">PEOPLE</h4>
+                      </div>
                     </div>
+
+                    {/* Intersections with different opacities for depth effect */}
+                    <div className="absolute top-[190px] left-1/2 transform -translate-x-1/2 z-20 
+                                   bg-green-200 rounded-full h-32 w-32 opacity-60"></div>
                   </div>
                 </div>
               </div>
-
-              {/* Service Cards */}
-              <div className="space-y-8">
-                {transformServices.map((service, index) => (
-                  <Card key={index} className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
-                    <CardContent className="p-0">
-                      <div className="grid md:grid-cols-[200px_1fr] items-center">
-                        <div className="bg-green-50 p-6 flex flex-col items-center justify-center h-full border-r border-green-100">
-                          <div className="bg-white rounded-full p-4 shadow-sm mb-3">
-                            {service.icon}
-                          </div>
-                          <h4 className="font-bold text-xl text-green-800">{service.title}</h4>
-                        </div>
-                        <div className="p-6">
-                          <h4 className="font-bold text-xl text-green-700 mb-2">{service.subtitle}</h4>
-                          <p className="text-gray-600 mb-4">{service.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {service.badges.map((badge, i) => (
-                              <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                                {badge}
-                              </Badge>
-                            ))}
-                          </div>
-                          <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 mt-2">
-                            Learn more
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
             </div>
-          </div>
-        )}
+          </TabsContent>
 
-        {activeTab === "create" && (
-          <div className="animate-fade-in">
+          <TabsContent value="create" className="animate-fade-in mt-0">
             <div className="mb-12">
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to create new business
@@ -185,67 +178,74 @@ const ServicesSection = () => {
                 Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
               </p>
 
-              {/* Journey visualization */}
-              <div className="flex justify-center mb-16">
-                <div className="relative py-12 max-w-4xl w-full">
-                  {/* Journey steps */}
-                  <div className="flex justify-between items-center">
-                    {createServices.steps.map((step, index) => (
-                      <div key={index} className="flex flex-col items-center relative z-10 w-36">
-                        <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold mb-3 shadow-lg">
-                          {step.number}
+              {/* Two-column layout: Service Cards on left, Journey visualization on right */}
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left column: Service Card */}
+                <div>
+                  <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
+                    <CardContent className="p-0">
+                      <div className="grid md:grid-cols-[160px_1fr] items-center">
+                        <div className="bg-green-50 p-4 flex flex-col items-center justify-center h-full border-r border-green-100">
+                          <div className="bg-white rounded-full p-3 shadow-sm mb-3">
+                            {createServices.icon}
+                          </div>
+                          <h4 className="font-bold text-xl text-green-800">{createServices.title}</h4>
                         </div>
-                        <h4 className="font-bold text-green-800 text-lg mb-1">{step.title}</h4>
-                        <p className="text-gray-600 text-sm text-center">{step.description}</p>
+                        <div className="p-5">
+                          <h4 className="font-bold text-lg text-green-700 mb-2">{createServices.subtitle}</h4>
+                          <p className="text-gray-600 mb-3 text-sm">{createServices.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            {createServices.badges.map((badge, i) => (
+                              <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
+                                {badge}
+                              </Badge>
+                            ))}
+                          </div>
+                          <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 mt-1 text-sm">
+                            Learn more
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                  
-                  {/* Connecting line */}
-                  <div className="absolute top-[44px] left-[25%] right-[25%] h-1 bg-gradient-to-r from-green-400 to-green-600 z-0">
-                    <div className="absolute left-0 top-1/2 w-3 h-3 -mt-1.5 -ml-1.5 bg-green-600 rounded-full"></div>
-                    <div className="absolute right-0 top-1/2 w-3 h-3 -mt-1.5 -mr-1.5 bg-green-600 rounded-full"></div>
-                  </div>
+                    </CardContent>
+                  </Card>
+                </div>
 
-                  {/* Arrow indicators */}
-                  <div className="absolute top-[44px] left-[calc(33%-10px)] right-[calc(33%-10px)] flex justify-between z-0 text-green-600">
-                    <ArrowRight size={20} className="transform -translate-y-1/2" />
-                    <ArrowRight size={20} className="transform -translate-y-1/2" />
+                {/* Right column: Journey visualization with connected steps and arrows */}
+                <div className="flex justify-center items-center">
+                  <div className="relative py-8 max-w-md w-full">
+                    {/* Journey steps with arrows connecting them */}
+                    <div className="flex flex-col space-y-16 relative">
+                      {createServices.steps.map((step, index) => (
+                        <div key={index} className="flex items-center relative z-10">
+                          <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
+                            {step.number}
+                          </div>
+                          <div className="ml-4">
+                            <h4 className="font-bold text-green-800 text-lg">{step.title}</h4>
+                            <p className="text-gray-600">{step.description}</p>
+                          </div>
+                          
+                          {/* Add arrow between steps (except after the last step) */}
+                          {index < createServices.steps.length - 1 && (
+                            <div className="absolute top-[58px] left-7 h-16 flex items-center">
+                              <div className="w-0.5 h-full bg-green-500 relative">
+                                <ArrowRight 
+                                  className="absolute -bottom-3 -right-2 text-green-600 transform rotate-90" 
+                                  size={20} 
+                                />
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Service Card */}
-              <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
-                <CardContent className="p-0">
-                  <div className="grid md:grid-cols-[200px_1fr] items-center">
-                    <div className="bg-green-50 p-6 flex flex-col items-center justify-center h-full border-r border-green-100">
-                      <div className="bg-white rounded-full p-4 shadow-sm mb-3">
-                        {createServices.icon}
-                      </div>
-                      <h4 className="font-bold text-xl text-green-800">{createServices.title}</h4>
-                    </div>
-                    <div className="p-6">
-                      <h4 className="font-bold text-xl text-green-700 mb-2">{createServices.subtitle}</h4>
-                      <p className="text-gray-600 mb-4">{createServices.description}</p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {createServices.badges.map((badge, i) => (
-                          <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                            {badge}
-                          </Badge>
-                        ))}
-                      </div>
-                      <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 mt-2">
-                        Learn more
-                        <ArrowRight className="ml-1 h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
-          </div>
-        )}
+          </TabsContent>
+        </Tabs>
 
         {/* CTA */}
         <div className="mt-20 text-center">
