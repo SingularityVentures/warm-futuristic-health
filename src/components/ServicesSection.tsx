@@ -220,10 +220,10 @@ const ServicesSection = () => {
 
                 {/* Two-column layout: Journey visualization on left, Service Cards on right */}
                 <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                  {/* First column: Journey visualization with hover effects */}
+                  {/* First column: Journey visualization with hover effects - now centered horizontally */}
                   <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                     <div 
-                      className={`relative py-8 max-w-md w-full transition-all duration-300
+                      className={`relative py-8 max-w-md w-full mx-auto transition-all duration-300
                                 ${hoveredSection === "innovation" ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl" : ""}`}
                       onMouseEnter={() => handleCircleHover("innovation")}
                       onMouseLeave={() => handleCircleHover(null)}
@@ -309,7 +309,7 @@ const ServicesSection = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
                 Let's work together to achieve your digital transformation goals
               </h3>
-              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 px-8 py-6 h-auto">
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 px-8 py-6 h-auto text-base">
                 <a href="#contact">Get in Touch</a>
               </Button>
             </div>
