@@ -92,33 +92,40 @@ const ServicesSection = () => {
 
               {/* Two-column layout: Venn diagram on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Updated Venn Diagram */}
+                {/* First column: Updated Venn Diagram with animation */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative w-full max-w-md aspect-square mx-auto">
-                    {/* Technology Circle */}
+                    {/* Technology Circle - with pulse and hover animation */}
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
-                                  h-[65%] w-[65%] flex items-center justify-center">
+                                  h-[65%] w-[65%] flex items-center justify-center
+                                  transition-all duration-500 hover:border-green-500 hover:bg-green-100
+                                  animate-[pulse_5s_ease-in-out_infinite]">
                       <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
-                    {/* Processes Circle */}
+                    {/* Processes Circle - with pulse and hover animation */}
                     <div className="absolute bottom-0 left-[25%] transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
-                                  h-[65%] w-[65%] flex items-center justify-center">
+                                  h-[65%] w-[65%] flex items-center justify-center
+                                  transition-all duration-500 hover:border-green-500 hover:bg-green-100
+                                  animate-[pulse_5s_ease-in-out_infinite_1s]">
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
-                    {/* People Circle */}
+                    {/* People Circle - with pulse and hover animation */}
                     <div className="absolute bottom-0 right-[25%] transform translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
-                                  h-[65%] w-[65%] flex items-center justify-center">
+                                  h-[65%] w-[65%] flex items-center justify-center
+                                  transition-all duration-500 hover:border-green-500 hover:bg-green-100
+                                  animate-[pulse_5s_ease-in-out_infinite_2s]">
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
-                    {/* Digital Transformation pill in center */}
+                    {/* Digital Transformation pill in center - with shadow pulse animation */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
-                                  bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center">
+                                  bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
+                                  shadow-lg animate-[shadow-pulse_3s_ease-in-out_infinite]">
                       <div className="leading-tight">
                         <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
                         <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
@@ -140,7 +147,7 @@ const ServicesSection = () => {
                             <h4 className="font-bold text-xl text-green-800">{service.title}</h4>
                           </div>
                           <div className="p-5">
-                            <h4 className="font-bold text-lg text-green-700 mb-2">{service.subtitle}</h4>
+                            <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{service.subtitle}</h4>
                             <p className="text-gray-600 mb-3 text-sm">{service.description}</p>
                             <div className="flex flex-wrap gap-1.5 mb-4">
                               {service.badges.map((badge, i) => (
@@ -222,7 +229,7 @@ const ServicesSection = () => {
                           <h4 className="font-bold text-xl text-green-800">{createServices.title}</h4>
                         </div>
                         <div className="p-5">
-                          <h4 className="font-bold text-lg text-green-700 mb-2">{createServices.subtitle}</h4>
+                          <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{createServices.subtitle}</h4>
                           <p className="text-gray-600 mb-3 text-sm">{createServices.description}</p>
                           <div className="flex flex-wrap gap-1.5 mb-4">
                             {createServices.badges.map((badge, i) => (
