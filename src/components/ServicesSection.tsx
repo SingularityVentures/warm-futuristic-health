@@ -5,8 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { BrainCircuit, Beaker, Users, Rocket, ArrowRight, CheckCircle } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ServicesSection = () => {
+  const isMobile = useIsMobile();
+  
   const transformServices = [
     {
       icon: <Beaker className="h-8 w-8 text-green-600" strokeWidth={1.5} />,
@@ -48,29 +51,29 @@ const ServicesSection = () => {
     <section id="services" className="section py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Digital Transformation Services
           </h2>
           <div className="technoline mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-lg max-w-4xl mx-auto">
             Comprehensive services tailored specifically for pharmaceutical and healthcare organizations.
           </p>
         </div>
 
         {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
         <Tabs defaultValue="transform" className="w-full">
-          <div className="flex justify-center mb-12">
-            <TabsList className="bg-green-50 p-2 gap-4 h-auto">
+          <div className="flex justify-center mb-8">
+            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex">
               <TabsTrigger 
                 value="transform" 
-                className="px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 min-w-[240px]"
+                className="flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100"
               >
                 Transform Existing Business
               </TabsTrigger>
               <TabsTrigger 
                 value="create" 
-                className="px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 min-w-[240px]"
+                className="flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100"
               >
                 Create New Business
               </TabsTrigger>
@@ -87,10 +90,60 @@ const ServicesSection = () => {
                 I offer services to do each individual section or all of the three combined.
               </p>
 
-              {/* Two-column layout: Service Cards on left, Venn diagram on right */}
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                {/* Left column: Service Cards */}
-                <div className="space-y-6">
+              {/* Two-column layout: Venn diagram on left, Service Cards on right */}
+              <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
+                {/* First column: Venn Diagram */}
+                <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
+                  <div className="relative w-full max-w-md h-[500px]">
+                    {/* Pill shaped header */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-40 bg-green-700 text-white font-bold rounded-full py-3 px-8 shadow-lg text-center min-w-64">
+                      <p className="text-lg">DIGITAL TRANSFORMATION</p>
+                    </div>
+                    
+                    {/* Technology Circle */}
+                    <div className="absolute top-[100px] left-[50%] transform -translate-x-1/2 z-10 
+                                  bg-gradient-to-b from-green-50 to-green-100 
+                                  border-2 border-green-300 rounded-full h-56 w-56 
+                                  flex items-center justify-center">
+                      <div className="absolute top-6 text-center">
+                        <h4 className="text-green-800 font-bold text-xl">TECHNOLOGY</h4>
+                      </div>
+                    </div>
+
+                    {/* Process Circle */}
+                    <div className="absolute top-[190px] left-[30%] transform -translate-x-1/2 z-10 
+                                  bg-gradient-to-b from-green-50 to-green-100 
+                                  border-2 border-green-300 rounded-full h-56 w-56 
+                                  flex items-center justify-center">
+                      <div className="absolute left-8 text-center">
+                        <h4 className="text-green-800 font-bold text-xl">PROCESSES</h4>
+                      </div>
+                    </div>
+
+                    {/* People Circle */}
+                    <div className="absolute top-[190px] left-[70%] transform -translate-x-1/2 z-10 
+                                  bg-gradient-to-b from-green-50 to-green-100 
+                                  border-2 border-green-300 rounded-full h-56 w-56 
+                                  flex items-center justify-center">
+                      <div className="absolute right-8 text-center">
+                        <h4 className="text-green-800 font-bold text-xl">PEOPLE</h4>
+                      </div>
+                    </div>
+
+                    {/* Overlapping sections with different opacities */}
+                    <div className="absolute top-[170px] left-[40%] transform -translate-x-1/2 z-20 
+                                  bg-green-200 rounded-full h-36 w-36 opacity-60"></div>
+                    <div className="absolute top-[170px] left-[60%] transform -translate-x-1/2 z-20 
+                                  bg-green-200 rounded-full h-36 w-36 opacity-60"></div>
+                    <div className="absolute top-[220px] left-[50%] transform -translate-x-1/2 z-20 
+                                  bg-green-200 rounded-full h-36 w-36 opacity-60"></div>
+                    <div className="absolute top-[190px] left-[50%] transform -translate-x-1/2 z-30 
+                                  bg-green-300 rounded-full h-24 w-24 opacity-70"></div>
+                  </div>
+                </div>
+
+                {/* Second column: Service Cards */}
+                <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
                   {transformServices.map((service, index) => (
                     <Card key={index} className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
                       <CardContent className="p-0">
@@ -104,14 +157,17 @@ const ServicesSection = () => {
                           <div className="p-5">
                             <h4 className="font-bold text-lg text-green-700 mb-2">{service.subtitle}</h4>
                             <p className="text-gray-600 mb-3 text-sm">{service.description}</p>
-                            <div className="flex flex-wrap gap-1.5 mb-3">
+                            <div className="flex flex-wrap gap-1.5 mb-4">
                               {service.badges.map((badge, i) => (
                                 <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
                                   {badge}
                                 </Badge>
                               ))}
                             </div>
-                            <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 mt-1 text-sm">
+                            <Button 
+                              variant="outline" 
+                              className="text-green-700 hover:text-white hover:bg-green-600 border-green-200 hover:border-green-600 transition-colors"
+                            >
                               Learn more
                               <ArrowRight className="ml-1 h-4 w-4" />
                             </Button>
@@ -120,50 +176,6 @@ const ServicesSection = () => {
                       </CardContent>
                     </Card>
                   ))}
-                </div>
-
-                {/* Right column: Venn Diagram */}
-                <div className="flex justify-center items-center">
-                  <div className="relative w-full max-w-md h-[500px]">
-                    {/* Pill shaped header */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-40 bg-green-700 text-white font-bold rounded-full py-3 px-8 shadow-lg text-center w-64">
-                      <p className="text-lg">DIGITAL TRANSFORMATION</p>
-                    </div>
-                    
-                    {/* Technology Circle */}
-                    <div className="absolute top-[80px] left-1/2 transform -translate-x-1/2 z-10 
-                                   bg-gradient-to-b from-green-50 to-green-100 
-                                   border-2 border-green-300 rounded-full h-64 w-64 
-                                   flex items-center justify-center opacity-90">
-                      <div className="absolute top-8 text-center">
-                        <h4 className="text-green-800 font-bold text-xl">TECHNOLOGY</h4>
-                      </div>
-                    </div>
-
-                    {/* Process Circle */}
-                    <div className="absolute top-[220px] left-[25%] transform -translate-x-1/3 z-10 
-                                   bg-gradient-to-b from-green-50 to-green-100 
-                                   border-2 border-green-300 rounded-full h-64 w-64 
-                                   flex items-center justify-center opacity-90">
-                      <div className="absolute left-8 text-center">
-                        <h4 className="text-green-800 font-bold text-xl">PROCESSES</h4>
-                      </div>
-                    </div>
-
-                    {/* People Circle */}
-                    <div className="absolute top-[220px] left-[75%] transform -translate-x-2/3 z-10 
-                                   bg-gradient-to-b from-green-50 to-green-100 
-                                   border-2 border-green-300 rounded-full h-64 w-64 
-                                   flex items-center justify-center opacity-90">
-                      <div className="absolute right-8 text-center">
-                        <h4 className="text-green-800 font-bold text-xl">PEOPLE</h4>
-                      </div>
-                    </div>
-
-                    {/* Intersections with different opacities for depth effect */}
-                    <div className="absolute top-[190px] left-1/2 transform -translate-x-1/2 z-20 
-                                   bg-green-200 rounded-full h-32 w-32 opacity-60"></div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -178,44 +190,13 @@ const ServicesSection = () => {
                 Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
               </p>
 
-              {/* Two-column layout: Service Cards on left, Journey visualization on right */}
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                {/* Left column: Service Card */}
-                <div>
-                  <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
-                    <CardContent className="p-0">
-                      <div className="grid md:grid-cols-[160px_1fr] items-center">
-                        <div className="bg-green-50 p-4 flex flex-col items-center justify-center h-full border-r border-green-100">
-                          <div className="bg-white rounded-full p-3 shadow-sm mb-3">
-                            {createServices.icon}
-                          </div>
-                          <h4 className="font-bold text-xl text-green-800">{createServices.title}</h4>
-                        </div>
-                        <div className="p-5">
-                          <h4 className="font-bold text-lg text-green-700 mb-2">{createServices.subtitle}</h4>
-                          <p className="text-gray-600 mb-3 text-sm">{createServices.description}</p>
-                          <div className="flex flex-wrap gap-1.5 mb-3">
-                            {createServices.badges.map((badge, i) => (
-                              <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
-                                {badge}
-                              </Badge>
-                            ))}
-                          </div>
-                          <Button variant="ghost" className="text-green-700 hover:text-green-800 hover:bg-green-50 p-0 mt-1 text-sm">
-                            Learn more
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* Right column: Journey visualization with connected steps and arrows */}
-                <div className="flex justify-center items-center">
+              {/* Two-column layout: Journey visualization on left, Service Cards on right */}
+              <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
+                {/* First column: Journey visualization */}
+                <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative py-8 max-w-md w-full">
                     {/* Journey steps with arrows connecting them */}
-                    <div className="flex flex-col space-y-16 relative">
+                    <div className="flex flex-col space-y-20 relative">
                       {createServices.steps.map((step, index) => (
                         <div key={index} className="flex items-center relative z-10">
                           <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
@@ -228,12 +209,14 @@ const ServicesSection = () => {
                           
                           {/* Add arrow between steps (except after the last step) */}
                           {index < createServices.steps.length - 1 && (
-                            <div className="absolute top-[58px] left-7 h-16 flex items-center">
+                            <div className="absolute top-[58px] left-7 h-20 flex items-center">
                               <div className="w-0.5 h-full bg-green-500 relative">
-                                <ArrowRight 
-                                  className="absolute -bottom-3 -right-2 text-green-600 transform rotate-90" 
-                                  size={20} 
-                                />
+                                <div className="absolute -bottom-4 -left-3 w-7 h-7 flex items-center justify-center">
+                                  <ArrowRight 
+                                    className="text-green-600 transform rotate-90" 
+                                    size={28} 
+                                  />
+                                </div>
                               </div>
                             </div>
                           )}
@@ -241,6 +224,40 @@ const ServicesSection = () => {
                       ))}
                     </div>
                   </div>
+                </div>
+
+                {/* Second column: Service Card */}
+                <div className={`${isMobile ? "order-2" : "order-2"}`}>
+                  <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
+                    <CardContent className="p-0">
+                      <div className="grid md:grid-cols-[160px_1fr] items-center">
+                        <div className="bg-green-50 p-4 flex flex-col items-center justify-center h-full border-r border-green-100">
+                          <div className="bg-white rounded-full p-3 shadow-sm mb-3">
+                            {createServices.icon}
+                          </div>
+                          <h4 className="font-bold text-xl text-green-800">{createServices.title}</h4>
+                        </div>
+                        <div className="p-5">
+                          <h4 className="font-bold text-lg text-green-700 mb-2">{createServices.subtitle}</h4>
+                          <p className="text-gray-600 mb-3 text-sm">{createServices.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mb-4">
+                            {createServices.badges.map((badge, i) => (
+                              <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
+                                {badge}
+                              </Badge>
+                            ))}
+                          </div>
+                          <Button 
+                            variant="outline" 
+                            className="text-green-700 hover:text-white hover:bg-green-600 border-green-200 hover:border-green-600 transition-colors"
+                          >
+                            Learn more
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
             </div>
