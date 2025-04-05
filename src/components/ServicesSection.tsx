@@ -70,9 +70,12 @@ const ServicesSection = () => {
         </div>
 
         {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
-        <Tabs defaultValue="transform" className="w-full">
+        <Tabs defaultValue="transform" className="w-full relative">
+          {/* Background panel that expands from the selected tab */}
+          <div className="absolute inset-x-0 top-16 bottom-0 bg-green-50/70 rounded-3xl transform transition-all duration-500 -z-10"></div>
+          
           <div className="flex justify-center mb-8">
-            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex">
+            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex relative z-10">
               <TabsTrigger 
                 value="transform" 
                 className="flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100"
@@ -89,7 +92,7 @@ const ServicesSection = () => {
           </div>
 
           <TabsContent value="transform" className="animate-fade-in mt-0">
-            <div className="mb-12">
+            <div className="mb-12 relative">
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to transform your existing business
               </h3>
