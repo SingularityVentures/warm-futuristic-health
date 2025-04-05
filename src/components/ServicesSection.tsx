@@ -98,90 +98,210 @@ const ServicesSection = () => {
                 I offer services to do each individual section or all of the three combined.
               </p>
 
-              {/* Two-column layout: Venn diagram on left, Service Cards on right */}
-              <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Updated Venn Diagram with halo effect and no animation */}
-                <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
-                  <div className="relative w-full max-w-md aspect-square mx-auto">
-                    {/* Technology Circle - with green halo effect when highlighted */}
-                    <div 
-                      className={`absolute top-0 left-1/2 transform -translate-x-1/2 
-                                  bg-green-50 border-2 border-green-300 rounded-full 
-                                  h-[65%] w-[65%] flex items-center justify-center
-                                  transition-all duration-300 cursor-pointer
-                                  ${isHighlighted("technology") 
-                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
-                                    : hoveredSection ? "opacity-50" : ""}`}
-                      onMouseEnter={() => handleCircleHover("technology")}
-                      onMouseLeave={() => handleCircleHover(null)}
-                    >
-                      <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
-                    </div>
+              {/* Shared container with background to group the diagram and cards */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+                {/* New label for the visual connection */}
+                <div className="text-center mb-8">
+                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-sm px-4 py-1">
+                    Interactive Services Framework
+                  </Badge>
+                </div>
 
-                    {/* Processes Circle - with green halo effect when highlighted */}
-                    <div 
-                      className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
-                                  bg-green-50 border-2 border-green-300 rounded-full 
-                                  h-[65%] w-[65%] flex items-center justify-center
-                                  transition-all duration-300 cursor-pointer
-                                  ${isHighlighted("processes") 
-                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
-                                    : hoveredSection ? "opacity-50" : ""}`}
-                      onMouseEnter={() => handleCircleHover("processes")}
-                      onMouseLeave={() => handleCircleHover(null)}
-                    >
-                      <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
-                    </div>
+                {/* Two-column layout: Venn diagram on left, Service Cards on right */}
+                <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
+                  {/* First column: Updated Venn Diagram with halo effect and no animation */}
+                  <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
+                    <div className="relative w-full max-w-md aspect-square mx-auto">
+                      {/* Connecting lines to visually link diagram with cards */}
+                      {!isMobile && (
+                        <div className="absolute right-0 top-1/2 transform translate-x-[95%] -translate-y-1/2 w-16 h-0.5 bg-green-200 z-0"></div>
+                      )}
+                      
+                      {/* Technology Circle - with green halo effect when highlighted */}
+                      <div 
+                        className={`absolute top-0 left-1/2 transform -translate-x-1/2 
+                                    bg-green-50 border-2 border-green-300 rounded-full 
+                                    h-[65%] w-[65%] flex items-center justify-center
+                                    transition-all duration-300 cursor-pointer
+                                    ${isHighlighted("technology") 
+                                      ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
+                                      : hoveredSection ? "opacity-50" : ""}`}
+                        onMouseEnter={() => handleCircleHover("technology")}
+                        onMouseLeave={() => handleCircleHover(null)}
+                      >
+                        <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
+                      </div>
 
-                    {/* People Circle - with green halo effect when highlighted */}
-                    <div 
-                      className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
-                                  bg-green-50 border-2 border-green-300 rounded-full 
-                                  h-[65%] w-[65%] flex items-center justify-center
-                                  transition-all duration-300 cursor-pointer
-                                  ${isHighlighted("people") 
-                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
-                                    : hoveredSection ? "opacity-50" : ""}`}
-                      onMouseEnter={() => handleCircleHover("people")}
-                      onMouseLeave={() => handleCircleHover(null)}
-                    >
-                      <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
-                    </div>
+                      {/* Processes Circle - with green halo effect when highlighted */}
+                      <div 
+                        className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
+                                    bg-green-50 border-2 border-green-300 rounded-full 
+                                    h-[65%] w-[65%] flex items-center justify-center
+                                    transition-all duration-300 cursor-pointer
+                                    ${isHighlighted("processes") 
+                                      ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
+                                      : hoveredSection ? "opacity-50" : ""}`}
+                        onMouseEnter={() => handleCircleHover("processes")}
+                        onMouseLeave={() => handleCircleHover(null)}
+                      >
+                        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
+                      </div>
 
-                    {/* Digital Transformation pill in center - no animation */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
-                                  bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
-                                  shadow-lg">
-                      <div className="leading-tight">
-                        <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
-                        <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
+                      {/* People Circle - with green halo effect when highlighted */}
+                      <div 
+                        className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
+                                    bg-green-50 border-2 border-green-300 rounded-full 
+                                    h-[65%] w-[65%] flex items-center justify-center
+                                    transition-all duration-300 cursor-pointer
+                                    ${isHighlighted("people") 
+                                      ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
+                                      : hoveredSection ? "opacity-50" : ""}`}
+                        onMouseEnter={() => handleCircleHover("people")}
+                        onMouseLeave={() => handleCircleHover(null)}
+                      >
+                        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
+                      </div>
+
+                      {/* Digital Transformation pill in center - no animation */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
+                                    bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
+                                    shadow-lg">
+                        <div className="leading-tight">
+                          <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
+                          <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Second column: Service Cards with green halo effect when highlighted */}
+                  <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
+                    {transformServices.map((service, index) => (
+                      <Card 
+                        key={index} 
+                        className={`border-l-4 border-l-green-600 transition-all duration-300
+                                  ${isHighlighted(service.id) 
+                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10" 
+                                    : hoveredSection ? "opacity-50" : "hover:shadow-lg"}`}
+                        onMouseEnter={() => handleCircleHover(service.id)}
+                        onMouseLeave={() => handleCircleHover(null)}
+                      >
+                        <CardContent className="p-0">
+                          <div className="grid md:grid-cols-[120px_1fr] items-center">
+                            <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100`}>
+                              <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
+                            </div>
+                            <div className="p-5">
+                              <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{service.subtitle}</h4>
+                              <p className="text-gray-600 mb-3 text-sm">{service.description}</p>
+                              <div className="flex flex-wrap gap-1.5 mb-4">
+                                {service.badges.map((badge, i) => (
+                                  <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
+                                    {badge}
+                                  </Badge>
+                                ))}
+                              </div>
+                              <Button 
+                                className="bg-green-600 hover:bg-green-700 text-white transition-colors"
+                              >
+                                Learn more
+                                <ArrowRight className="ml-1 h-4 w-4" />
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="create" className="animate-fade-in mt-0">
+            <div className="mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
+                How I help you to create new business
+              </h3>
+              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
+              </p>
+
+              {/* Shared container with background to group the journey and card */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+                {/* New label for the visual connection */}
+                <div className="text-center mb-8">
+                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-sm px-4 py-1">
+                    Innovation Journey Framework
+                  </Badge>
                 </div>
 
-                {/* Second column: Service Cards with green halo effect when highlighted */}
-                <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
-                  {transformServices.map((service, index) => (
+                {/* Two-column layout: Journey visualization on left, Service Cards on right */}
+                <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
+                  {/* First column: Journey visualization with hover effects */}
+                  <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
+                    <div 
+                      className={`relative py-8 max-w-md w-full transition-all duration-300
+                                ${hoveredSection === "innovation" ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl" : ""}`}
+                      onMouseEnter={() => handleCircleHover("innovation")}
+                      onMouseLeave={() => handleCircleHover(null)}
+                    >
+                      {/* Connecting line to visually link journey with card */}
+                      {!isMobile && (
+                        <div className="absolute right-0 top-1/2 transform translate-x-[95%] -translate-y-1/2 w-16 h-0.5 bg-green-200 z-0"></div>
+                      )}
+                      
+                      {/* Journey steps with arrows connecting them */}
+                      <div className="flex flex-col space-y-20 relative">
+                        {createServices.steps.map((step, index) => (
+                          <div key={index} className="flex items-center relative z-10">
+                            <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
+                              {step.number}
+                            </div>
+                            <div className="ml-4">
+                              <h4 className="font-bold text-green-800 text-lg">{step.title}</h4>
+                              <p className="text-gray-600">{step.description}</p>
+                            </div>
+                            
+                            {/* Add arrow between steps (except after the last step) */}
+                            {index < createServices.steps.length - 1 && (
+                              <div className="absolute top-[58px] left-7 h-20 flex items-center">
+                                <div className="w-0.5 h-full bg-green-500 relative">
+                                  <div className="absolute -bottom-4 -left-3 w-7 h-7 flex items-center justify-center">
+                                    <ArrowRight 
+                                      className="text-green-600 transform rotate-90" 
+                                      size={28} 
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Second column: Service Card with hover effect */}
+                  <div className={`${isMobile ? "order-2" : "order-2"}`}>
                     <Card 
-                      key={index} 
                       className={`border-l-4 border-l-green-600 transition-all duration-300
-                                ${isHighlighted(service.id) 
+                                ${hoveredSection === "innovation" 
                                   ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10" 
-                                  : hoveredSection ? "opacity-50" : "hover:shadow-lg"}`}
-                      onMouseEnter={() => handleCircleHover(service.id)}
+                                  : "hover:shadow-lg"}`}
+                      onMouseEnter={() => handleCircleHover("innovation")}
                       onMouseLeave={() => handleCircleHover(null)}
                     >
                       <CardContent className="p-0">
                         <div className="grid md:grid-cols-[120px_1fr] items-center">
-                          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100`}>
-                            <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
+                          <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
+                            <h4 className="font-bold text-lg text-green-800">{createServices.title}</h4>
                           </div>
                           <div className="p-5">
-                            <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{service.subtitle}</h4>
-                            <p className="text-gray-600 mb-3 text-sm">{service.description}</p>
+                            <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{createServices.subtitle}</h4>
+                            <p className="text-gray-600 mb-3 text-sm">{createServices.description}</p>
                             <div className="flex flex-wrap gap-1.5 mb-4">
-                              {service.badges.map((badge, i) => (
+                              {createServices.badges.map((badge, i) => (
                                 <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
                                   {badge}
                                 </Badge>
@@ -197,97 +317,7 @@ const ServicesSection = () => {
                         </div>
                       </CardContent>
                     </Card>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="create" className="animate-fade-in mt-0">
-            <div className="mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-                How I help you to create new business
-              </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-                Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
-              </p>
-
-              {/* Two-column layout: Journey visualization on left, Service Cards on right */}
-              <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Journey visualization with hover effects */}
-                <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
-                  <div 
-                    className={`relative py-8 max-w-md w-full transition-all duration-300
-                               ${hoveredSection === "innovation" ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl" : ""}`}
-                    onMouseEnter={() => handleCircleHover("innovation")}
-                    onMouseLeave={() => handleCircleHover(null)}
-                  >
-                    {/* Journey steps with arrows connecting them */}
-                    <div className="flex flex-col space-y-20 relative">
-                      {createServices.steps.map((step, index) => (
-                        <div key={index} className="flex items-center relative z-10">
-                          <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
-                            {step.number}
-                          </div>
-                          <div className="ml-4">
-                            <h4 className="font-bold text-green-800 text-lg">{step.title}</h4>
-                            <p className="text-gray-600">{step.description}</p>
-                          </div>
-                          
-                          {/* Add arrow between steps (except after the last step) */}
-                          {index < createServices.steps.length - 1 && (
-                            <div className="absolute top-[58px] left-7 h-20 flex items-center">
-                              <div className="w-0.5 h-full bg-green-500 relative">
-                                <div className="absolute -bottom-4 -left-3 w-7 h-7 flex items-center justify-center">
-                                  <ArrowRight 
-                                    className="text-green-600 transform rotate-90" 
-                                    size={28} 
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
                   </div>
-                </div>
-
-                {/* Second column: Service Card with hover effect */}
-                <div className={`${isMobile ? "order-2" : "order-2"}`}>
-                  <Card 
-                    className={`border-l-4 border-l-green-600 transition-all duration-300
-                              ${hoveredSection === "innovation" 
-                                ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10" 
-                                : "hover:shadow-lg"}`}
-                    onMouseEnter={() => handleCircleHover("innovation")}
-                    onMouseLeave={() => handleCircleHover(null)}
-                  >
-                    <CardContent className="p-0">
-                      <div className="grid md:grid-cols-[120px_1fr] items-center">
-                        <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
-                          <h4 className="font-bold text-lg text-green-800">{createServices.title}</h4>
-                        </div>
-                        <div className="p-5">
-                          <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{createServices.subtitle}</h4>
-                          <p className="text-gray-600 mb-3 text-sm">{createServices.description}</p>
-                          <div className="flex flex-wrap gap-1.5 mb-4">
-                            {createServices.badges.map((badge, i) => (
-                              <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
-                                {badge}
-                              </Badge>
-                            ))}
-                          </div>
-                          <Button 
-                            className="bg-green-600 hover:bg-green-700 text-white transition-colors"
-                          >
-                            Learn more
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
                 </div>
               </div>
             </div>
