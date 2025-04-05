@@ -12,21 +12,18 @@ const ServicesSection = () => {
   
   const transformServices = [
     {
-      icon: <Beaker className="h-8 w-8 text-green-600" strokeWidth={1.5} />,
       title: "Technology",
       subtitle: "(GxP) Software Implementation",
       description: "Specialized support for implementing and validating GxP-compliant systems. From vendor selection to deployment, I ensure alignment with regulatory standards.",
       badges: ["Validation", "Qualification", "Compliance", "GxP", "Stakeholder Mgmt", "End-To-End"],
     },
     {
-      icon: <BrainCircuit className="h-8 w-8 text-green-600" strokeWidth={1.5} />,
       title: "Processes",
       subtitle: "Business Process Transformation",
       description: "Redesign of core workflows, systems, and operations to improve efficiency, reduce costs, and enhance customer value by leveraging technology (AI) and data analytics.",
       badges: ["AI", "RPA", "Automation"],
     },
     {
-      icon: <Users className="h-8 w-8 text-green-600" strokeWidth={1.5} />,
       title: "People",
       subtitle: "Change Management & Organizational Change",
       description: "Transitioning individuals, teams, and organizations from a current state to a desired future state while minimizing resistance and maximizing adoption.",
@@ -35,7 +32,6 @@ const ServicesSection = () => {
   ];
 
   const createServices = {
-    icon: <Rocket className="h-8 w-8 text-green-600" strokeWidth={1.5} />,
     title: "Innovation",
     subtitle: "Venture Building & Go-To-Market",
     description: "I help you to create bold ideas that can turn into digital, scalable business models and validate them. Finally, I create go-to-market strategies and execute them. I build, launch, and scale ventures that win markets.",
@@ -92,40 +88,40 @@ const ServicesSection = () => {
 
               {/* Two-column layout: Venn diagram on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Updated Venn Diagram with animation */}
+                {/* First column: Updated Venn Diagram with halo effect and calmer animation */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative w-full max-w-md aspect-square mx-auto">
-                    {/* Technology Circle - with pulse and hover animation */}
+                    {/* Technology Circle - with soft halo effect */}
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  animate-[pulse_5s_ease-in-out_infinite]">
+                                  shadow-[0_0_20px_rgba(34,197,94,0.15)]">
                       <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
-                    {/* Processes Circle - with pulse and hover animation */}
+                    {/* Processes Circle - with soft halo effect */}
                     <div className="absolute bottom-0 left-[25%] transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  animate-[pulse_5s_ease-in-out_infinite_1s]">
+                                  shadow-[0_0_20px_rgba(34,197,94,0.15)]">
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
-                    {/* People Circle - with pulse and hover animation */}
+                    {/* People Circle - with soft halo effect */}
                     <div className="absolute bottom-0 right-[25%] transform translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  animate-[pulse_5s_ease-in-out_infinite_2s]">
+                                  shadow-[0_0_20px_rgba(34,197,94,0.15)]">
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
-                    {/* Digital Transformation pill in center - with shadow pulse animation */}
+                    {/* Digital Transformation pill in center - with subtle floating animation */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
                                   bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
-                                  shadow-lg animate-[shadow-pulse_3s_ease-in-out_infinite]">
+                                  shadow-lg animate-float">
                       <div className="leading-tight">
                         <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
                         <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
@@ -134,17 +130,14 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                {/* Second column: Service Cards */}
+                {/* Second column: Service Cards with smaller green sections */}
                 <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
                   {transformServices.map((service, index) => (
                     <Card key={index} className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
                       <CardContent className="p-0">
-                        <div className="grid md:grid-cols-[160px_1fr] items-center">
-                          <div className="bg-green-50 p-4 flex flex-col items-center justify-center h-full border-r border-green-100">
-                            <div className="bg-white rounded-full p-3 shadow-sm mb-3">
-                              {service.icon}
-                            </div>
-                            <h4 className="font-bold text-xl text-green-800">{service.title}</h4>
+                        <div className="grid md:grid-cols-[120px_1fr] items-center">
+                          <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
+                            <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
                           </div>
                           <div className="p-5">
                             <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{service.subtitle}</h4>
@@ -221,12 +214,9 @@ const ServicesSection = () => {
                 <div className={`${isMobile ? "order-2" : "order-2"}`}>
                   <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
                     <CardContent className="p-0">
-                      <div className="grid md:grid-cols-[160px_1fr] items-center">
-                        <div className="bg-green-50 p-4 flex flex-col items-center justify-center h-full border-r border-green-100">
-                          <div className="bg-white rounded-full p-3 shadow-sm mb-3">
-                            {createServices.icon}
-                          </div>
-                          <h4 className="font-bold text-xl text-green-800">{createServices.title}</h4>
+                      <div className="grid md:grid-cols-[120px_1fr] items-center">
+                        <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
+                          <h4 className="font-bold text-lg text-green-800">{createServices.title}</h4>
                         </div>
                         <div className="p-5">
                           <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{createServices.subtitle}</h4>
