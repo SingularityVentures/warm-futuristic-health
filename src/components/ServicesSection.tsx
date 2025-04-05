@@ -51,7 +51,7 @@ const ServicesSection = () => {
     <section id="services" className="section py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div className="text-center max-w-full mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Digital Transformation Services
           </h2>
@@ -85,60 +85,45 @@ const ServicesSection = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to transform your existing business
               </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-12">
+              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
                 Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
                 I offer services to do each individual section or all of the three combined.
               </p>
 
               {/* Two-column layout: Venn diagram on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Venn Diagram */}
+                {/* First column: Updated Venn Diagram */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
-                  <div className="relative w-full max-w-md h-[500px]">
-                    {/* Pill shaped header */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-40 bg-green-700 text-white font-bold rounded-full py-3 px-8 shadow-lg text-center min-w-64">
-                      <p className="text-lg">DIGITAL TRANSFORMATION</p>
-                    </div>
-                    
+                  <div className="relative w-full max-w-md aspect-square mx-auto">
                     {/* Technology Circle */}
-                    <div className="absolute top-[100px] left-[50%] transform -translate-x-1/2 z-10 
-                                  bg-gradient-to-b from-green-50 to-green-100 
-                                  border-2 border-green-300 rounded-full h-56 w-56 
-                                  flex items-center justify-center">
-                      <div className="absolute top-6 text-center">
-                        <h4 className="text-green-800 font-bold text-xl">TECHNOLOGY</h4>
-                      </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 
+                                  bg-green-50 border-2 border-green-300 rounded-full 
+                                  h-[65%] w-[65%] flex items-center justify-center">
+                      <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
-                    {/* Process Circle */}
-                    <div className="absolute top-[190px] left-[30%] transform -translate-x-1/2 z-10 
-                                  bg-gradient-to-b from-green-50 to-green-100 
-                                  border-2 border-green-300 rounded-full h-56 w-56 
-                                  flex items-center justify-center">
-                      <div className="absolute left-8 text-center">
-                        <h4 className="text-green-800 font-bold text-xl">PROCESSES</h4>
-                      </div>
+                    {/* Processes Circle */}
+                    <div className="absolute bottom-0 left-[25%] transform -translate-x-1/2 
+                                  bg-green-50 border-2 border-green-300 rounded-full 
+                                  h-[65%] w-[65%] flex items-center justify-center">
+                      <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
                     {/* People Circle */}
-                    <div className="absolute top-[190px] left-[70%] transform -translate-x-1/2 z-10 
-                                  bg-gradient-to-b from-green-50 to-green-100 
-                                  border-2 border-green-300 rounded-full h-56 w-56 
-                                  flex items-center justify-center">
-                      <div className="absolute right-8 text-center">
-                        <h4 className="text-green-800 font-bold text-xl">PEOPLE</h4>
-                      </div>
+                    <div className="absolute bottom-0 right-[25%] transform translate-x-1/2 
+                                  bg-green-50 border-2 border-green-300 rounded-full 
+                                  h-[65%] w-[65%] flex items-center justify-center">
+                      <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
-                    {/* Overlapping sections with different opacities */}
-                    <div className="absolute top-[170px] left-[40%] transform -translate-x-1/2 z-20 
-                                  bg-green-200 rounded-full h-36 w-36 opacity-60"></div>
-                    <div className="absolute top-[170px] left-[60%] transform -translate-x-1/2 z-20 
-                                  bg-green-200 rounded-full h-36 w-36 opacity-60"></div>
-                    <div className="absolute top-[220px] left-[50%] transform -translate-x-1/2 z-20 
-                                  bg-green-200 rounded-full h-36 w-36 opacity-60"></div>
-                    <div className="absolute top-[190px] left-[50%] transform -translate-x-1/2 z-30 
-                                  bg-green-300 rounded-full h-24 w-24 opacity-70"></div>
+                    {/* Digital Transformation pill in center */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
+                                  bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center">
+                      <div className="leading-tight">
+                        <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
+                        <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -165,8 +150,7 @@ const ServicesSection = () => {
                               ))}
                             </div>
                             <Button 
-                              variant="outline" 
-                              className="text-green-700 hover:text-white hover:bg-green-600 border-green-200 hover:border-green-600 transition-colors"
+                              className="bg-green-600 hover:bg-green-700 text-white transition-colors"
                             >
                               Learn more
                               <ArrowRight className="ml-1 h-4 w-4" />
@@ -186,7 +170,7 @@ const ServicesSection = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to create new business
               </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-12">
+              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
                 Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
               </p>
 
@@ -248,8 +232,7 @@ const ServicesSection = () => {
                             ))}
                           </div>
                           <Button 
-                            variant="outline" 
-                            className="text-green-700 hover:text-white hover:bg-green-600 border-green-200 hover:border-green-600 transition-colors"
+                            className="bg-green-600 hover:bg-green-700 text-white transition-colors"
                           >
                             Learn more
                             <ArrowRight className="ml-1 h-4 w-4" />
@@ -266,10 +249,6 @@ const ServicesSection = () => {
 
         {/* CTA */}
         <div className="mt-20 text-center">
-          <div className="inline-flex items-center justify-center gap-2 bg-green-50 px-4 py-2 rounded-full mb-6">
-            <CheckCircle className="h-5 w-5 text-green-600" />
-            <span className="text-green-700 font-medium">Ready to transform your business?</span>
-          </div>
           <h3 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
             Let's work together to achieve your digital transformation goals
           </h3>
