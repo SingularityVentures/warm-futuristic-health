@@ -9,21 +9,25 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const ServicesSection = () => {
   const isMobile = useIsMobile();
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   
   const transformServices = [
     {
+      id: "technology",
       title: "Technology",
       subtitle: "(GxP) Software Implementation",
       description: "Specialized support for implementing and validating GxP-compliant systems. From vendor selection to deployment, I ensure alignment with regulatory standards.",
       badges: ["Validation", "Qualification", "Compliance", "GxP", "Stakeholder Mgmt", "End-To-End"],
     },
     {
+      id: "processes",
       title: "Processes",
       subtitle: "Business Process Transformation",
       description: "Redesign of core workflows, systems, and operations to improve efficiency, reduce costs, and enhance customer value by leveraging technology (AI) and data analytics.",
       badges: ["AI", "RPA", "Automation"],
     },
     {
+      id: "people",
       title: "People",
       subtitle: "Change Management & Organizational Change",
       description: "Transitioning individuals, teams, and organizations from a current state to a desired future state while minimizing resistance and maximizing adoption.",
@@ -41,6 +45,14 @@ const ServicesSection = () => {
       { number: 2, title: "Validation", description: "Test and refine ideas" },
       { number: 3, title: "Go-to-Market", description: "Launch and scale" },
     ]
+  };
+
+  const handleCircleHover = (id: string | null) => {
+    setHoveredSection(id);
+  };
+
+  const isHighlighted = (id: string) => {
+    return hoveredSection === id;
   };
 
   return (
@@ -92,36 +104,54 @@ const ServicesSection = () => {
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative w-full max-w-md aspect-square mx-auto">
                     {/* Technology Circle - with soft halo effect */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 
-                                  bg-green-50 border-2 border-green-300 rounded-full 
+                    <div 
+                      className={`absolute top-0 left-1/2 transform -translate-x-1/2 
+                                  bg-green-50 border-2 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
-                                  transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  shadow-[0_0_20px_rgba(34,197,94,0.15)]">
+                                  transition-all duration-300 cursor-pointer
+                                  ${isHighlighted("technology") 
+                                    ? "border-green-500 bg-green-100 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
+                                    : "border-green-300 shadow-[0_0_20px_rgba(34,197,94,0.15)]"}`}
+                      onMouseEnter={() => handleCircleHover("technology")}
+                      onMouseLeave={() => handleCircleHover(null)}
+                    >
                       <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
                     {/* Processes Circle - with soft halo effect */}
-                    <div className="absolute bottom-0 left-[25%] transform -translate-x-1/2 
-                                  bg-green-50 border-2 border-green-300 rounded-full 
+                    <div 
+                      className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
+                                  bg-green-50 border-2 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
-                                  transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  shadow-[0_0_20px_rgba(34,197,94,0.15)]">
+                                  transition-all duration-300 cursor-pointer
+                                  ${isHighlighted("processes") 
+                                    ? "border-green-500 bg-green-100 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
+                                    : "border-green-300 shadow-[0_0_20px_rgba(34,197,94,0.15)]"}`}
+                      onMouseEnter={() => handleCircleHover("processes")}
+                      onMouseLeave={() => handleCircleHover(null)}
+                    >
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
                     {/* People Circle - with soft halo effect */}
-                    <div className="absolute bottom-0 right-[25%] transform translate-x-1/2 
-                                  bg-green-50 border-2 border-green-300 rounded-full 
+                    <div 
+                      className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
+                                  bg-green-50 border-2 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
-                                  transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  shadow-[0_0_20px_rgba(34,197,94,0.15)]">
+                                  transition-all duration-300 cursor-pointer
+                                  ${isHighlighted("people") 
+                                    ? "border-green-500 bg-green-100 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
+                                    : "border-green-300 shadow-[0_0_20px_rgba(34,197,94,0.15)]"}`}
+                      onMouseEnter={() => handleCircleHover("people")}
+                      onMouseLeave={() => handleCircleHover(null)}
+                    >
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
-                    {/* Digital Transformation pill in center - with subtle floating animation */}
+                    {/* Digital Transformation pill in center - without animation */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
                                   bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
-                                  shadow-lg animate-float">
+                                  shadow-lg">
                       <div className="leading-tight">
                         <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
                         <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
@@ -133,10 +163,21 @@ const ServicesSection = () => {
                 {/* Second column: Service Cards with smaller green sections */}
                 <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
                   {transformServices.map((service, index) => (
-                    <Card key={index} className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
+                    <Card 
+                      key={index} 
+                      className={`border-l-4 transition-all duration-300
+                                ${isHighlighted(service.id) 
+                                  ? "border-l-green-500 shadow-lg bg-green-50" 
+                                  : "border-l-green-600 hover:shadow-lg"}`}
+                      onMouseEnter={() => handleCircleHover(service.id)}
+                      onMouseLeave={() => handleCircleHover(null)}
+                    >
                       <CardContent className="p-0">
                         <div className="grid md:grid-cols-[120px_1fr] items-center">
-                          <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
+                          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r 
+                                        transition-colors duration-300 ${isHighlighted(service.id) 
+                                          ? "border-green-300 bg-green-100" 
+                                          : "border-green-100"}`}>
                             <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
                           </div>
                           <div className="p-5">
