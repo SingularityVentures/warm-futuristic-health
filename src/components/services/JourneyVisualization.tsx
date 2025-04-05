@@ -41,10 +41,10 @@ const JourneyVisualization = ({
       )}
       
       {/* Journey steps with arrows connecting them */}
-      <div className={`flex flex-col space-y-20 relative ${isHighlighted ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl p-6" : "p-6"}`}>
+      <div className={`flex flex-col space-y-24 relative ${isHighlighted ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl p-6" : "p-6"}`}>
         {steps.map((step, index) => (
           <div key={index} className="flex items-center relative z-10">
-            <div className="rounded-full text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg overflow-hidden relative">
+            <div className="rounded-full text-white w-20 h-20 flex items-center justify-center text-3xl font-bold shadow-lg overflow-hidden relative">
               {/* Background image for the step circle */}
               <div className="absolute inset-0 w-full h-full">
                 <img 
@@ -58,19 +58,19 @@ const JourneyVisualization = ({
               {/* Step number */}
               <span className="relative z-10">{step.number}</span>
             </div>
-            <div className="ml-4">
+            <div className="ml-5">
               <h4 className="font-bold text-green-800 text-lg">{step.title}</h4>
               <p className="text-gray-600">{step.description}</p>
             </div>
             
             {/* Add arrow between steps (except after the last step) */}
             {index < steps.length - 1 && (
-              <div className="absolute top-[58px] left-7 h-20 flex items-center">
+              <div className="absolute top-[78px] left-10 h-24 flex items-center">
                 <div className="w-0.5 h-full bg-green-500 relative">
-                  <div className="absolute -bottom-4 -left-3 w-7 h-7 flex items-center justify-center">
+                  <div className="absolute -bottom-5 -left-4 w-9 h-9 flex items-center justify-center">
                     <ArrowRight 
                       className="text-green-600 transform rotate-90" 
-                      size={28} 
+                      size={32} 
                     />
                   </div>
                 </div>
