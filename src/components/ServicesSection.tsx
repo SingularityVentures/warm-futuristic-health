@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -97,11 +98,13 @@ const ServicesSection = () => {
 
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
                 <div className={`flex justify-center items-center relative ${isMobile ? "order-1" : "order-1"}`}>
-                  <div className="absolute inset-0 bg-green-50/90 rounded-2xl shadow-md" style={{ 
-                    top: isMobile ? '0' : '-1.5rem', 
-                    bottom: isMobile ? '0' : '-1.5rem',
+                  {/* Background that aligns perfectly with service tiles height */}
+                  <div className="absolute bg-green-50/90 rounded-2xl shadow-md" style={{ 
+                    top: '0',
+                    bottom: '0',
                     left: '-1.5rem',
-                    right: '1rem'
+                    right: '1rem',
+                    zIndex: 0
                   }}></div>
                   
                   <div className="relative w-full max-w-md aspect-square mx-auto z-10">
