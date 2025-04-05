@@ -36,15 +36,14 @@ const ServicesSection = () => {
   ];
 
   const createServices = {
-    id: "innovation",
     title: "Innovation",
     subtitle: "Venture Building & Go-To-Market",
     description: "I help you to create bold ideas that can turn into digital, scalable business models and validate them. Finally, I create go-to-market strategies and execute them. I build, launch, and scale ventures that win markets.",
     badges: ["Ideation", "Design Thinking", "Hypothesis Testing", "Go-To-Market", "Venture Building"],
     steps: [
-      { id: "step1", number: 1, title: "Ideation", description: "Generate innovative concepts" },
-      { id: "step2", number: 2, title: "Validation", description: "Test and refine ideas" },
-      { id: "step3", number: 3, title: "Go-to-Market", description: "Launch and scale" },
+      { number: 1, title: "Ideation", description: "Generate innovative concepts" },
+      { number: 2, title: "Validation", description: "Test and refine ideas" },
+      { number: 3, title: "Go-to-Market", description: "Launch and scale" },
     ]
   };
 
@@ -54,16 +53,6 @@ const ServicesSection = () => {
 
   const isHighlighted = (id: string) => {
     return hoveredSection === id;
-  };
-
-  // Helper function to check if any step is highlighted
-  const isAnyStepHighlighted = () => {
-    return createServices.steps.some(step => isHighlighted(step.id));
-  };
-
-  // Helper function to check if innovation card or any step is highlighted
-  const isInnovationHighlighted = () => {
-    return isHighlighted(createServices.id) || isAnyStepHighlighted();
   };
 
   return (
@@ -225,21 +214,13 @@ const ServicesSection = () => {
 
               {/* Two-column layout: Journey visualization on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Journey visualization with hover effects */}
+                {/* First column: Journey visualization */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative py-8 max-w-md w-full">
                     {/* Journey steps with arrows connecting them */}
                     <div className="flex flex-col space-y-20 relative">
                       {createServices.steps.map((step, index) => (
-                        <div 
-                          key={index} 
-                          className={`flex items-center relative z-10 transition-all duration-300
-                                    ${isHighlighted(step.id)
-                                      ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] bg-white rounded-xl p-2 z-10"
-                                      : isInnovationHighlighted() ? "opacity-50" : ""}`}
-                          onMouseEnter={() => handleCircleHover(step.id)}
-                          onMouseLeave={() => handleCircleHover(null)}
-                        >
+                        <div key={index} className="flex items-center relative z-10">
                           <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
                             {step.number}
                           </div>
@@ -267,16 +248,9 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                {/* Second column: Service Card with hover effects */}
+                {/* Second column: Service Card */}
                 <div className={`${isMobile ? "order-2" : "order-2"}`}>
-                  <Card 
-                    className={`border-l-4 border-l-green-600 transition-all duration-300
-                              ${isHighlighted(createServices.id)
-                                ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10"
-                                : isInnovationHighlighted() ? "opacity-50" : "hover:shadow-lg"}`}
-                    onMouseEnter={() => handleCircleHover(createServices.id)}
-                    onMouseLeave={() => handleCircleHover(null)}
-                  >
+                  <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
                     <CardContent className="p-0">
                       <div className="grid md:grid-cols-[120px_1fr] items-center">
                         <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
