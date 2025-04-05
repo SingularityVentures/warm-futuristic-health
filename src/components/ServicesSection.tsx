@@ -88,24 +88,16 @@ const ServicesSection = () => {
             </TabsList>
           </div>
 
-          <TabsContent value="transform" className="animate-fade-in mt-0">
-            <div className="mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-                How I help you to transform your existing business
-              </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-                Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
-                I offer services to do each individual section or all of the three combined.
-              </p>
-
-              {/* Shared container with background to group the diagram and cards */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
-                {/* New label for the visual connection */}
-                <div className="text-center mb-8">
-                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-sm px-4 py-1">
-                    Interactive Services Framework
-                  </Badge>
-                </div>
+          <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+            <TabsContent value="transform" className="animate-fade-in mt-0">
+              <div className="mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
+                  How I help you to transform your existing business
+                </h3>
+                <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                  Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
+                  I offer services to do each individual section or all of the three combined.
+                </p>
 
                 {/* Two-column layout: Venn diagram on left, Service Cards on right */}
                 <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
@@ -215,26 +207,16 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </TabsContent>
+            </TabsContent>
 
-          <TabsContent value="create" className="animate-fade-in mt-0">
-            <div className="mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-                How I help you to create new business
-              </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-                Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
-              </p>
-
-              {/* Shared container with background to group the journey and card */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
-                {/* New label for the visual connection */}
-                <div className="text-center mb-8">
-                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 text-sm px-4 py-1">
-                    Innovation Journey Framework
-                  </Badge>
-                </div>
+            <TabsContent value="create" className="animate-fade-in mt-0">
+              <div className="mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
+                  How I help you to create new business
+                </h3>
+                <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                  Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
+                </p>
 
                 {/* Two-column layout: Journey visualization on left, Service Cards on right */}
                 <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
@@ -320,19 +302,19 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </TabsContent>
-        </Tabs>
+            </TabsContent>
 
-        {/* CTA */}
-        <div className="mt-20 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
-            Let's work together to achieve your digital transformation goals
-          </h3>
-          <Button asChild className="bg-green-600 hover:bg-green-700">
-            <a href="#contact">Get in Touch</a>
-          </Button>
-        </div>
+            {/* CTA - Now inside the same container */}
+            <div className="mt-12 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
+                Let's work together to achieve your digital transformation goals
+              </h3>
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 px-8 py-6 h-auto">
+                <a href="#contact">Get in Touch</a>
+              </Button>
+            </div>
+          </div>
+        </Tabs>
       </div>
     </section>
   );
