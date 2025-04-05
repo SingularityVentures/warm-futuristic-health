@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Brain, Database, Users, Wrench, ArrowRight, CircleIcon, CheckCircle2 } from "lucide-react";
+import { Brain, Database, Users, Wrench, ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface AIAreaProps {
@@ -94,11 +94,11 @@ const AIFocusSection = () => {
       delay: 0.3
     },
     { 
-      title: "Data", 
-      description: "Build the foundation for AI success", 
+      title: "Processes", 
+      description: "Optimize workflows for AI integration", 
       icon: <Database size={24} />, 
       color: "purple",
-      items: ["Data Quality", "Data Architecture", "Data Governance", "Analytical Infrastructure"],
+      items: ["Process Mapping", "Workflow Optimization", "Automation Potential", "Quality Management"],
       delay: 0.5
     },
     { 
@@ -160,15 +160,13 @@ const AIFocusSection = () => {
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white text-center p-4 shadow-lg z-10"
                 variants={centralCircleVariants}
                 whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(34, 197, 94, 0.5)" }}
-                animate={{ boxShadow: ["0 0 15px rgba(34, 197, 94, 0.3)", "0 0 25px rgba(34, 197, 94, 0.5)", "0 0 15px rgba(34, 197, 94, 0.3)"] }}
-                transition={{ boxShadow: { duration: 2, repeat: Infinity } }}
               >
                 <span className="font-bold text-sm">AI Transformation</span>
               </motion.div>
               
               {/* AI Strategy - Top Left */}
               <motion.div 
-                className="absolute top-4 left-4 md:left-12 w-36 h-36 md:w-40 md:h-40"
+                className="absolute top-0 left-0 md:left-[calc(50%-150px)] transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-40 md:h-40"
                 initial={{ opacity: 0, x: -50, y: -50 }}
                 animate={isVisible ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: -50, y: -50 }}
                 transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
@@ -181,12 +179,12 @@ const AIFocusSection = () => {
                   </div>
                 </div>
                 {/* Connecting Line */}
-                <svg className="absolute top-1/2 left-1/2 z-[-1]" width="100" height="100" viewBox="0 0 100 100">
+                <svg className="absolute top-1/2 left-1/2 z-[-1]" width="150" height="150" viewBox="0 0 150 150">
                   <motion.line 
-                    x1="50" 
-                    y1="50" 
-                    x2="120" 
-                    y2="120" 
+                    x1="75" 
+                    y1="75" 
+                    x2="150" 
+                    y2="150" 
                     stroke="green" 
                     strokeWidth="2"
                     strokeDasharray="5,5"
@@ -199,7 +197,7 @@ const AIFocusSection = () => {
               
               {/* AI Implementation - Top Right */}
               <motion.div 
-                className="absolute top-4 right-4 md:right-12 w-36 h-36 md:w-40 md:h-40"
+                className="absolute top-0 right-0 md:right-[calc(50%-150px)] transform translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-40 md:h-40"
                 initial={{ opacity: 0, x: 50, y: -50 }}
                 animate={isVisible ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: -50 }}
                 transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
@@ -212,12 +210,12 @@ const AIFocusSection = () => {
                   </div>
                 </div>
                 {/* Connecting Line */}
-                <svg className="absolute top-1/2 right-1/2 z-[-1]" width="100" height="100" viewBox="0 0 100 100">
+                <svg className="absolute top-1/2 right-1/2 z-[-1]" width="150" height="150" viewBox="0 0 150 150">
                   <motion.line 
-                    x1="50" 
-                    y1="50" 
+                    x1="75" 
+                    y1="75" 
                     x2="0" 
-                    y2="120" 
+                    y2="150" 
                     stroke="blue" 
                     strokeWidth="2"
                     strokeDasharray="5,5"
@@ -228,9 +226,9 @@ const AIFocusSection = () => {
                 </svg>
               </motion.div>
               
-              {/* Data - Bottom Left */}
+              {/* Processes - Bottom Left */}
               <motion.div 
-                className="absolute bottom-4 left-4 md:left-12 w-36 h-36 md:w-40 md:h-40"
+                className="absolute bottom-0 left-0 md:left-[calc(50%-150px)] transform -translate-x-1/2 translate-y-1/2 w-36 h-36 md:w-40 md:h-40"
                 initial={{ opacity: 0, x: -50, y: 50 }}
                 animate={isVisible ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: -50, y: 50 }}
                 transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
@@ -239,15 +237,15 @@ const AIFocusSection = () => {
                 <div className="w-full h-full rounded-full bg-purple-100 border-2 border-purple-500 flex items-center justify-center p-3 shadow-lg">
                   <div className="text-center">
                     <Database className="mx-auto text-purple-600 mb-1" size={24} />
-                    <span className="text-purple-800 font-bold text-sm">Data</span>
+                    <span className="text-purple-800 font-bold text-sm">Processes</span>
                   </div>
                 </div>
                 {/* Connecting Line */}
-                <svg className="absolute bottom-1/2 left-1/2 z-[-1]" width="100" height="100" viewBox="0 0 100 100">
+                <svg className="absolute bottom-1/2 left-1/2 z-[-1]" width="150" height="150" viewBox="0 0 150 150">
                   <motion.line 
-                    x1="50" 
-                    y1="50" 
-                    x2="120" 
+                    x1="75" 
+                    y1="75" 
+                    x2="150" 
                     y2="0" 
                     stroke="purple" 
                     strokeWidth="2"
@@ -261,7 +259,7 @@ const AIFocusSection = () => {
               
               {/* Organization Change - Bottom Right */}
               <motion.div 
-                className="absolute bottom-4 right-4 md:right-12 w-36 h-36 md:w-40 md:h-40"
+                className="absolute bottom-0 right-0 md:right-[calc(50%-150px)] transform translate-x-1/2 translate-y-1/2 w-36 h-36 md:w-40 md:h-40"
                 initial={{ opacity: 0, x: 50, y: 50 }}
                 animate={isVisible ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: 50 }}
                 transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
@@ -274,10 +272,10 @@ const AIFocusSection = () => {
                   </div>
                 </div>
                 {/* Connecting Line */}
-                <svg className="absolute bottom-1/2 right-1/2 z-[-1]" width="100" height="100" viewBox="0 0 100 100">
+                <svg className="absolute bottom-1/2 right-1/2 z-[-1]" width="150" height="150" viewBox="0 0 150 150">
                   <motion.line 
-                    x1="50" 
-                    y1="50" 
+                    x1="75" 
+                    y1="75" 
                     x2="0" 
                     y2="0" 
                     stroke="orange" 
@@ -288,38 +286,6 @@ const AIFocusSection = () => {
                     transition={{ delay: 0.9, duration: 0.8 }}
                   />
                 </svg>
-              </motion.div>
-              
-              {/* Animated Pulses around the central circle */}
-              <motion.div 
-                className="absolute top-1/2 left-1/2 rounded-full -translate-x-1/2 -translate-y-1/2 w-32 h-32"
-                animate={{ 
-                  scale: [1, 1.2, 1], 
-                  opacity: [0.7, 0, 0.7],
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div className="w-full h-full rounded-full border-2 border-green-300 bg-green-50 opacity-30"></div>
-              </motion.div>
-              
-              <motion.div 
-                className="absolute top-1/2 left-1/2 rounded-full -translate-x-1/2 -translate-y-1/2 w-32 h-32"
-                animate={{ 
-                  scale: [1, 1.5, 1], 
-                  opacity: [0.5, 0, 0.5],
-                }}
-                transition={{ 
-                  duration: 4,
-                  delay: 0.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div className="w-full h-full rounded-full border-2 border-green-200 bg-green-50 opacity-20"></div>
               </motion.div>
             </motion.div>
           </div>
