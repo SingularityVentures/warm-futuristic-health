@@ -49,22 +49,25 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="section py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
-      <div className="container mx-auto px-4">
-        {/* Section header */}
+      {/* Background pattern element for cohesion */}
+      <div className="absolute inset-0 w-full h-full opacity-5 molecular-bg pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 relative">
+        {/* Section header with enhanced styling */}
         <div className="text-center max-w-full mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Digital Transformation Services
           </h2>
           <div className="technoline mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg max-w-4xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-4xl mx-auto mb-6">
             Comprehensive services tailored specifically for pharmaceutical and healthcare organizations.
           </p>
         </div>
 
         {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
-        <Tabs defaultValue="transform" className="w-full">
+        <Tabs defaultValue="transform" className="w-full relative">
           <div className="flex justify-center mb-8">
-            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex">
+            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex shadow-md">
               <TabsTrigger 
                 value="transform" 
                 className="flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100"
@@ -80,52 +83,64 @@ const ServicesSection = () => {
             </TabsList>
           </div>
 
+          {/* Green connecting line for visual cohesion */}
+          <div className="absolute h-[calc(100%-8rem)] w-0.5 bg-gradient-to-b from-green-400 to-green-600 left-1/2 transform -translate-x-1/2 top-32 -z-1 hidden md:block"></div>
+
           <TabsContent value="transform" className="animate-fade-in mt-0">
-            <div className="mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-                How I help you to transform your existing business
-              </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-                Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
-                I offer services to do each individual section or all of the three combined.
-              </p>
+            <div className="mb-12 relative">
+              <div className="tech-card p-6 mb-8 mx-auto max-w-4xl">
+                <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
+                  How I help you to transform your existing business
+                </h3>
+                <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                  Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
+                  I offer services to do each individual section or all of the three combined.
+                </p>
+              </div>
 
               {/* Two-column layout: Venn diagram on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Updated Venn Diagram with animation */}
+                {/* First column: Updated Venn Diagram with new animation */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative w-full max-w-md aspect-square mx-auto">
-                    {/* Technology Circle - with pulse and hover animation */}
+                    {/* Technology Circle - with smooth rotation animation */}
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  animate-[pulse_5s_ease-in-out_infinite]">
+                                  hover:translate-y-[-8px] hover:shadow-lg"
+                         style={{transition: "all 0.5s ease"}}>
                       <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
-                    {/* Processes Circle - with pulse and hover animation */}
+                    {/* Processes Circle - with smooth movement animation */}
                     <div className="absolute bottom-0 left-[25%] transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  animate-[pulse_5s_ease-in-out_infinite_1s]">
+                                  hover:translate-x-[-8px] hover:shadow-lg"
+                         style={{transition: "all 0.5s ease"}}>
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
-                    {/* People Circle - with pulse and hover animation */}
+                    {/* People Circle - with smooth movement animation */}
                     <div className="absolute bottom-0 right-[25%] transform translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-500 hover:border-green-500 hover:bg-green-100
-                                  animate-[pulse_5s_ease-in-out_infinite_2s]">
+                                  hover:translate-x-[8px] hover:shadow-lg"
+                         style={{transition: "all 0.5s ease"}}>
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
-                    {/* Digital Transformation pill in center - with shadow pulse animation */}
+                    {/* Digital Transformation pill in center with subtle glow animation */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
                                   bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
-                                  shadow-lg animate-[shadow-pulse_3s_ease-in-out_infinite]">
+                                  shadow-lg transition-all duration-500 hover:shadow-xl hover:scale-105"
+                         style={{
+                           boxShadow: "0 0 20px rgba(22, 163, 74, 0.3)",
+                           transition: "all 0.5s ease"
+                         }}>
                       <div className="leading-tight">
                         <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
                         <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
@@ -157,7 +172,7 @@ const ServicesSection = () => {
                               ))}
                             </div>
                             <Button 
-                              className="bg-green-600 hover:bg-green-700 text-white transition-colors"
+                              className="btn-primary"
                             >
                               Learn more
                               <ArrowRight className="ml-1 h-4 w-4" />
@@ -174,12 +189,14 @@ const ServicesSection = () => {
 
           <TabsContent value="create" className="animate-fade-in mt-0">
             <div className="mb-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-                How I help you to create new business
-              </h3>
-              <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-                Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
-              </p>
+              <div className="tech-card p-6 mb-8 mx-auto max-w-4xl">
+                <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
+                  How I help you to create new business
+                </h3>
+                <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
+                  Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
+                </p>
+              </div>
 
               {/* Two-column layout: Journey visualization on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
@@ -189,8 +206,8 @@ const ServicesSection = () => {
                     {/* Journey steps with arrows connecting them */}
                     <div className="flex flex-col space-y-20 relative">
                       {createServices.steps.map((step, index) => (
-                        <div key={index} className="flex items-center relative z-10">
-                          <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
+                        <div key={index} className="flex items-center relative z-10 transition-transform duration-500 hover:translate-x-2">
+                          <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-green-700">
                             {step.number}
                           </div>
                           <div className="ml-4">
@@ -239,7 +256,7 @@ const ServicesSection = () => {
                             ))}
                           </div>
                           <Button 
-                            className="bg-green-600 hover:bg-green-700 text-white transition-colors"
+                            className="btn-primary"
                           >
                             Learn more
                             <ArrowRight className="ml-1 h-4 w-4" />
@@ -259,7 +276,7 @@ const ServicesSection = () => {
           <h3 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
             Let's work together to achieve your digital transformation goals
           </h3>
-          <Button asChild className="bg-green-600 hover:bg-green-700">
+          <Button asChild className="btn-primary">
             <a href="#contact">Get in Touch</a>
           </Button>
         </div>
