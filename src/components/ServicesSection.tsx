@@ -214,9 +214,14 @@ const ServicesSection = () => {
 
               {/* Two-column layout: Journey visualization on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Journey visualization */}
+                {/* First column: Journey visualization with hover effects */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
-                  <div className="relative py-8 max-w-md w-full">
+                  <div 
+                    className={`relative py-8 max-w-md w-full transition-all duration-300
+                               ${hoveredSection === "innovation" ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl" : ""}`}
+                    onMouseEnter={() => handleCircleHover("innovation")}
+                    onMouseLeave={() => handleCircleHover(null)}
+                  >
                     {/* Journey steps with arrows connecting them */}
                     <div className="flex flex-col space-y-20 relative">
                       {createServices.steps.map((step, index) => (
@@ -248,9 +253,16 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                {/* Second column: Service Card */}
+                {/* Second column: Service Card with hover effect */}
                 <div className={`${isMobile ? "order-2" : "order-2"}`}>
-                  <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
+                  <Card 
+                    className={`border-l-4 border-l-green-600 transition-all duration-300
+                              ${hoveredSection === "innovation" 
+                                ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10" 
+                                : "hover:shadow-lg"}`}
+                    onMouseEnter={() => handleCircleHover("innovation")}
+                    onMouseLeave={() => handleCircleHover(null)}
+                  >
                     <CardContent className="p-0">
                       <div className="grid md:grid-cols-[120px_1fr] items-center">
                         <div className="bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100">
