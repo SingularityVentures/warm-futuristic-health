@@ -19,49 +19,76 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         <div className="absolute right-0 top-1/2 transform translate-x-[95%] -translate-y-1/2 w-16 h-0.5 bg-green-200 z-0"></div>
       )}
       
-      {/* Technology Circle - with green halo effect when highlighted */}
+      {/* Technology Circle - with technology image and highlights */}
       <div 
         className={`absolute top-0 left-1/2 transform -translate-x-1/2 
-                    bg-green-50 border-2 border-green-300 rounded-full 
+                    rounded-full overflow-hidden
                     h-[65%] w-[65%] flex items-center justify-center
                     transition-all duration-300 cursor-pointer
+                    border-2 border-green-300
                     ${isHighlighted("technology") 
                       ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
                       : hoveredSection ? "opacity-50" : ""}`}
         onMouseEnter={() => handleCircleHover("technology")}
         onMouseLeave={() => handleCircleHover(null)}
       >
-        <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
+        {/* Technology image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img 
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+            alt="Technology" 
+            className="w-full h-full object-cover opacity-40"
+          />
+        </div>
+        <h4 className="text-green-800 font-bold text-2xl absolute top-[30%] z-10">TECHNOLOGY</h4>
       </div>
 
-      {/* Processes Circle - with green halo effect when highlighted */}
+      {/* Processes Circle - with processes image and highlights */}
       <div 
         className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
-                    bg-green-50 border-2 border-green-300 rounded-full 
+                    rounded-full overflow-hidden
                     h-[65%] w-[65%] flex items-center justify-center
                     transition-all duration-300 cursor-pointer
+                    border-2 border-green-300
                     ${isHighlighted("processes") 
                       ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
                       : hoveredSection ? "opacity-50" : ""}`}
         onMouseEnter={() => handleCircleHover("processes")}
         onMouseLeave={() => handleCircleHover(null)}
       >
-        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
+        {/* Processes image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img 
+            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+            alt="Processes" 
+            className="w-full h-full object-cover opacity-40"
+          />
+        </div>
+        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%] z-10">PROCESSES</h4>
       </div>
 
-      {/* People Circle - with green halo effect when highlighted */}
+      {/* People Circle - with people image and highlights */}
       <div 
         className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
-                    bg-green-50 border-2 border-green-300 rounded-full 
+                    rounded-full overflow-hidden
                     h-[65%] w-[65%] flex items-center justify-center
                     transition-all duration-300 cursor-pointer
+                    border-2 border-green-300
                     ${isHighlighted("people") 
                       ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
                       : hoveredSection ? "opacity-50" : ""}`}
         onMouseEnter={() => handleCircleHover("people")}
         onMouseLeave={() => handleCircleHover(null)}
       >
-        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
+        {/* People image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img 
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+            alt="People" 
+            className="w-full h-full object-cover opacity-40"
+          />
+        </div>
+        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%] z-10">PEOPLE</h4>
       </div>
 
       {/* Digital Transformation pill in center - no animation */}
