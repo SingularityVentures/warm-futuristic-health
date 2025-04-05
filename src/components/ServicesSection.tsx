@@ -58,6 +58,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="section py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
+        {/* Section header */}
         <div className="text-center max-w-full mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Digital Transformation Services
@@ -68,9 +69,13 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="transform" className="w-full">
+        {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
+        <Tabs defaultValue="transform" className="w-full relative">
+          {/* Background panel that expands from the selected tab - ENHANCED to be more visible */}
+          <div className="absolute inset-x-0 top-12 -bottom-24 bg-green-50/90 rounded-3xl transform transition-all duration-500 -z-10 shadow-sm"></div>
+          
           <div className="flex justify-center mb-8">
-            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex">
+            <TabsList className="bg-green-100 p-2 gap-4 h-auto w-full max-w-xl flex relative z-10 shadow-md">
               <TabsTrigger 
                 value="transform" 
                 className="flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100"
@@ -87,7 +92,7 @@ const ServicesSection = () => {
           </div>
 
           <TabsContent value="transform" className="animate-fade-in mt-0">
-            <div className="mb-12 relative z-10">
+            <div className="mb-12 relative">
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to transform your existing business
               </h3>
@@ -96,18 +101,12 @@ const ServicesSection = () => {
                 I offer services to do each individual section or all of the three combined.
               </p>
 
+              {/* Two-column layout: Venn diagram on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                <div className={`flex justify-center items-center relative ${isMobile ? "order-1" : "order-1"}`}>
-                  {/* Background that aligns perfectly with service tiles height */}
-                  <div className="absolute bg-green-50/90 rounded-2xl shadow-md" style={{ 
-                    top: '0',
-                    bottom: '0',
-                    left: '-1.5rem',
-                    right: '1rem',
-                    zIndex: 0
-                  }}></div>
-                  
-                  <div className="relative w-full max-w-md aspect-square mx-auto z-10">
+                {/* First column: Updated Venn Diagram with halo effect and no animation */}
+                <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
+                  <div className="relative w-full max-w-md aspect-square mx-auto">
+                    {/* Technology Circle - with green halo effect when highlighted */}
                     <div 
                       className={`absolute top-0 left-1/2 transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
@@ -122,6 +121,7 @@ const ServicesSection = () => {
                       <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
+                    {/* Processes Circle - with green halo effect when highlighted */}
                     <div 
                       className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
@@ -136,6 +136,7 @@ const ServicesSection = () => {
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
+                    {/* People Circle - with green halo effect when highlighted */}
                     <div 
                       className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
                                   bg-green-50 border-2 border-green-300 rounded-full 
@@ -150,6 +151,7 @@ const ServicesSection = () => {
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
+                    {/* Digital Transformation pill in center - no animation */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
                                   bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
                                   shadow-lg">
@@ -161,6 +163,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
+                {/* Second column: Service Cards with green halo effect when highlighted */}
                 <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
                   {transformServices.map((service, index) => (
                     <Card 
@@ -204,7 +207,7 @@ const ServicesSection = () => {
           </TabsContent>
 
           <TabsContent value="create" className="animate-fade-in mt-0">
-            <div className="mb-12 relative z-10">
+            <div className="mb-12">
               <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
                 How I help you to create new business
               </h3>
@@ -212,9 +215,12 @@ const ServicesSection = () => {
                 Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
               </p>
 
+              {/* Two-column layout: Journey visualization on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
+                {/* First column: Journey visualization */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative py-8 max-w-md w-full">
+                    {/* Journey steps with arrows connecting them */}
                     <div className="flex flex-col space-y-20 relative">
                       {createServices.steps.map((step, index) => (
                         <div key={index} className="flex items-center relative z-10">
@@ -226,6 +232,7 @@ const ServicesSection = () => {
                             <p className="text-gray-600">{step.description}</p>
                           </div>
                           
+                          {/* Add arrow between steps (except after the last step) */}
                           {index < createServices.steps.length - 1 && (
                             <div className="absolute top-[58px] left-7 h-20 flex items-center">
                               <div className="w-0.5 h-full bg-green-500 relative">
@@ -244,6 +251,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
+                {/* Second column: Service Card */}
                 <div className={`${isMobile ? "order-2" : "order-2"}`}>
                   <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-all">
                     <CardContent className="p-0">
@@ -277,6 +285,7 @@ const ServicesSection = () => {
           </TabsContent>
         </Tabs>
 
+        {/* CTA */}
         <div className="mt-20 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
             Let's work together to achieve your digital transformation goals
