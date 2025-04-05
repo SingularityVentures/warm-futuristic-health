@@ -15,12 +15,14 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <AchievementsSection />
-      <ServicesSection />
-      <ExpertiseSection />
-      <AIFocusSection />
-      <AboutSection />
-      <ContactSection />
+      <div className="space-y-12"> {/* Reduced space between sections */}
+        <AchievementsSection />
+        <ServicesSection />
+        <ExpertiseSection />
+        <AIFocusSection />
+        <AboutSection />
+        <ContactSection />
+      </div>
       <Footer />
       <BackToTop />
     </div>
