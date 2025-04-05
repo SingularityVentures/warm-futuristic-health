@@ -6,13 +6,22 @@ import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Basic scroll detection
       if (window.scrollY > 10) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+      }
+      
+      // Hero section height detection
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        setIsPastHero(window.scrollY > heroHeight - 100); // -100 for a slight overlap
       }
     };
 
@@ -31,7 +40,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gradient-to-r from-black/70 to-green-950/70 shadow-md backdrop-blur-sm" : "bg-transparent"
+        isPastHero ? "bg-gradient-to-r from-black/70 to-green-950/70 shadow-md backdrop-blur-sm" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">

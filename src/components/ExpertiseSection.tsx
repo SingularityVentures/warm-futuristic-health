@@ -76,8 +76,8 @@ const ExpertiseSection = () => {
           <div className="order-1 lg:order-2 h-full">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop"
-                alt="Digital healthcare technology" 
+                src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=2669&auto=format&fit=crop"
+                alt="Medical technology innovation" 
                 className="w-full h-full object-cover" 
               />
             </div>

@@ -15,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <div className="space-y-12"> {/* Reduced space between sections */}
+      <div className="space-y-0"> {/* Changed from space-y-12 to space-y-0 to remove spacing */}
         <AchievementsSection />
         <ServicesSection />
         <ExpertiseSection />
