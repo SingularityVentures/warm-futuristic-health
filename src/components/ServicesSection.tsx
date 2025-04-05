@@ -38,7 +38,7 @@ const ServicesSection = () => {
             </TabsList>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-green-100 shadow-sm">
             <TabsContent value="transform" className="animate-fade-in mt-0">
               <TransformBusinessTab />
             </TabsContent>
