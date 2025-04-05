@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -150,10 +151,5 @@
     50% {
       box-shadow: 0 15px 25px -5px rgba(22, 163, 74, 0.5), 0 8px 10px -6px rgba(22, 163, 74, 0.5);
     }
-  }
-
-  /* Add radial gradient utility */
-  .bg-gradient-radial {
-    background-image: radial-gradient(var(--tw-gradient-stops));
   }
 }
