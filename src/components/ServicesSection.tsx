@@ -100,55 +100,55 @@ const ServicesSection = () => {
 
               {/* Two-column layout: Venn diagram on left, Service Cards on right */}
               <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-                {/* First column: Updated Venn Diagram with halo effect and calmer animation */}
+                {/* First column: Updated Venn Diagram with halo effect and no animation */}
                 <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
                   <div className="relative w-full max-w-md aspect-square mx-auto">
-                    {/* Technology Circle - with soft halo effect */}
+                    {/* Technology Circle - with green halo effect when highlighted */}
                     <div 
                       className={`absolute top-0 left-1/2 transform -translate-x-1/2 
-                                  bg-green-50 border-2 rounded-full 
+                                  bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-300 cursor-pointer
                                   ${isHighlighted("technology") 
-                                    ? "border-green-500 bg-green-100 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
-                                    : "border-green-300 shadow-[0_0_20px_rgba(34,197,94,0.15)]"}`}
+                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
+                                    : hoveredSection ? "opacity-50" : ""}`}
                       onMouseEnter={() => handleCircleHover("technology")}
                       onMouseLeave={() => handleCircleHover(null)}
                     >
                       <h4 className="text-green-800 font-bold text-2xl absolute top-[30%]">TECHNOLOGY</h4>
                     </div>
 
-                    {/* Processes Circle - with soft halo effect */}
+                    {/* Processes Circle - with green halo effect when highlighted */}
                     <div 
                       className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
-                                  bg-green-50 border-2 rounded-full 
+                                  bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-300 cursor-pointer
                                   ${isHighlighted("processes") 
-                                    ? "border-green-500 bg-green-100 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
-                                    : "border-green-300 shadow-[0_0_20px_rgba(34,197,94,0.15)]"}`}
+                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
+                                    : hoveredSection ? "opacity-50" : ""}`}
                       onMouseEnter={() => handleCircleHover("processes")}
                       onMouseLeave={() => handleCircleHover(null)}
                     >
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PROCESSES</h4>
                     </div>
 
-                    {/* People Circle - with soft halo effect */}
+                    {/* People Circle - with green halo effect when highlighted */}
                     <div 
                       className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
-                                  bg-green-50 border-2 rounded-full 
+                                  bg-green-50 border-2 border-green-300 rounded-full 
                                   h-[65%] w-[65%] flex items-center justify-center
                                   transition-all duration-300 cursor-pointer
                                   ${isHighlighted("people") 
-                                    ? "border-green-500 bg-green-100 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
-                                    : "border-green-300 shadow-[0_0_20px_rgba(34,197,94,0.15)]"}`}
+                                    ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
+                                    : hoveredSection ? "opacity-50" : ""}`}
                       onMouseEnter={() => handleCircleHover("people")}
                       onMouseLeave={() => handleCircleHover(null)}
                     >
                       <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%]">PEOPLE</h4>
                     </div>
 
-                    {/* Digital Transformation pill in center - without animation */}
+                    {/* Digital Transformation pill in center - no animation */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
                                   bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
                                   shadow-lg">
@@ -160,24 +160,21 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                {/* Second column: Service Cards with smaller green sections */}
+                {/* Second column: Service Cards with green halo effect when highlighted */}
                 <div className={`space-y-6 ${isMobile ? "order-2" : "order-2"}`}>
                   {transformServices.map((service, index) => (
                     <Card 
                       key={index} 
-                      className={`border-l-4 transition-all duration-300
+                      className={`border-l-4 border-l-green-600 transition-all duration-300
                                 ${isHighlighted(service.id) 
-                                  ? "border-l-green-500 shadow-lg bg-green-50" 
-                                  : "border-l-green-600 hover:shadow-lg"}`}
+                                  ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10" 
+                                  : hoveredSection ? "opacity-50" : "hover:shadow-lg"}`}
                       onMouseEnter={() => handleCircleHover(service.id)}
                       onMouseLeave={() => handleCircleHover(null)}
                     >
                       <CardContent className="p-0">
                         <div className="grid md:grid-cols-[120px_1fr] items-center">
-                          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r 
-                                        transition-colors duration-300 ${isHighlighted(service.id) 
-                                          ? "border-green-300 bg-green-100" 
-                                          : "border-green-100"}`}>
+                          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100`}>
                             <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
                           </div>
                           <div className="p-5">
