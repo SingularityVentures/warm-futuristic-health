@@ -40,7 +40,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover opacity-40"
           />
         </div>
-        <h4 className="text-green-800 font-bold text-2xl absolute top-[30%] z-10">TECHNOLOGY</h4>
+        <h4 className="text-green-800 font-bold text-2xl z-10">TECHNOLOGY</h4>
       </div>
 
       {/* Processes Circle - with processes image and highlights */}
@@ -64,7 +64,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover opacity-40"
           />
         </div>
-        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%] z-10">PROCESSES</h4>
+        <h4 className="text-green-800 font-bold text-2xl z-10">PROCESSES</h4>
       </div>
 
       {/* People Circle - with people image and highlights */}
@@ -88,16 +88,16 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover opacity-40"
           />
         </div>
-        <h4 className="text-green-800 font-bold text-2xl absolute bottom-[30%] z-10">PEOPLE</h4>
+        <h4 className="text-green-800 font-bold text-2xl z-10">PEOPLE</h4>
       </div>
 
       {/* Digital Transformation pill in center - no animation */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
-                    bg-green-700 text-white rounded-full py-4 px-8 w-[70%] text-center
+                    bg-green-700 text-white rounded-full py-2 px-4 w-[50%] text-center
                     shadow-lg">
         <div className="leading-tight">
-          <p className="text-lg sm:text-xl font-bold">DIGITAL</p>
-          <p className="text-lg sm:text-xl font-bold">TRANSFORMATION</p>
+          <p className="text-sm sm:text-base font-bold">DIGITAL</p>
+          <p className="text-sm sm:text-base font-bold">TRANSFORMATION</p>
         </div>
       </div>
     </div>
