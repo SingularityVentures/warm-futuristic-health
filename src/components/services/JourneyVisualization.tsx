@@ -24,8 +24,7 @@ const JourneyVisualization = ({
 }: JourneyVisualizationProps) => {
   return (
     <div 
-      className={`relative py-8 max-w-md w-full mx-auto transition-all duration-300
-                ${isHighlighted ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl" : ""}`}
+      className={`relative py-8 max-w-md w-full mx-auto flex justify-center transition-all duration-300`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -35,7 +34,7 @@ const JourneyVisualization = ({
       )}
       
       {/* Journey steps with arrows connecting them */}
-      <div className="flex flex-col space-y-20 relative">
+      <div className={`flex flex-col space-y-20 relative ${isHighlighted ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10 rounded-xl p-6" : "p-6"}`}>
         {steps.map((step, index) => (
           <div key={index} className="flex items-center relative z-10">
             <div className="rounded-full bg-green-600 text-white w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
