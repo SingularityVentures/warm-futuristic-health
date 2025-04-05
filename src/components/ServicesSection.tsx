@@ -71,11 +71,11 @@ const ServicesSection = () => {
 
         {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
         <Tabs defaultValue="transform" className="w-full relative">
-          {/* Background panel that expands from the selected tab */}
-          <div className="absolute inset-x-0 top-16 bottom-0 bg-green-50/70 rounded-3xl transform transition-all duration-500 -z-10"></div>
+          {/* Background panel that expands from the selected tab - ENHANCED to be more visible */}
+          <div className="absolute inset-x-0 top-12 -bottom-24 bg-green-50/90 rounded-3xl transform transition-all duration-500 -z-10 shadow-sm"></div>
           
           <div className="flex justify-center mb-8">
-            <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex relative z-10">
+            <TabsList className="bg-green-100 p-2 gap-4 h-auto w-full max-w-xl flex relative z-10 shadow-md">
               <TabsTrigger 
                 value="transform" 
                 className="flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100"
