@@ -8,33 +8,32 @@ interface QuoteProps {
   text: string;
   author: string;
   position?: string;
-  imageSrc?: string;
 }
 
-const Quote = ({ text, author, position, imageSrc }: QuoteProps) => {
+const Quote = ({ text, author, position }: QuoteProps) => {
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200">
-      <div className="relative">
-        {imageSrc && (
-          <div className="absolute inset-0 opacity-10">
-            <img src={imageSrc} alt="" className="w-full h-full object-cover" />
-          </div>
-        )}
-        <CardContent className="p-6 backdrop-blur-sm relative z-10">
-          <blockquote className="relative">
-            <span className="absolute top-0 left-0 text-6xl text-green-300 leading-none -translate-x-2 -translate-y-3">"</span>
-            <p className="text-gray-800 italic text-lg md:text-xl relative z-10 pt-5 pl-5 font-medium mb-4">
-              {text}
-            </p>
-            <footer className="mt-4 text-right">
-              <cite className="font-medium text-green-700 not-italic">
-                {author}
-                {position && <span className="block text-sm text-gray-500 mt-1">{position}</span>}
-              </cite>
-            </footer>
-          </blockquote>
-        </CardContent>
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white rounded-lg border border-gray-100 relative">
+      {/* Hexagonal background pattern similar to achievements cards */}
+      <div className="absolute -right-6 -bottom-6 w-32 h-32 opacity-5">
+        <svg viewBox="0 0 100 100" fill="currentColor" className="text-gray-900">
+          <path d="M50 0L93.3 25V75L50 100L6.7 75V25L50 0z" />
+        </svg>
       </div>
+      
+      <CardContent className="p-6 relative z-10">
+        <blockquote className="relative">
+          <span className="absolute top-0 left-0 text-7xl font-serif text-green-400 leading-none -translate-x-2 -translate-y-3">"</span>
+          <p className="text-gray-800 italic text-lg md:text-xl relative z-10 pt-6 pl-6 font-medium mb-4">
+            {text}
+          </p>
+          <footer className="mt-4 text-right">
+            <cite className="font-medium text-green-700 not-italic">
+              {author}
+              {position && <span className="block text-sm text-gray-500 mt-1">{position}</span>}
+            </cite>
+          </footer>
+        </blockquote>
+      </CardContent>
     </Card>
   );
 };
@@ -76,20 +75,17 @@ const AIFocusSection = () => {
     {
       text: "This is the single most powerful force of our time.",
       author: "Alex Thavoronko",
-      position: "Insilico Medicine",
-      imageSrc: "/lovable-uploads/bc6e2537-9ddc-4599-a096-bae35e651555.png"
+      position: "Insilico Medicine"
     },
     {
       text: "AI is the solution, enhancing every stage of patient care from research and discovery to diagnosis and therapy selection.",
       author: "Ronald M. Razmi",
-      position: "Author",
-      imageSrc: "/lovable-uploads/dd7b86f5-cc61-4c8c-b907-db217cdce5eb.png"
+      position: "Author"
     },
     {
       text: "AI will not only help to deliver new and cheaper drugs but also expand the possibilities of what medicines can do.",
       author: "Forbes Technology Council",
-      position: "Forbes",
-      imageSrc: "/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png"
+      position: "Forbes"
     }
   ];
   
@@ -127,6 +123,10 @@ const AIFocusSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Unlocking AI's Potential in Pharma and Healthcare
           </h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
+          <p className="text-gray-600 text-lg mx-auto px-4 md:px-12">
+            Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate, from research and development to patient care. Strategic implementation is key to balancing innovation with compliance in these regulated industries.
+          </p>
         </div>
         
         {/* Quotes section with enhanced design */}
@@ -138,7 +138,6 @@ const AIFocusSection = () => {
                 text={quote.text}
                 author={quote.author}
                 position={quote.position}
-                imageSrc={quote.imageSrc}
               />
             ))}
           </div>
