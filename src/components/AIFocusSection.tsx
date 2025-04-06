@@ -102,7 +102,7 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line to Strategy */}
-              <div className="absolute top-[10%] left-[10%] w-[30%] h-[30%] border-t-2 border-green-300 rotate-[45deg] origin-bottom-left"></div>
+              <div className="absolute top-[16%] left-[16%] w-[68%] h-[34%] border-t-2 border-green-300 rotate-[45deg] origin-top-left"></div>
               
               {/* AI Implementation - Top Right */}
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-blue-100 border-2 border-blue-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -112,7 +112,7 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line to Implementation */}
-              <div className="absolute top-[10%] right-[10%] w-[30%] h-[30%] border-t-2 border-blue-300 rotate-[-45deg] origin-bottom-right"></div>
+              <div className="absolute top-[16%] right-[16%] w-[68%] h-[34%] border-t-2 border-blue-300 rotate-[-45deg] origin-top-right"></div>
               
               {/* Processes - Bottom Left */}
               <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-purple-100 border-2 border-purple-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -122,7 +122,7 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line to Processes */}
-              <div className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] border-t-2 border-purple-300 rotate-[-45deg] origin-top-left"></div>
+              <div className="absolute bottom-[16%] left-[16%] w-[68%] h-[34%] border-t-2 border-purple-300 rotate-[-135deg] origin-bottom-left"></div>
               
               {/* Organizational Change - Bottom Right */}
               <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-orange-100 border-2 border-orange-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -132,7 +132,7 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line to Organizational Change */}
-              <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[30%] border-t-2 border-orange-300 rotate-[45deg] origin-top-right"></div>
+              <div className="absolute bottom-[16%] right-[16%] w-[68%] h-[34%] border-t-2 border-orange-300 rotate-[135deg] origin-bottom-right"></div>
             </div>
           </div>
           
