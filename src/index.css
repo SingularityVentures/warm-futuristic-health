@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ 
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -10,160 +10,91 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
+ 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 142 76% 36%;
+ 
+    --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 142 30% 96%;
+ 
+    --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
+ 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 142 30% 96%;
+ 
+    --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
+ 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 76% 36%;
-
+    --ring: 222.2 84% 4.9%;
+ 
     --radius: 0.5rem;
   }
-
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground scroll-smooth font-raleway;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-oswald font-bold;
-  }
-
-  .section {
-    @apply py-16 md:py-24;
-  }
-
-  .container {
-    @apply px-4 mx-auto max-w-7xl;
+    @apply bg-background text-foreground;
   }
 }
 
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center h-11 px-6 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 shadow-lg shadow-green-700/20;
-  }
-  
-  .btn-secondary {
-    @apply inline-flex items-center justify-center h-11 px-6 py-3 bg-white text-green-700 border border-green-200 font-medium rounded-md hover:bg-green-50 transition-colors focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2;
-  }
-
+/* Custom Utilities */
+@layer utilities {
   .heading-gradient {
     @apply bg-gradient-to-r from-green-700 to-green-500 bg-clip-text text-transparent;
   }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-  }
-
-  .green-gradient-bg {
-    @apply bg-gradient-to-br from-green-500 to-green-700;
-  }
   
-  /* Tech-inspired components */
-  .tech-card {
-    @apply relative bg-white rounded-xl overflow-hidden border border-gray-100 transition-all hover:shadow-xl hover:border-green-100;
-  }
-  
-  .tech-pattern {
-    @apply absolute opacity-5 w-full h-full top-0 left-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zNiAzNGg0djFoLTR6TTM2IDMxaDR2MWgtNHpNMzUgMzJ2M2gtMVYzMnpNMzggMzJ2M2gtMVYzMnpNMzMgMzBoMTV2MTVIMzN6Ii8+PC9nPjwvc3ZnPg==')];
-  }
-
-  .molecular-bg {
-    @apply bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgY3g9IjE1IiBjeT0iMTUiIHI9IjUiIHN0cm9rZT0iI2NjYyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iNDUiIGN5PSI0NSIgcj0iNSIgc3Ryb2tlPSIjY2NjIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBzdHJva2U9IiNjY2MiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTE1IDE1bDMwIDMwIi8+PC9nPjwvc3ZnPg==')];
-  }
-  
-  .glow-effect {
-    @apply relative;
-  }
-  
-  .glow-effect::before {
-    @apply content-[''] absolute -inset-0.5 bg-gradient-to-r from-green-500 to-green-600 rounded-lg blur opacity-0 transition-opacity duration-300;
-  }
-  
-  .glow-effect:hover::before {
-    @apply opacity-75;
-  }
-
   .technoline {
-    @apply h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full;
-  }
-}
-
-@layer utilities {
-  .mask-glare {
-    mask-image: linear-gradient(to bottom right, transparent 40%, black 50%, transparent 60%);
-    mask-size: 300% 300%;
-    mask-position: top left;
-    animation: glare 3s infinite ease;
-  }
-
-  @keyframes glare {
-    0% {
-      mask-position: top left;
-    }
-    100% {
-      mask-position: bottom right;
-    }
+    @apply h-1 w-16 bg-gradient-to-r from-green-500 to-green-600;
   }
   
-  .tech-blur {
-    @apply backdrop-blur-lg bg-white/80 border border-white/20 shadow-xl;
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
   
-  .pulse-slow {
-    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
   
-  @keyframes pulse {
-    0%, 100% {
-      opacity: .8;
-    }
-    50% {
-      opacity: .5;
-    }
-  }
-  
-  /* Custom shadow pulse animation for the Venn diagram center */
-  @keyframes shadow-pulse {
-    0%, 100% {
-      box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3), 0 4px 6px -4px rgba(22, 163, 74, 0.3);
-    }
-    50% {
-      box-shadow: 0 15px 25px -5px rgba(22, 163, 74, 0.5), 0 8px 10px -6px rgba(22, 163, 74, 0.5);
-    }
-  }
-  
-  /* Floating animation for the digital transformation pill */
-  @keyframes float {
-    0%, 100% {
-      transform: translate(-50%, -50%);
-    }
-    50% {
-      transform: translate(-50%, calc(-50% - 5px));
-    }
-  }
-  
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 }
