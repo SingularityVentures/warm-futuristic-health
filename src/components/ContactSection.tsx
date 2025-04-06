@@ -25,21 +25,46 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Send email to jan@singularity-ventures.com
-    // This is a simulation - in a real app, you would connect this to an email service
-    setTimeout(() => {
+    try {
+      // Format the email body with the form data
+      const subject = `New contact form submission from ${formData.name}`;
+      const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+
+Message:
+${formData.message}
+      `;
+      
+      // Create mailto link
+      const mailtoLink = `mailto:jan@singularity-ventures.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open the user's email client
+      window.open(mailtoLink, '_blank');
+      
       toast({
-        title: "Message Sent",
-        description: "Thank you for reaching out! I'll get back to you soon.",
+        title: "Message Ready to Send",
+        description: "Your email client has been opened with the message details.",
       });
-      setIsSubmitting(false);
+      
+      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error preparing email:", error);
+      toast({
+        title: "Error",
+        description: "There was a problem preparing your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
