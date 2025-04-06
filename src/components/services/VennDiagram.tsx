@@ -19,7 +19,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         <div className="absolute right-0 top-1/2 transform translate-x-[95%] -translate-y-1/2 w-16 h-0.5 bg-green-200 z-0"></div>
       )}
       
-      {/* Technology Circle - with technology image */}
+      {/* Technology Circle - with technology image - UPDATED: now using the Processes image */}
       <div 
         className={`absolute top-0 left-1/2 transform -translate-x-1/2 
                     rounded-full overflow-hidden
@@ -33,10 +33,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         onMouseLeave={() => handleCircleHover(null)}
         style={{ zIndex: isHighlighted("technology") ? 10 : 2 }}
       >
-        {/* Technology image - no overlay */}
+        {/* Technology image - now using Processes image */}
         <div className="absolute inset-0 w-full h-full">
           <img 
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
             alt="Technology" 
             className="w-full h-full object-cover"
           />
@@ -69,7 +69,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">PROCESSES</h4>
       </div>
 
-      {/* People Circle - with people image */}
+      {/* People Circle - with people image - UPDATED: now using the uploaded image */}
       <div 
         className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
                     rounded-full overflow-hidden
@@ -83,10 +83,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         onMouseLeave={() => handleCircleHover(null)}
         style={{ zIndex: isHighlighted("people") ? 10 : 2 }}
       >
-        {/* People image - no overlay */}
+        {/* People image - now using the uploaded image */}
         <div className="absolute inset-0 w-full h-full">
           <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+            src="/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png" 
             alt="People" 
             className="w-full h-full object-cover"
           />
