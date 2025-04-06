@@ -15,15 +15,15 @@ const AboutSection = () => {
         </div>
         
         <div className="flex flex-col lg:flex-row gap-8 items-stretch max-w-6xl mx-auto">
-          <div className="w-full lg:w-2/5">
+          <div className="w-full lg:w-1/2">
             <img 
-              src="/lovable-uploads/bfbb1e1e-799a-4916-9f0b-f26f853aa17b.png"
+              src="/lovable-uploads/a68067c5-ca94-4eb4-8c90-b322067b0600.png"
               alt="Jan Kroschinski" 
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg object-cover shadow-lg"
             />
           </div>
           
-          <div className="w-full lg:w-3/5">
+          <div className="w-full lg:w-1/2">
             <Card className="border-0 shadow-lg h-full p-8">
               <div className="space-y-8">
                 {/* Dedicated section */}
