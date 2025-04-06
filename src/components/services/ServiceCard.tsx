@@ -28,7 +28,7 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <Card 
-      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 h-[280px]
+      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 h-[240px]
                 ${isHighlighted 
                   ? "shadow-[0_0_20px_rgba(34,197,94,0.3)] relative z-10" 
                   : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
@@ -46,7 +46,7 @@ const ServiceCard = ({
                   alt={service.title} 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white p-6">
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
                   <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
                   <div className="w-20 h-0.5 bg-green-400 my-3"></div>
                   <p className="text-lg mt-2 text-center max-w-[90%] text-shadow font-medium">{service.subtitle}</p>
@@ -63,10 +63,10 @@ const ServiceCard = ({
           <div className="p-5 flex flex-col h-full justify-between">
             <div>
               <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{service.subtitle}</h4>
-              <p className="text-gray-600 mb-3 text-sm">{service.description}</p>
+              <p className="text-gray-600 mb-3 text-base">{service.description}</p>
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {service.badges.map((badge, i) => (
-                  <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-xs">
+                  <Badge key={i} variant="outline" className="bg-green-50 text-green-700 border-green-200 text-sm">
                     {badge}
                   </Badge>
                 ))}
