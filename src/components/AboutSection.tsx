@@ -15,11 +15,11 @@ const AboutSection = () => {
         </div>
         
         <div className="flex flex-col lg:flex-row gap-8 items-stretch max-w-6xl mx-auto">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 flex items-center justify-center">
             <img 
               src="/lovable-uploads/a68067c5-ca94-4eb4-8c90-b322067b0600.png"
               alt="Jan Kroschinski" 
-              className="w-full h-auto rounded-lg object-cover shadow-lg"
+              className="w-full h-auto max-w-full object-contain mix-blend-multiply"
             />
           </div>
           
