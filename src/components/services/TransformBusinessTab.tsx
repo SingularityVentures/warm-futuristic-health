@@ -58,7 +58,7 @@ const TransformBusinessTab = () => {
           {transformServices.map((service, index) => (
             <div 
               key={index}
-              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 h-[240px]
+              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 h-[280px]
                         ${hoveredSection === service.id ? "ring-2 ring-green-500 shadow-lg" : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
               onMouseEnter={() => handleTileHover(service.id)}
               onMouseLeave={() => handleTileHover(null)}

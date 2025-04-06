@@ -28,7 +28,7 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <Card 
-      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 h-[240px]
+      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 h-[280px]
                 ${isHighlighted 
                   ? "shadow-[0_0_20px_rgba(34,197,94,0.3)] relative z-10" 
                   : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
