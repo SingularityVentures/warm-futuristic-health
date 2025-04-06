@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 const HeroSection = () => {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background with DNA/tech overlay */}
+      {/* Video Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-green-950/70 z-10"></div>
         <video
@@ -22,8 +22,7 @@ const HeroSection = () => {
           Your browser does not support the video tag.
         </video>
         
-        {/* Tech overlay pattern */}
-        <div className="absolute inset-0 z-5 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zNiAzNGg0djFoLTR6TTM2IDMxaDR2MWgtNHpNMzUgMzJ2M2gtMVYzMnpNMzggMzJ2M2gtMVYzMnpNMzMgMzBoMTV2MTVIMzN6Ii8+PC9nPjwvc3ZnPg==')]"></div>
+        {/* Removed the tech overlay pattern with tiles */}
       </div>
 
       {/* Content */}
