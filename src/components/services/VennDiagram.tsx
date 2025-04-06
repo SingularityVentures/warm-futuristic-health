@@ -69,7 +69,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">PROCESSES</h4>
       </div>
 
-      {/* People Circle - with people image - UPDATED: now using the uploaded image */}
+      {/* People Circle - with people image - UPDATED: now using the newly uploaded image */}
       <div 
         className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
                     rounded-full overflow-hidden
@@ -83,10 +83,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         onMouseLeave={() => handleCircleHover(null)}
         style={{ zIndex: isHighlighted("people") ? 10 : 2 }}
       >
-        {/* People image - now using the uploaded image */}
+        {/* People image - now using the newly uploaded image */}
         <div className="absolute inset-0 w-full h-full">
           <img 
-            src="/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png" 
+            src="/lovable-uploads/d0421a57-955d-4a3d-95fa-8c11795966d5.png" 
             alt="People" 
             className="w-full h-full object-cover"
           />
