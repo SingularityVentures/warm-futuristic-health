@@ -33,7 +33,7 @@ const Footer = () => {
               </svg>
             </a>
             <a 
-              href="mailto:info@singularity-ventures.com" 
+              href="mailto:jan@singularity-ventures.com" 
               className="bg-gray-800 p-2 rounded-full hover:bg-green-700 transition-colors"
               aria-label="Email"
             >
@@ -78,9 +78,8 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-green-400">Contact Us</h3>
               <address className="not-italic text-gray-400">
-                <p>San Francisco, CA</p>
-                <p className="mt-2">Email: info@singularity-ventures.com</p>
-                <p className="mt-2">Phone: +1 (555) 123-4567</p>
+                <p>Berlin, Germany</p>
+                <p className="mt-2">Email: jan@singularity-ventures.com</p>
               </address>
             </div>
           </div>

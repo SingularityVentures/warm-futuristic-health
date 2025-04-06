@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Calendar } from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -25,7 +25,8 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Send email to jan@singularity-ventures.com
+    // This is a simulation - in a real app, you would connect this to an email service
     setTimeout(() => {
       toast({
         title: "Message Sent",
@@ -46,10 +47,10 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Contact Us
+            Contact Me
           </h2>
           <p className="text-gray-600 text-lg">
-            Let's discuss how we can support your digital transformation journey.
+            Let's discuss how I can support your digital transformation journey.
           </p>
         </div>
         
@@ -67,17 +68,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600">info@singularity-ventures.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <Phone className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Phone</h4>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">jan@singularity-ventures.com</p>
                   </div>
                 </div>
                 
@@ -87,7 +78,17 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Location</h4>
-                    <p className="text-gray-600">San Francisco, CA</p>
+                    <p className="text-gray-600">Berlin, Germany</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-green-100 p-3 rounded-full">
+                    <Calendar className="h-5 w-5 text-green-700" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900">Available for</h4>
+                    <p className="text-gray-600">Projects, Workshops, Speaker Engagements</p>
                   </div>
                 </div>
               </div>
