@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Brain, Database, Users, Wrench, CheckCircle2 } from "lucide-react";
+import { Brain, Database, Users, Wrench, CheckCircle2, Target } from "lucide-react";
 
 interface AIAreaProps {
   title: string;
@@ -43,7 +43,7 @@ const AIFocusSection = () => {
     { 
       title: "AI Strategy", 
       description: "Define your AI vision and roadmap", 
-      icon: <Brain size={24} />, 
+      icon: <Target size={24} />, 
       color: "green",
       items: ["Needs Assessment", "Solution Design", "Implementation Roadmap", "Technology Selection"],
     },
@@ -84,53 +84,55 @@ const AIFocusSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="relative h-[500px]">
-              {/* Static bubble layout with AI Transformation in center */}
-              
+            <div className="relative h-[550px] w-full">
               {/* Center Circle - AI Transformation */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white text-center p-4 shadow-lg z-10 border-4 border-white">
-                <span className="font-bold text-lg">AI Transformation</span>
+                <div className="text-center">
+                  <span className="font-bold text-lg">AI</span>
+                  <br />
+                  <span className="font-bold text-lg">Transformation</span>
+                </div>
               </div>
               
-              {/* AI Strategy - Top */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4 w-32 h-32 rounded-full bg-green-100 border-2 border-green-500 flex items-center justify-center text-center p-2 shadow-lg">
+              {/* AI Strategy - Top Left */}
+              <div className="absolute top-[15%] left-[20%] w-32 h-32 rounded-full bg-green-100 border-2 border-green-500 flex items-center justify-center text-center p-2 shadow-lg">
                 <div className="text-center">
-                  <Brain className="mx-auto text-green-600 mb-1" size={24} />
+                  <Target className="mx-auto text-green-600 mb-1" size={24} />
                   <span className="text-green-800 font-bold text-sm">AI Strategy</span>
                 </div>
-                {/* Connecting Line */}
-                <div className="absolute h-12 w-0.5 bg-green-300 top-full left-1/2 transform -translate-x-1/2"></div>
               </div>
+              {/* Connecting Line to Strategy */}
+              <div className="absolute top-[25%] left-[30%] w-[15%] h-[15%] border-t-2 border-green-300 rotate-[30deg] origin-bottom-left"></div>
               
-              {/* AI Implementation - Right */}
-              <div className="absolute top-1/2 right-0 transform translate-x-1/4 -translate-y-1/2 w-32 h-32 rounded-full bg-blue-100 border-2 border-blue-500 flex items-center justify-center text-center p-2 shadow-lg">
+              {/* AI Implementation - Top Right */}
+              <div className="absolute top-[15%] right-[20%] w-32 h-32 rounded-full bg-blue-100 border-2 border-blue-500 flex items-center justify-center text-center p-2 shadow-lg">
                 <div className="text-center">
                   <Wrench className="mx-auto text-blue-600 mb-1" size={24} />
                   <span className="text-blue-800 font-bold text-sm">AI Implementation</span>
                 </div>
-                {/* Connecting Line */}
-                <div className="absolute w-12 h-0.5 bg-blue-300 top-1/2 right-full transform -translate-y-1/2"></div>
               </div>
+              {/* Connecting Line to Implementation */}
+              <div className="absolute top-[25%] right-[30%] w-[15%] h-[15%] border-t-2 border-blue-300 rotate-[-30deg] origin-bottom-right"></div>
               
-              {/* Processes - Bottom */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4 w-32 h-32 rounded-full bg-purple-100 border-2 border-purple-500 flex items-center justify-center text-center p-2 shadow-lg">
+              {/* Processes - Bottom Left */}
+              <div className="absolute bottom-[15%] left-[20%] w-32 h-32 rounded-full bg-purple-100 border-2 border-purple-500 flex items-center justify-center text-center p-2 shadow-lg">
                 <div className="text-center">
                   <Database className="mx-auto text-purple-600 mb-1" size={24} />
                   <span className="text-purple-800 font-bold text-sm">Processes</span>
                 </div>
-                {/* Connecting Line */}
-                <div className="absolute h-12 w-0.5 bg-purple-300 bottom-full left-1/2 transform -translate-x-1/2"></div>
               </div>
+              {/* Connecting Line to Processes */}
+              <div className="absolute bottom-[25%] left-[30%] w-[15%] h-[15%] border-t-2 border-purple-300 rotate-[-30deg] origin-top-left"></div>
               
-              {/* Organizational Change - Left */}
-              <div className="absolute top-1/2 left-0 transform -translate-x-1/4 -translate-y-1/2 w-32 h-32 rounded-full bg-orange-100 border-2 border-orange-500 flex items-center justify-center text-center p-2 shadow-lg">
+              {/* Organizational Change - Bottom Right */}
+              <div className="absolute bottom-[15%] right-[20%] w-32 h-32 rounded-full bg-orange-100 border-2 border-orange-500 flex items-center justify-center text-center p-2 shadow-lg">
                 <div className="text-center">
                   <Users className="mx-auto text-orange-600 mb-1" size={24} />
                   <span className="text-orange-800 font-bold text-sm">Organizational Change</span>
                 </div>
-                {/* Connecting Line */}
-                <div className="absolute w-12 h-0.5 bg-orange-300 top-1/2 left-full transform -translate-y-1/2"></div>
               </div>
+              {/* Connecting Line to Organizational Change */}
+              <div className="absolute bottom-[25%] right-[30%] w-[15%] h-[15%] border-t-2 border-orange-300 rotate-[30deg] origin-top-right"></div>
             </div>
           </div>
           
