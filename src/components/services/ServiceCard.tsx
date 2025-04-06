@@ -11,7 +11,6 @@ interface ServiceCardProps {
     subtitle: string;
     description: string;
     badges: string[];
-    imageSrc?: string;
   };
   isHighlighted: boolean;
   hoveredSection: string | null;
@@ -28,16 +27,16 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <Card 
-      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300
+      className={`border-l-4 border-l-green-600 transition-all duration-300
                 ${isHighlighted 
-                  ? "shadow-[0_0_20px_rgba(34,197,94,0.3)] relative z-10" 
-                  : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
+                  ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] relative z-10" 
+                  : hoveredSection ? "opacity-50" : "hover:shadow-lg"}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <CardContent className="p-0">
         <div className="grid md:grid-cols-[120px_1fr] items-center">
-          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100 rounded-l-lg`}>
+          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100`}>
             <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
           </div>
           <div className="p-5">
