@@ -85,12 +85,22 @@ const AboutSection = () => {
                 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button className="bg-green-600 hover:bg-green-700">
-                    Contact Me
+                  <Button asChild className="bg-green-600 hover:bg-green-700">
+                    <a href="#contact">Contact Me</a>
                   </Button>
-                  <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-                    <Linkedin size={18} className="mr-2" />
-                    Connect on LinkedIn
+                  <Button 
+                    variant="outline" 
+                    className="border-green-600 text-green-600 hover:bg-green-50"
+                    asChild
+                  >
+                    <a 
+                      href="https://www.linkedin.com/in/jankroschinski/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin size={18} className="mr-2" />
+                      Connect on LinkedIn
+                    </a>
                   </Button>
                 </div>
               </div>
