@@ -28,7 +28,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
                     border-2 border-green-300
                     ${isHighlighted("technology") 
                       ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
-                      : hoveredSection ? "opacity-50" : ""}`}
+                      : hoveredSection ? "opacity-80" : ""}`}
         onMouseEnter={() => handleCircleHover("technology")}
         onMouseLeave={() => handleCircleHover(null)}
         style={{ zIndex: 1 }}
@@ -41,7 +41,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-white font-bold text-2xl z-10 tracking-wider">TECHNOLOGY</h4>
+        <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">TECHNOLOGY</h4>
       </div>
 
       {/* Processes Circle - with processes image and highlights */}
@@ -53,7 +53,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
                     border-2 border-green-300
                     ${isHighlighted("processes") 
                       ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
-                      : hoveredSection ? "opacity-50" : ""}`}
+                      : hoveredSection ? "opacity-80" : ""}`}
         onMouseEnter={() => handleCircleHover("processes")}
         onMouseLeave={() => handleCircleHover(null)}
         style={{ zIndex: 1 }}
@@ -66,7 +66,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-white font-bold text-2xl z-10 tracking-wider">PROCESSES</h4>
+        <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">PROCESSES</h4>
       </div>
 
       {/* People Circle - with people image and highlights */}
@@ -78,7 +78,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
                     border-2 border-green-300
                     ${isHighlighted("people") 
                       ? "shadow-[0_0_20px_rgba(34,197,94,0.5)] z-10" 
-                      : hoveredSection ? "opacity-50" : ""}`}
+                      : hoveredSection ? "opacity-80" : ""}`}
         onMouseEnter={() => handleCircleHover("people")}
         onMouseLeave={() => handleCircleHover(null)}
         style={{ zIndex: 1 }}
@@ -91,7 +91,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-white font-bold text-2xl z-10 tracking-wider">PEOPLE</h4>
+        <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">PEOPLE</h4>
       </div>
 
       {/* Digital Transformation pill in center - no animation */}
