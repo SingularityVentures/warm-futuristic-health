@@ -49,14 +49,14 @@ const TransformBusinessTab = () => {
       <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
         How I help you to transform your existing business
       </h3>
-      <p className="text-center text-gray-600 max-w-4xl mx-auto mb-10">
+      <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
         Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
         I offer services to do each individual section or all of the three combined.
       </p>
 
-      {/* Two-column layout: Pyramid diagram on left, Service Cards on right */}
-      <div className={`grid ${isMobile ? "grid-cols-1 gap-10" : "md:grid-cols-2 gap-6"} items-center`}>
-        {/* First column: Pyramid Diagram */}
+      {/* Two-column layout: Venn diagram on left, Service Cards on right */}
+      <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
+        {/* First column: Venn Diagram */}
         <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
           <VennDiagram 
             hoveredSection={hoveredSection}

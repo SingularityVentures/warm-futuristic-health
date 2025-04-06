@@ -9,7 +9,7 @@ const ServicesSection = () => {
     <section id="services" className="section py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="text-center max-w-full mx-auto mb-16">
+        <div className="text-center max-w-full mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             Digital Transformation Services
           </h2>
@@ -38,7 +38,7 @@ const ServicesSection = () => {
             </TabsList>
           </div>
 
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-sm">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
             <TabsContent value="transform" className="animate-fade-in mt-0">
               <TransformBusinessTab />
             </TabsContent>
@@ -47,7 +47,7 @@ const ServicesSection = () => {
               <CreateBusinessTab />
             </TabsContent>
 
-            {/* CTA - Inside the same container */}
+            {/* CTA - Now inside the same container */}
             <CallToAction />
           </div>
         </Tabs>
