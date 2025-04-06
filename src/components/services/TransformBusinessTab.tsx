@@ -58,7 +58,7 @@ const TransformBusinessTab = () => {
           {transformServices.map((service, index) => (
             <div 
               key={index}
-              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300
+              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 h-[220px]
                         ${hoveredSection === service.id ? "ring-2 ring-green-500 shadow-lg" : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
               onMouseEnter={() => handleTileHover(service.id)}
               onMouseLeave={() => handleTileHover(null)}
@@ -66,11 +66,12 @@ const TransformBusinessTab = () => {
               <img 
                 src={service.imageSrc} 
                 alt={service.title} 
-                className="w-full h-full object-cover aspect-[16/9]"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-4">
                 <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
-                <p className="text-sm mt-2 text-center max-w-[80%] text-shadow">{service.subtitle}</p>
+                <div className="w-16 h-0.5 bg-green-400 my-2"></div>
+                <p className="text-lg mt-2 text-center max-w-[90%] text-shadow font-medium">{service.subtitle}</p>
               </div>
             </div>
           ))}
