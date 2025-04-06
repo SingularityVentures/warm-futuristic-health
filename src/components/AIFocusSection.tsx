@@ -101,8 +101,8 @@ const AIFocusSection = () => {
                   <span className="text-green-800 font-bold text-sm">AI Strategy</span>
                 </div>
               </div>
-              {/* Connecting Line to Strategy */}
-              <div className="absolute top-[16%] left-[16%] w-[68%] h-[34%] border-t-2 border-green-300 rotate-[45deg] origin-top-left"></div>
+              {/* Connecting Line from Strategy to Center */}
+              <div className="absolute top-[16px] left-[16px] w-[140px] border-t-2 border-green-300" style={{ transform: 'rotate(45deg)', transformOrigin: 'left' }}></div>
               
               {/* AI Implementation - Top Right */}
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-blue-100 border-2 border-blue-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -111,8 +111,8 @@ const AIFocusSection = () => {
                   <span className="text-blue-800 font-bold text-sm">AI Implementation</span>
                 </div>
               </div>
-              {/* Connecting Line to Implementation */}
-              <div className="absolute top-[16%] right-[16%] w-[68%] h-[34%] border-t-2 border-blue-300 rotate-[-45deg] origin-top-right"></div>
+              {/* Connecting Line from Implementation to Center */}
+              <div className="absolute top-[16px] right-[16px] w-[140px] border-t-2 border-blue-300" style={{ transform: 'rotate(-45deg)', transformOrigin: 'right' }}></div>
               
               {/* Processes - Bottom Left */}
               <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-purple-100 border-2 border-purple-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -121,8 +121,8 @@ const AIFocusSection = () => {
                   <span className="text-purple-800 font-bold text-sm">Processes</span>
                 </div>
               </div>
-              {/* Connecting Line to Processes */}
-              <div className="absolute bottom-[16%] left-[16%] w-[68%] h-[34%] border-t-2 border-purple-300 rotate-[-135deg] origin-bottom-left"></div>
+              {/* Connecting Line from Processes to Center */}
+              <div className="absolute bottom-[16px] left-[16px] w-[140px] border-t-2 border-purple-300" style={{ transform: 'rotate(-45deg)', transformOrigin: 'left' }}></div>
               
               {/* Organizational Change - Bottom Right */}
               <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-orange-100 border-2 border-orange-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -131,8 +131,8 @@ const AIFocusSection = () => {
                   <span className="text-orange-800 font-bold text-sm">Organizational Change</span>
                 </div>
               </div>
-              {/* Connecting Line to Organizational Change */}
-              <div className="absolute bottom-[16%] right-[16%] w-[68%] h-[34%] border-t-2 border-orange-300 rotate-[135deg] origin-bottom-right"></div>
+              {/* Connecting Line from Organizational Change to Center */}
+              <div className="absolute bottom-[16px] right-[16px] w-[140px] border-t-2 border-orange-300" style={{ transform: 'rotate(45deg)', transformOrigin: 'right' }}></div>
             </div>
           </div>
           
