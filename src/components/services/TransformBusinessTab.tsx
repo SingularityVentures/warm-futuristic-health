@@ -52,13 +52,13 @@ const TransformBusinessTab = () => {
       </p>
 
       {/* Two-column layout with equal sized tiles */}
-      <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-start`}>
+      <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-stretch`}>
         {/* First column: Service Tiles */}
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col justify-between h-full">
           {transformServices.map((service, index) => (
             <div 
               key={index}
-              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300
+              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 h-[calc(33%-1rem)]
                         ${hoveredSection === service.id ? "ring-2 ring-green-500 shadow-lg" : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
               onMouseEnter={() => handleTileHover(service.id)}
               onMouseLeave={() => handleTileHover(null)}
@@ -66,22 +66,23 @@ const TransformBusinessTab = () => {
               <img 
                 src={service.imageSrc} 
                 alt={service.title} 
-                className="w-full h-full object-cover aspect-[16/9]"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-                <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
-                <p className="text-sm mt-2 text-center max-w-[80%] text-shadow">{service.subtitle}</p>
+                <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow mb-1">{service.title}</h4>
+                <div className="w-16 h-0.5 bg-green-400 my-2"></div>
+                <p className="text-base md:text-lg mt-1 text-center max-w-[80%] text-shadow">{service.subtitle}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Second column: Service Cards */}
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col justify-between h-full">
           {transformServices.map((service, index) => (
             <div 
               key={index}
-              className={`${hoveredSection === service.id ? "scale-[1.02]" : hoveredSection ? "opacity-80" : ""} transition-all duration-300`}
+              className={`${hoveredSection === service.id ? "scale-[1.02]" : hoveredSection ? "opacity-80" : ""} transition-all duration-300 h-[calc(33%-1rem)]`}
               onMouseEnter={() => handleTileHover(service.id)}
               onMouseLeave={() => handleTileHover(null)}
             >
