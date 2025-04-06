@@ -14,7 +14,7 @@ const AboutSection = () => {
         </div>
         
         <div className="flex flex-col lg:flex-row gap-12 items-stretch max-w-5xl mx-auto">
-          <div className="w-full lg:w-1/3 flex justify-center">
+          <div className="w-full lg:w-2/5 flex justify-center">
             <div className="w-full h-full flex items-center justify-center">
               <img 
                 src="/lovable-uploads/bfbb1e1e-799a-4916-9f0b-f26f853aa17b.png"
@@ -24,7 +24,7 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-3/5">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
               <div className="flex items-center mb-6">
                 <div className="p-2 rounded-lg bg-green-100 mr-4">
