@@ -102,7 +102,8 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line from Strategy to Center */}
-              <div className="absolute top-[16px] left-[16px] w-[140px] border-t-2 border-green-300" style={{ transform: 'rotate(45deg)', transformOrigin: 'left' }}></div>
+              <div className="absolute top-[52px] left-[52px] w-[120px] border-t-2 border-green-300" 
+                   style={{ transform: 'rotate(45deg)', transformOrigin: '0 0' }}></div>
               
               {/* AI Implementation - Top Right */}
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-blue-100 border-2 border-blue-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -112,7 +113,8 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line from Implementation to Center */}
-              <div className="absolute top-[16px] right-[16px] w-[140px] border-t-2 border-blue-300" style={{ transform: 'rotate(-45deg)', transformOrigin: 'right' }}></div>
+              <div className="absolute top-[52px] right-[52px] w-[120px] border-t-2 border-blue-300" 
+                   style={{ transform: 'rotate(-45deg)', transformOrigin: '100% 0' }}></div>
               
               {/* Processes - Bottom Left */}
               <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-purple-100 border-2 border-purple-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -122,7 +124,8 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line from Processes to Center */}
-              <div className="absolute bottom-[16px] left-[16px] w-[140px] border-t-2 border-purple-300" style={{ transform: 'rotate(-45deg)', transformOrigin: 'left' }}></div>
+              <div className="absolute bottom-[52px] left-[52px] w-[120px] border-t-2 border-purple-300" 
+                   style={{ transform: 'rotate(-45deg)', transformOrigin: '0 100%' }}></div>
               
               {/* Organizational Change - Bottom Right */}
               <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-orange-100 border-2 border-orange-500 flex items-center justify-center text-center p-2 shadow-lg">
@@ -132,7 +135,8 @@ const AIFocusSection = () => {
                 </div>
               </div>
               {/* Connecting Line from Organizational Change to Center */}
-              <div className="absolute bottom-[16px] right-[16px] w-[140px] border-t-2 border-orange-300" style={{ transform: 'rotate(45deg)', transformOrigin: 'right' }}></div>
+              <div className="absolute bottom-[52px] right-[52px] w-[120px] border-t-2 border-orange-300" 
+                   style={{ transform: 'rotate(45deg)', transformOrigin: '100% 100%' }}></div>
             </div>
           </div>
           
