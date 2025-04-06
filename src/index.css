@@ -107,10 +107,6 @@
   .technoline {
     @apply h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full;
   }
-  
-  .text-shadow {
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-  }
 }
 
 @layer utilities {
