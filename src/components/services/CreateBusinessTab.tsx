@@ -32,7 +32,7 @@ const CreateBusinessTab = () => {
     }
   ];
 
-  const handleCardHover = (id: string | null) => {
+  const handleTileHover = (id: string | null) => {
     setHoveredSection(id);
   };
 
@@ -45,17 +45,23 @@ const CreateBusinessTab = () => {
         Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
       </p>
 
-      {/* Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {createServices.map((service) => (
-          <ServiceCard
-            key={service.id}
-            service={service}
-            isHighlighted={hoveredSection === service.id}
-            hoveredSection={hoveredSection}
-            onMouseEnter={() => handleCardHover(service.id)}
-            onMouseLeave={() => handleCardHover(null)}
-          />
+      {/* Service Cards - Vertical layout matching TransformBusinessTab */}
+      <div className="space-y-6">
+        {createServices.map((service, index) => (
+          <div 
+            key={index}
+            className={`${hoveredSection === service.id ? "scale-[1.02]" : hoveredSection ? "opacity-80" : ""} transition-all duration-300`}
+            onMouseEnter={() => handleTileHover(service.id)}
+            onMouseLeave={() => handleTileHover(null)}
+          >
+            <ServiceCard
+              service={service}
+              isHighlighted={hoveredSection === service.id}
+              hoveredSection={hoveredSection}
+              onMouseEnter={() => handleTileHover(service.id)}
+              onMouseLeave={() => handleTileHover(null)}
+            />
+          </div>
         ))}
       </div>
     </div>
