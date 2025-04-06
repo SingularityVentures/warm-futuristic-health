@@ -19,7 +19,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
         <div className="absolute right-0 top-1/2 transform translate-x-[95%] -translate-y-1/2 w-16 h-0.5 bg-green-200 z-0"></div>
       )}
       
-      {/* Technology Circle - with technology image and highlights */}
+      {/* Technology Circle - with technology image */}
       <div 
         className={`absolute top-0 left-1/2 transform -translate-x-1/2 
                     rounded-full overflow-hidden
@@ -31,9 +31,9 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
                       : hoveredSection ? "opacity-50" : ""}`}
         onMouseEnter={() => handleCircleHover("technology")}
         onMouseLeave={() => handleCircleHover(null)}
-        style={{ zIndex: 1 }}
+        style={{ zIndex: isHighlighted("technology") ? 10 : 2 }}
       >
-        {/* Technology image */}
+        {/* Technology image - no overlay */}
         <div className="absolute inset-0 w-full h-full">
           <img 
             src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
@@ -41,10 +41,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-white font-bold text-2xl z-10 tracking-wider">TECHNOLOGY</h4>
+        <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">TECHNOLOGY</h4>
       </div>
 
-      {/* Processes Circle - with processes image and highlights */}
+      {/* Processes Circle - with processes image */}
       <div 
         className={`absolute bottom-0 left-[25%] transform -translate-x-1/2 
                     rounded-full overflow-hidden
@@ -56,9 +56,9 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
                       : hoveredSection ? "opacity-50" : ""}`}
         onMouseEnter={() => handleCircleHover("processes")}
         onMouseLeave={() => handleCircleHover(null)}
-        style={{ zIndex: 1 }}
+        style={{ zIndex: isHighlighted("processes") ? 10 : 2 }}
       >
-        {/* Processes image */}
+        {/* Processes image - no overlay */}
         <div className="absolute inset-0 w-full h-full">
           <img 
             src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
@@ -66,10 +66,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-white font-bold text-2xl z-10 tracking-wider">PROCESSES</h4>
+        <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">PROCESSES</h4>
       </div>
 
-      {/* People Circle - with people image and highlights */}
+      {/* People Circle - with people image */}
       <div 
         className={`absolute bottom-0 right-[25%] transform translate-x-1/2 
                     rounded-full overflow-hidden
@@ -81,9 +81,9 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
                       : hoveredSection ? "opacity-50" : ""}`}
         onMouseEnter={() => handleCircleHover("people")}
         onMouseLeave={() => handleCircleHover(null)}
-        style={{ zIndex: 1 }}
+        style={{ zIndex: isHighlighted("people") ? 10 : 2 }}
       >
-        {/* People image */}
+        {/* People image - no overlay */}
         <div className="absolute inset-0 w-full h-full">
           <img 
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
@@ -91,7 +91,7 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
             className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-white font-bold text-2xl z-10 tracking-wider">PEOPLE</h4>
+        <h4 className="text-white font-bold text-2xl z-10 tracking-[0.15em] text-shadow">PEOPLE</h4>
       </div>
 
       {/* Digital Transformation pill in center - no animation */}
