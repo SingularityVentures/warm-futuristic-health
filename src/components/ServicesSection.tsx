@@ -38,7 +38,7 @@ const ServicesSection = () => {
             </TabsList>
           </div>
 
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-sm">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-sm">
             <TabsContent value="transform" className="animate-fade-in mt-0">
               <TransformBusinessTab />
             </TabsContent>
@@ -47,7 +47,7 @@ const ServicesSection = () => {
               <CreateBusinessTab />
             </TabsContent>
 
-            {/* CTA - Now inside the same container */}
+            {/* CTA - Inside the same container */}
             <CallToAction />
           </div>
         </Tabs>

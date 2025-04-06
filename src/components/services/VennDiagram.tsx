@@ -17,16 +17,16 @@ const VennDiagram = ({
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto">
+    <div className="relative w-full max-w-2xl mx-auto py-10">
       {/* Connecting lines to visually link diagram with cards */}
       {!isMobile && (
         <div className="absolute right-0 top-1/2 transform translate-x-[95%] -translate-y-1/2 w-16 h-0.5 bg-green-200 z-0"></div>
       )}
       
-      <div className="relative h-[400px] w-full">
-        {/* Technology Circle */}
+      <div className="relative h-[480px] w-full">
+        {/* Technology Circle - Top of Pyramid */}
         <div 
-          className={`absolute top-0 left-1/2 transform -translate-x-1/2 w-52 h-52
+          className={`absolute top-0 left-1/2 transform -translate-x-1/2 w-64 h-64
                       transition-all duration-300 cursor-pointer
                       ${isHighlighted("technology") 
                         ? "z-10 scale-105" 
@@ -37,7 +37,7 @@ const VennDiagram = ({
           onMouseLeave={() => handleCircleHover(null)}
           style={{ zIndex: isHighlighted("technology") ? 10 : 2 }}
         >
-          <div className={`w-full h-full rounded-2xl overflow-hidden shadow-lg 
+          <div className={`w-full h-full rounded-3xl overflow-hidden shadow-lg 
                           ${isHighlighted("technology") 
                             ? "shadow-[0_0_25px_rgba(34,197,94,0.5)]" 
                             : ""}`}>
@@ -59,9 +59,10 @@ const VennDiagram = ({
           </div>
         </div>
 
-        {/* Processes Circle */}
+        {/* Process and People at the bottom of pyramid - side by side */}
+        {/* Processes Tile - Bottom Left */}
         <div 
-          className={`absolute bottom-0 left-[20%] w-52 h-52
+          className={`absolute bottom-0 left-[calc(50%-150px)] transform -translate-x-1/2 w-64 h-64
                       transition-all duration-300 cursor-pointer
                       ${isHighlighted("processes") 
                         ? "z-10 scale-105" 
@@ -72,7 +73,7 @@ const VennDiagram = ({
           onMouseLeave={() => handleCircleHover(null)}
           style={{ zIndex: isHighlighted("processes") ? 10 : 2 }}
         >
-          <div className={`w-full h-full rounded-2xl overflow-hidden shadow-lg 
+          <div className={`w-full h-full rounded-3xl overflow-hidden shadow-lg 
                           ${isHighlighted("processes") 
                             ? "shadow-[0_0_25px_rgba(34,197,94,0.5)]" 
                             : ""}`}>
@@ -94,9 +95,9 @@ const VennDiagram = ({
           </div>
         </div>
 
-        {/* People Circle */}
+        {/* People Tile - Bottom Right */}
         <div 
-          className={`absolute bottom-0 right-[20%] w-52 h-52
+          className={`absolute bottom-0 right-[calc(50%-150px)] transform translate-x-1/2 w-64 h-64
                       transition-all duration-300 cursor-pointer
                       ${isHighlighted("people") 
                         ? "z-10 scale-105" 
@@ -107,7 +108,7 @@ const VennDiagram = ({
           onMouseLeave={() => handleCircleHover(null)}
           style={{ zIndex: isHighlighted("people") ? 10 : 2 }}
         >
-          <div className={`w-full h-full rounded-2xl overflow-hidden shadow-lg 
+          <div className={`w-full h-full rounded-3xl overflow-hidden shadow-lg 
                           ${isHighlighted("people") 
                             ? "shadow-[0_0_25px_rgba(34,197,94,0.5)]" 
                             : ""}`}>
@@ -131,10 +132,10 @@ const VennDiagram = ({
 
         {/* Digital Transformation Center Element */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-          <div className="bg-white/90 backdrop-blur-sm shadow-xl rounded-full p-5 w-32 h-32 flex flex-col items-center justify-center">
+          <div className="bg-white/90 backdrop-blur-sm shadow-xl rounded-full p-5 w-36 h-36 flex flex-col items-center justify-center animate-float">
             <div className="text-green-800 font-bold leading-tight text-center">
               <p className="text-sm">DIGITAL</p>
-              <div className="h-0.5 w-12 bg-green-500 my-1 mx-auto"></div>
+              <div className="h-0.5 w-16 bg-green-500 my-1 mx-auto"></div>
               <p className="text-sm">TRANSFORMATION</p>
             </div>
           </div>
