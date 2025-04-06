@@ -1,30 +1,47 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Target, Wrench, Database, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle2, Target, Wrench, Database, Users, Quote as QuoteIcon } from "lucide-react";
 
 interface QuoteProps {
   text: string;
   author: string;
   position?: string;
+  imgSrc?: string;
 }
 
-const Quote = ({ text, author, position }: QuoteProps) => {
+const Quote = ({ text, author, position, imgSrc }: QuoteProps) => {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-green-100">
-      <blockquote className="relative">
-        <span className="absolute top-0 left-0 text-6xl text-green-200 leading-none -translate-x-2 -translate-y-3">"</span>
-        <p className="text-gray-700 italic text-lg relative z-10 pt-4 pl-4">
-          {text}
-        </p>
-        <footer className="mt-3 text-right">
-          <cite className="font-medium text-green-700 not-italic">
-            {author}
-            {position && <span className="block text-sm text-gray-500 mt-1">{position}</span>}
-          </cite>
-        </footer>
-      </blockquote>
-    </div>
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-gradient-to-br from-white to-green-50 border-green-100">
+      <CardContent className="p-0">
+        <div className="flex flex-col md:flex-row">
+          {imgSrc && (
+            <div className="w-full md:w-1/3 h-48 md:h-auto overflow-hidden">
+              <img 
+                src={imgSrc} 
+                alt="AI in Healthcare" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+              />
+            </div>
+          )}
+          <div className={`p-6 ${imgSrc ? 'md:w-2/3' : 'w-full'} relative`}>
+            <QuoteIcon className="absolute top-4 left-4 text-green-200 h-8 w-8 opacity-50" />
+            <blockquote className="pt-6 pl-6">
+              <p className="text-gray-700 italic text-lg relative z-10">
+                {text}
+              </p>
+              <footer className="mt-3 text-right">
+                <cite className="font-medium text-green-700 not-italic">
+                  {author}
+                  {position && <span className="block text-sm text-gray-500 mt-1">{position}</span>}
+                </cite>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -65,16 +82,19 @@ const AIFocusSection = () => {
     {
       text: "This is the single most powerful force of our time",
       author: "Alex Thavoronko",
-      position: "Insilico Medicine"
+      position: "Insilico Medicine",
+      imgSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
     },
     {
       text: "AI is the solution, enhancing every stage of patient care from research and discovery to diagnosis and therapy selection.",
       author: "Ronald M. Razmi",
-      position: "Author"
+      position: "Author",
+      imgSrc: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=800"
     },
     {
       text: "AI will not only help to deliver new and cheaper drugs but also expand the possibilities of what medicines can do",
-      author: "Forbes Technology Council"
+      author: "Forbes Technology Council",
+      imgSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=800"
     }
   ];
   
@@ -117,61 +137,48 @@ const AIFocusSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Quotes */}
-          <div className="space-y-6">
-            <div className="relative">
-              {/* Background pattern for aesthetics */}
-              <div className="absolute inset-0 tech-pattern opacity-5 rounded-xl"></div>
-              
-              {/* Quotes section */}
-              <div className="relative space-y-6 z-10">
-                {quotes.map((quote, index) => (
-                  <Quote
-                    key={index}
-                    text={quote.text}
-                    author={quote.author}
-                    position={quote.position}
-                  />
-                ))}
-              </div>
-              
-              {/* Background image subtle overlay */}
-              <div className="absolute bottom-0 right-0 opacity-10">
-                <img 
-                  src="/lovable-uploads/bc6e2537-9ddc-4599-a096-bae35e651555.png" 
-                  alt="AI Technology" 
-                  className="w-44 h-44 object-contain"
-                />
+        <div className="space-y-12">
+          {/* Quotes with images - enhanced design */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {quotes.map((quote, index) => (
+              <Quote
+                key={index}
+                text={quote.text}
+                author={quote.author}
+                position={quote.position}
+                imgSrc={quote.imgSrc}
+              />
+            ))}
+            
+            <div className="md:col-span-2 bg-white/80 backdrop-blur-md rounded-xl border border-green-100 shadow-md p-8">
+              <div className="text-center max-w-3xl mx-auto">
+                <h3 className="text-2xl font-bold text-green-700 mb-6">
+                  Unlocking AI's Potential in Healthcare
+                </h3>
+                
+                <p className="text-gray-700 mb-8">
+                  Artificial intelligence is transforming pharma and healthcare, from drug discovery to patient care. 
+                  However, implementing AI in these regulated industries requires specialized expertise to balance innovation with compliance.
+                </p>
+                
+                <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 mx-auto">
+                  <a href="#contact">Discuss Your AI Strategy</a>
+                </Button>
               </div>
             </div>
           </div>
           
-          {/* Right side - AI Areas (updated to green only) */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-green-700">
-              Unlocking AI's Potential in Healthcare
-            </h3>
-            
-            <p className="text-gray-700">
-              Artificial intelligence is transforming pharma and healthcare, from drug discovery to patient care. However, implementing AI in these regulated industries requires specialized expertise to balance innovation with compliance.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {aiAreas.map((area, index) => (
-                <AIArea 
-                  key={index}
-                  title={area.title}
-                  description={area.description}
-                  icon={area.icon}
-                  items={area.items}
-                />
-              ))}
-            </div>
-            
-            <Button asChild className="bg-green-600 hover:bg-green-700 mt-6">
-              <a href="#contact">Discuss Your AI Strategy</a>
-            </Button>
+          {/* AI Areas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {aiAreas.map((area, index) => (
+              <AIArea 
+                key={index}
+                title={area.title}
+                description={area.description}
+                icon={area.icon}
+                items={area.items}
+              />
+            ))}
           </div>
         </div>
       </div>
