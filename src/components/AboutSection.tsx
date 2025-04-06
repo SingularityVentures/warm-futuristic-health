@@ -14,12 +14,12 @@ const AboutSection = () => {
         </div>
         
         <div className="flex flex-col lg:flex-row gap-12 items-center max-w-5xl mx-auto">
-          <div className="w-full lg:w-1/3 flex justify-center">
-            <div className="relative">
+          <div className="w-full lg:w-1/3 flex justify-center h-full">
+            <div className="relative h-full flex items-center">
               <img 
                 src="/lovable-uploads/bfbb1e1e-799a-4916-9f0b-f26f853aa17b.png"
                 alt="Jan Kroschinski" 
-                className="w-full shadow-xl"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
