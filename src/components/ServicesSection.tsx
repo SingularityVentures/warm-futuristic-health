@@ -52,9 +52,9 @@ const ServicesSection = () => {
           </div>
         </Tabs>
       </div>
-
-      {/* Add stylesheet for float animation */}
-      <style>{`
+      
+      {/* Add float animation to index.css */}
+      <style jsx>{`
         @keyframes float {
           0%, 100% {
             transform: translate(-50%, -50%);
@@ -65,7 +65,7 @@ const ServicesSection = () => {
         }
         
         .animate-float {
-          animation: float 3s ease-in-out infinite;
+          animation: float 4s ease-in-out infinite;
         }
       `}</style>
     </section>
