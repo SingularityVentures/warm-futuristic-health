@@ -16,7 +16,7 @@ const HeroSection = () => {
           playsInline
           className="object-cover w-full h-full"
         >
-          <source src="/20250406_1847_Warm Lab Reflections_remix_01jr5zyy7gf3htqenh4jcmbren.mp4" 
+          <source src="/20250406_1947_Focused Lab Innovation_simple_compose_01jr63d868ew2r1g32grk9d5sr.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
