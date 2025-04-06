@@ -32,7 +32,7 @@ const ExpertiseSection = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div className="order-2 lg:order-1">
             <div className="p-6 h-full bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between">
               <div>
@@ -73,8 +73,8 @@ const ExpertiseSection = () => {
             </div>
           </div>
           
-          <div className="order-1 lg:order-2 h-full">
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
+          <div className="order-1 lg:order-2 flex items-stretch">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full">
               <img 
                 src="/lovable-uploads/5e72a647-d929-4260-bd31-05078dd065a5.png"
                 alt="Healthcare professional working with genetic data" 
