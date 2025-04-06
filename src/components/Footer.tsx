@@ -1,6 +1,5 @@
 
-import { ArrowUp, FileText } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -87,25 +86,9 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-wrap gap-4 text-gray-400 text-sm mb-4 md:mb-0">
-            <p>© {new Date().getFullYear()} Singularity Ventures. All rights reserved.</p>
-            <div className="flex items-center gap-4 ml-0 md:ml-4">
-              <Link 
-                to="/legal#imprint" 
-                className="flex items-center hover:text-green-400 transition-colors"
-              >
-                <FileText size={16} className="mr-1" />
-                Imprint
-              </Link>
-              <Link 
-                to="/legal#data-privacy" 
-                className="flex items-center hover:text-green-400 transition-colors"
-              >
-                <FileText size={16} className="mr-1" />
-                Data Privacy
-              </Link>
-            </div>
-          </div>
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            © {new Date().getFullYear()} Singularity Ventures. All rights reserved.
+          </p>
           
           <button 
             onClick={scrollToTop}
