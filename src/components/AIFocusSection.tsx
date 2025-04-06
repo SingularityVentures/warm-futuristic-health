@@ -13,7 +13,7 @@ interface QuoteProps {
 
 const Quote = ({ text, author, position, imageSrc }: QuoteProps) => {
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-green-100">
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200">
       <div className="relative">
         {imageSrc && (
           <div className="absolute inset-0 opacity-10">
@@ -23,7 +23,7 @@ const Quote = ({ text, author, position, imageSrc }: QuoteProps) => {
         <CardContent className="p-6 backdrop-blur-sm relative z-10">
           <blockquote className="relative">
             <span className="absolute top-0 left-0 text-6xl text-green-300 leading-none -translate-x-2 -translate-y-3">"</span>
-            <p className="text-gray-800 italic text-lg relative z-10 pt-5 pl-5 font-medium">
+            <p className="text-gray-800 italic text-lg md:text-xl relative z-10 pt-5 pl-5 font-medium mb-4">
               {text}
             </p>
             <footer className="mt-4 text-right">
@@ -74,7 +74,7 @@ const AIArea = ({ title, description, icon, items }: AIAreaProps) => {
 const AIFocusSection = () => {
   const quotes = [
     {
-      text: "This is the single most powerful force of our time",
+      text: "This is the single most powerful force of our time.",
       author: "Alex Thavoronko",
       position: "Insilico Medicine",
       imageSrc: "/lovable-uploads/bc6e2537-9ddc-4599-a096-bae35e651555.png"
@@ -86,8 +86,9 @@ const AIFocusSection = () => {
       imageSrc: "/lovable-uploads/dd7b86f5-cc61-4c8c-b907-db217cdce5eb.png"
     },
     {
-      text: "AI will not only help to deliver new and cheaper drugs but also expand the possibilities of what medicines can do",
+      text: "AI will not only help to deliver new and cheaper drugs but also expand the possibilities of what medicines can do.",
       author: "Forbes Technology Council",
+      position: "Forbes",
       imageSrc: "/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png"
     }
   ];
@@ -124,11 +125,8 @@ const AIFocusSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Focus Topic – AI
+            Unlocking AI's Potential in Pharma and Healthcare
           </h2>
-          <p className="text-gray-600 text-lg">
-            Transforming pharmaceutical and healthcare operations through strategic AI implementation
-          </p>
         </div>
         
         {/* Quotes section with enhanced design */}
@@ -148,14 +146,6 @@ const AIFocusSection = () => {
         
         {/* AI Areas */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-green-700 text-center mb-8">
-            Unlocking AI's Potential in Healthcare
-          </h3>
-          
-          <p className="text-gray-700 text-center max-w-3xl mx-auto mb-10">
-            Artificial intelligence is transforming pharma and healthcare, from drug discovery to patient care. However, implementing AI in these regulated industries requires specialized expertise to balance innovation with compliance.
-          </p>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiAreas.map((area, index) => (
               <AIArea 
