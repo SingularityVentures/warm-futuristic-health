@@ -37,10 +37,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
           <img 
             src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
             alt="Technology" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-green-800 font-bold text-2xl z-10">TECHNOLOGY</h4>
+        <h4 className="text-white font-bold text-2xl z-10">TECHNOLOGY</h4>
       </div>
 
       {/* Processes Circle - with processes image and highlights */}
@@ -61,10 +61,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
           <img 
             src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
             alt="Processes" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-green-800 font-bold text-2xl z-10">PROCESSES</h4>
+        <h4 className="text-white font-bold text-2xl z-10">PROCESSES</h4>
       </div>
 
       {/* People Circle - with people image and highlights */}
@@ -85,10 +85,10 @@ const VennDiagram = ({ hoveredSection, handleCircleHover, isMobile }: VennDiagra
           <img 
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
             alt="People" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
           />
         </div>
-        <h4 className="text-green-800 font-bold text-2xl z-10">PEOPLE</h4>
+        <h4 className="text-white font-bold text-2xl z-10">PEOPLE</h4>
       </div>
 
       {/* Digital Transformation pill in center - no animation */}
