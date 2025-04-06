@@ -1,8 +1,5 @@
 
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import ServiceCard from "./ServiceCard";
 
@@ -51,51 +48,24 @@ const TransformBusinessTab = () => {
         I offer services to do each individual section or all of the three combined.
       </p>
 
-      {/* Two-column layout with equal sized tiles */}
-      <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-start`}>
-        {/* First column: Service Tiles */}
-        <div className="space-y-6">
-          {transformServices.map((service, index) => (
-            <div 
-              key={index}
-              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 h-[280px]
-                        ${hoveredSection === service.id ? "ring-2 ring-green-500 shadow-lg" : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
+      {/* Service Cards */}
+      <div className="space-y-6">
+        {transformServices.map((service, index) => (
+          <div 
+            key={index}
+            className={`${hoveredSection === service.id ? "scale-[1.02]" : hoveredSection ? "opacity-80" : ""} transition-all duration-300`}
+            onMouseEnter={() => handleTileHover(service.id)}
+            onMouseLeave={() => handleTileHover(null)}
+          >
+            <ServiceCard
+              service={service}
+              isHighlighted={hoveredSection === service.id}
+              hoveredSection={hoveredSection}
               onMouseEnter={() => handleTileHover(service.id)}
               onMouseLeave={() => handleTileHover(null)}
-            >
-              <img 
-                src={service.imageSrc} 
-                alt={service.title} 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
-                <h4 className="text-3xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
-                <div className="w-20 h-0.5 bg-green-400 my-3"></div>
-                <p className="text-xl mt-2 text-center max-w-[90%] text-shadow font-medium">{service.subtitle}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Second column: Service Cards */}
-        <div className="space-y-6">
-          {transformServices.map((service, index) => (
-            <div 
-              key={index}
-              className={`${hoveredSection === service.id ? "scale-[1.02]" : hoveredSection ? "opacity-80" : ""} transition-all duration-300`}
-              onMouseEnter={() => handleTileHover(service.id)}
-              onMouseLeave={() => handleTileHover(null)}
-            >
-              <ServiceCard
-                service={service}
-                isHighlighted={hoveredSection === service.id}
-                hoveredSection={hoveredSection}
-                onMouseEnter={() => handleTileHover(service.id)}
-                onMouseLeave={() => handleTileHover(null)}
-              />
-            </div>
-          ))}
-        </div>
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

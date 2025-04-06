@@ -36,10 +36,30 @@ const ServiceCard = ({
       onMouseLeave={onMouseLeave}
     >
       <CardContent className="p-0 h-full">
-        <div className="grid md:grid-cols-[120px_1fr] h-full items-center">
-          <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100 rounded-l-lg`}>
-            <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
+        <div className="grid grid-cols-[1fr_2fr] h-full">
+          {/* Image Section */}
+          <div className="relative h-full overflow-hidden rounded-l-lg">
+            {service.imageSrc ? (
+              <div className="absolute inset-0">
+                <img 
+                  src={service.imageSrc} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-white p-6">
+                  <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
+                  <div className="w-20 h-0.5 bg-green-400 my-3"></div>
+                  <p className="text-lg mt-2 text-center max-w-[90%] text-shadow font-medium">{service.subtitle}</p>
+                </div>
+              </div>
+            ) : (
+              <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100 rounded-l-lg`}>
+                <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
+              </div>
+            )}
           </div>
+          
+          {/* Content Section */}
           <div className="p-5 flex flex-col h-full justify-between">
             <div>
               <h4 className="font-bold text-xl md:text-2xl text-green-700 mb-2">{service.subtitle}</h4>

@@ -1,9 +1,5 @@
 
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import JourneyVisualization from "./JourneyVisualization";
 import ServiceCard from "./ServiceCard";
@@ -18,6 +14,7 @@ const CreateBusinessTab = () => {
     subtitle: "Venture Building & Go-To-Market",
     description: "I help you to create bold ideas that can turn into digital, scalable business models and validate them. Finally, I create go-to-market strategies and execute them. I build, launch, and scale ventures that win markets.",
     badges: ["Ideation", "Design Thinking", "Hypothesis Testing", "Go-To-Market", "Venture Building"],
+    imageSrc: "/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png",
     steps: [
       { number: 1, title: "Ideation", description: "Generate innovative concepts" },
       { number: 2, title: "Validation", description: "Test and refine ideas" },
@@ -38,25 +35,21 @@ const CreateBusinessTab = () => {
         Strategic guidance for launching healthcare and life science ventures—from concept validation to market entry and scaling.
       </p>
 
-      {/* Two-column layout: Journey visualization on left, Service Cards on right */}
-      <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-center`}>
-        {/* First column: Journey visualization */}
-        <div className={`flex justify-center items-center ${isMobile ? "order-1" : "order-1"}`}>
+      {/* Combined approach: Journey visualization and Merged Service Card */}
+      <div className="space-y-8">
+        <ServiceCard
+          service={createServices}
+          isHighlighted={hoveredSection === "innovation"}
+          hoveredSection={hoveredSection}
+          onMouseEnter={() => handleCircleHover("innovation")}
+          onMouseLeave={() => handleCircleHover(null)}
+        />
+          
+        <div className="flex justify-center items-center">
           <JourneyVisualization 
             steps={createServices.steps}
             isHighlighted={hoveredSection === "innovation"}
             isMobile={isMobile}
-            onMouseEnter={() => handleCircleHover("innovation")}
-            onMouseLeave={() => handleCircleHover(null)}
-          />
-        </div>
-
-        {/* Second column: Service Card */}
-        <div className={`${isMobile ? "order-2" : "order-2"}`}>
-          <ServiceCard
-            service={createServices}
-            isHighlighted={hoveredSection === "innovation"}
-            hoveredSection={hoveredSection}
             onMouseEnter={() => handleCircleHover("innovation")}
             onMouseLeave={() => handleCircleHover(null)}
           />
