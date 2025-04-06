@@ -51,48 +51,29 @@ const TransformBusinessTab = () => {
         I offer services to do each individual section or all of the three combined.
       </p>
 
-      {/* Two-column layout: Image tiles on left, Service Cards on right */}
+      {/* Two-column layout with equal sized tiles */}
       <div className={`grid ${isMobile ? "grid-cols-1" : "md:grid-cols-2"} gap-8 items-start`}>
         {/* First column: Service Tiles */}
-        <div className="flex flex-col space-y-4">
-          {/* Digital Transformation label in middle */}
-          <div className="relative">
-            {/* Service Tiles */}
-            {transformServices.map((service, index) => (
-              <div 
-                key={index}
-                className={`relative rounded-2xl overflow-hidden mb-4 h-48 cursor-pointer transition-all duration-300
-                          ${hoveredSection === service.id ? "ring-2 ring-green-500 shadow-lg" : ""}`}
-                onMouseEnter={() => handleTileHover(service.id)}
-                onMouseLeave={() => handleTileHover(null)}
-              >
-                <img 
-                  src={service.imageSrc} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-                  <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
-                  <p className="text-sm mt-2 text-center max-w-[80%] text-shadow">{service.subtitle}</p>
-                </div>
-              </div>
-            ))}
-
-            {/* Digital Transformation Pill in Center */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20
-                           bg-green-700 text-white rounded-full py-2 px-4 text-center shadow-lg">
-              <div className="leading-tight whitespace-nowrap">
-                <p className="text-sm sm:text-base font-bold">DIGITAL</p>
-                <p className="text-sm sm:text-base font-bold">TRANSFORMATION</p>
+        <div className="space-y-6">
+          {transformServices.map((service, index) => (
+            <div 
+              key={index}
+              className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300
+                        ${hoveredSection === service.id ? "ring-2 ring-green-500 shadow-lg" : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
+              onMouseEnter={() => handleTileHover(service.id)}
+              onMouseLeave={() => handleTileHover(null)}
+            >
+              <img 
+                src={service.imageSrc} 
+                alt={service.title} 
+                className="w-full h-full object-cover aspect-[16/9]"
+              />
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+                <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
+                <p className="text-sm mt-2 text-center max-w-[80%] text-shadow">{service.subtitle}</p>
               </div>
             </div>
-
-            {/* Connecting lines */}
-            <div className="absolute top-[22%] left-1/2 w-1 h-[28%] bg-green-500 -translate-x-1/2"></div>
-            <div className="absolute bottom-[22%] left-1/2 w-1 h-[28%] bg-green-500 -translate-x-1/2"></div>
-            <div className="absolute top-1/2 left-[30%] w-[20%] h-1 bg-green-500 -translate-y-1/2"></div>
-            <div className="absolute top-1/2 right-[30%] w-[20%] h-1 bg-green-500 -translate-y-1/2"></div>
-          </div>
+          ))}
         </div>
 
         {/* Second column: Service Cards */}
