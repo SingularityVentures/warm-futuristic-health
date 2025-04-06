@@ -46,6 +46,10 @@ const ServiceCard = ({
                   alt={service.title} 
                   className="w-full h-full object-cover"
                 />
+                {/* Added conditional overlay for "people" service */}
+                {service.id === "people" && (
+                  <div className="absolute inset-0 bg-black/30"></div>
+                )}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
                   <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
                   <div className="w-20 h-0.5 bg-green-400 my-3"></div>
