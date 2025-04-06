@@ -1,29 +1,20 @@
-
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const ExpertiseSection = () => {
-  const expertisePoints = [
-    {
-      text: "IT Project Management in Regulated Industries",
-      icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-    },
-    {
-      text: "In-depth Knowledge of Pharma & Healthcare Value Chains",
-      icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-    },
-    {
-      text: "Computer System Validation (CSV) & GxP Expertise",
-      icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-    },
-    {
-      text: "Healthcare Data Protection & GDPR Compliance",
-      icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-    }
-  ];
-  
-  return (
-    <section id="expertise" className="section bg-white py-12">
+  const expertisePoints = [{
+    text: "IT Project Management in Regulated Industries",
+    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }, {
+    text: "In-depth Knowledge of Pharma & Healthcare Value Chains",
+    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }, {
+    text: "Computer System Validation (CSV) & GxP Expertise",
+    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }, {
+    text: "Healthcare Data Protection & GDPR Compliance",
+    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }];
+  return <section id="expertise" className="section bg-white py-12">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
@@ -57,12 +48,10 @@ const ExpertiseSection = () => {
                     My Expertise
                   </h3>
                   <ul className="space-y-3 pl-2">
-                    {expertisePoints.map((point, index) => (
-                      <li key={index} className="flex items-start bg-white p-3 rounded-lg shadow-sm border border-gray-50">
+                    {expertisePoints.map((point, index) => <li key={index} className="flex items-start bg-white p-3 rounded-lg shadow-sm border border-gray-50">
                         {point.icon}
                         <span className="text-gray-700">{point.text}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
                 
@@ -75,17 +64,11 @@ const ExpertiseSection = () => {
           
           <div className="order-1 lg:order-2 h-full">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
-              <img 
-                src="/lovable-uploads/5e72a647-d929-4260-bd31-05078dd065a5.png"
-                alt="Healthcare professional working with genetic data" 
-                className="w-full h-full object-cover" 
-              />
+              <img alt="Medical technology and healthcare innovation" className="w-full h-full object-cover" src="/lovable-uploads/c23dfbf6-b5bc-42e9-b68b-12f67aadb072.png" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ExpertiseSection;
