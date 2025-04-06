@@ -16,7 +16,7 @@ const HeroSection = () => {
           playsInline
           className="object-cover w-full h-full"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-medical-technology-with-a-3d-scan-of-the-human-body-12462-large.mp4" 
+          <source src="/20250406_1712_Harmony of Health Innovation_remix_01jr5thhr7eswarp7ja5nkgs4h.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
