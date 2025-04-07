@@ -128,7 +128,8 @@ const AIFocusSection = () => {
             <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-7xl mx-auto">
               Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate -<br />
-              from pharma R&D to in-hospital patient care, AI will impact every single process in the next years.
+              from pharma R&D to in-hospital patient care, AI will impact every single process in the next years. <br />
+              Let me help you evolve into an AI-driven organization:
             </p>
           </div>
         </div>
@@ -145,12 +146,6 @@ const AIFocusSection = () => {
               />
             ))}
           </div>
-        </div>
-        
-        {/* How I can help heading */}
-        <div className="text-center max-w-3xl mx-auto mb-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-green-700">How I Can Help You To Become an AI Organization</h3>
-          <div className="h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-3 mb-6"></div>
         </div>
         
         {/* AI Areas */}
