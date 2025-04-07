@@ -92,7 +92,7 @@ const AIFocusSection = () => {
   const aiAreas = [
     { 
       title: "AI Strategy", 
-      description: "Define your AI vision and roadmap with respect to Technology, Processes and People", 
+      description: "Define a holistic AI strategy and roadmap", 
       icon: <Target size={24} />, 
       items: ["AI Maturity Assessment", "AI Strategy", "Implementation Roadmap", "Technology Selection"],
     },
