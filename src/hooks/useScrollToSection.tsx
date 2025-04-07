@@ -64,5 +64,20 @@ export const useScrollToSection = () => {
     }
   };
 
-  return { scrollToSection, scrollToTop, isHomePage };
+  // Navigate to a specific page and scroll to top
+  const navigateToPage = (path: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    navigate(path);
+    
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 100);
+  };
+
+  return { scrollToSection, scrollToTop, navigateToPage, isHomePage };
 };

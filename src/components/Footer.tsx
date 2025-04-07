@@ -1,9 +1,10 @@
+
 import { ArrowUp } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Footer = () => {
-  const { scrollToSection, scrollToTop, isHomePage } = useScrollToSection();
+  const { scrollToSection, scrollToTop, isHomePage, navigateToPage } = useScrollToSection();
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -80,9 +81,21 @@ const Footer = () => {
           <div className="flex flex-wrap gap-4 text-gray-400 text-sm mb-4 md:mb-0">
             <p>© {new Date().getFullYear()} Singularity Ventures. All rights reserved.</p>
             <span className="hidden md:inline">|</span>
-            <Link to="/imprint" className="hover:text-green-400 transition-colors">Imprint</Link>
+            <a 
+              href="/imprint" 
+              onClick={(e) => navigateToPage("/imprint", e)} 
+              className="hover:text-green-400 transition-colors"
+            >
+              Imprint
+            </a>
             <span className="hidden md:inline">|</span>
-            <Link to="/privacy" className="hover:text-green-400 transition-colors">Data Privacy</Link>
+            <a 
+              href="/privacy" 
+              onClick={(e) => navigateToPage("/privacy", e)} 
+              className="hover:text-green-400 transition-colors"
+            >
+              Data Privacy
+            </a>
           </div>
           
           <button 
