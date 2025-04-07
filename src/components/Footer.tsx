@@ -85,9 +85,9 @@ const Footer = () => {
           <div className="flex flex-wrap gap-4 text-gray-400 text-sm mb-4 md:mb-0">
             <p>© {new Date().getFullYear()} Singularity Ventures. All rights reserved.</p>
             <span className="hidden md:inline">|</span>
-            <Link to="/legal/imprint" className="hover:text-green-400 transition-colors">Imprint</Link>
+            <Link to="/imprint" className="hover:text-green-400 transition-colors">Imprint</Link>
             <span className="hidden md:inline">|</span>
-            <Link to="/legal/privacy" className="hover:text-green-400 transition-colors">Data Privacy</Link>
+            <Link to="/privacy" className="hover:text-green-400 transition-colors">Data Privacy</Link>
           </div>
           
           <button 
