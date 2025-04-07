@@ -47,6 +47,11 @@ const PrivacyEnglish = () => {
         For security reasons and to protect the transmission of confidential content, such as inquiries you send to us as the website operator, this website uses SSL or TLS encryption. This ensures that the data you transmit cannot be read by third parties. You can recognize an encrypted connection by the lock symbol in your browser's address bar.
       </p>
       
+      <h4> International Data Transfers</h4>
+      <p>
+        Some of the third-party services we use (such as Netlify, Supabase, and Lovable) may process data on servers located in the United States or other countries outside the European Economic Area (EEA). In such cases, we ensure that appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) or compliance with adequacy decisions, to protect your data in accordance with GDPR requirements.
+      </p>
+      
       <h4>Server Log Files</h4>
       <p>
         The website provider automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These include:
