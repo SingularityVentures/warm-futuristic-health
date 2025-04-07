@@ -1,8 +1,10 @@
 
 import { useState } from "react";
 import ServiceCard from "./ServiceCard";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const CreateBusinessTab = () => {
+  const isMobile = useIsMobile();
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   
   const createServices = [
@@ -33,6 +35,7 @@ const CreateBusinessTab = () => {
   ];
 
   const handleTileHover = (id: string | null) => {
+    if (isMobile) return; // Disable hover effects on mobile
     setHoveredSection(id);
   };
 
@@ -50,7 +53,7 @@ const CreateBusinessTab = () => {
         {createServices.map((service, index) => (
           <div 
             key={index}
-            className={`${hoveredSection === service.id ? "scale-[1.02]" : hoveredSection ? "opacity-80" : ""} transition-all duration-300`}
+            className={`${!isMobile && hoveredSection === service.id ? "scale-[1.02]" : !isMobile && hoveredSection ? "opacity-80" : ""} transition-all duration-300`}
             onMouseEnter={() => handleTileHover(service.id)}
             onMouseLeave={() => handleTileHover(null)}
           >

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ServiceCardProps {
   service: {
@@ -28,10 +29,11 @@ const ServiceCard = ({
   onMouseLeave
 }: ServiceCardProps) => {
   const { scrollToSection } = useScrollToSection();
+  const isMobile = useIsMobile();
   
   return (
     <Card 
-      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 h-[240px]
+      className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 ${isMobile ? '' : 'h-[240px]'}
                 ${isHighlighted 
                   ? "shadow-[0_0_20px_rgba(34,197,94,0.3)] relative z-10" 
                   : hoveredSection ? "opacity-80" : "hover:shadow-lg"}`}
@@ -39,9 +41,9 @@ const ServiceCard = ({
       onMouseLeave={onMouseLeave}
     >
       <CardContent className="p-0 h-full">
-        <div className="grid grid-cols-[1fr_2fr] h-full">
+        <div className={`${isMobile ? 'grid grid-cols-1' : 'grid grid-cols-[1fr_2fr]'} h-full`}>
           {/* Image Section */}
-          <div className="relative h-full overflow-hidden rounded-l-lg">
+          <div className={`relative ${isMobile ? 'h-40' : 'h-full'} overflow-hidden ${isMobile ? 'rounded-t-lg' : 'rounded-l-lg'}`}>
             {service.imageSrc ? (
               <div className="absolute inset-0">
                 <img 
@@ -58,7 +60,7 @@ const ServiceCard = ({
                 </div>
               </div>
             ) : (
-              <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100 rounded-l-lg`}>
+              <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100 ${isMobile ? 'rounded-t-lg' : 'rounded-l-lg'}`}>
                 <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
               </div>
             )}
