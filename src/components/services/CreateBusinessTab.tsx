@@ -20,7 +20,7 @@ const CreateBusinessTab = () => {
       subtitle: "Rapid MVP Development",
       description: "I help you quickly develop and deploy minimal viable products to test your ideas in the real world. Using lean methodologies and iterative development, we can validate assumptions and gather user feedback faster.",
       badges: ["Lean Startup", "Rapid Prototyping", "User Testing", "Agile Development", "Feedback Collection"],
-      imageSrc: "/lovable-uploads/bfbb1e1e-799a-4916-9f0b-f26f853aa17b.png",
+      imageSrc: "/lovable-uploads/1868fe1c-abec-474c-8788-d83afc98502e.png",
     },
     {
       id: "scaling",
