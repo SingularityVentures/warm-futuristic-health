@@ -117,11 +117,11 @@ const AIFocusSection = () => {
   ];
   
   return (
-    <section id="ai-focus" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-20">
+    <section id="ai-focus" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-12 pb-8">
       <div className="container mx-auto px-4">
         {/* Main section heading in separate div - restructured to match other sections */}
-        <div className="max-w-full mx-auto mb-16">
-          <div className="text-center mb-10">
+        <div className="max-w-full mx-auto mb-10">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
               Unlocking AI's Potential in Pharma and Healthcare
             </h2>
@@ -134,7 +134,7 @@ const AIFocusSection = () => {
         </div>
         
         {/* Quotes section with enhanced design */}
-        <div className="mb-16">
+        <div className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {quotes.map((quote, index) => (
               <Quote
@@ -148,13 +148,13 @@ const AIFocusSection = () => {
         </div>
         
         {/* How I can help heading */}
-        <div className="text-center max-w-3xl mx-auto mb-8">
+        <div className="text-center max-w-3xl mx-auto mb-6">
           <h3 className="text-2xl md:text-3xl font-bold text-green-700">How I Can Help You To Become an AI Organization</h3>
-          <div className="h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-3 mb-8"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-3 mb-6"></div>
         </div>
         
         {/* AI Areas */}
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiAreas.map((area, index) => (
               <AIArea 
@@ -169,7 +169,7 @@ const AIFocusSection = () => {
         </div>
         
         {/* Centered CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 px-8 py-6 text-base">
             <a href="#contact">Discuss Your AI Strategy</a>
           </Button>
