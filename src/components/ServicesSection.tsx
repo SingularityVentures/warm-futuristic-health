@@ -11,11 +11,11 @@ const ServicesSection = () => {
         {/* Section header */}
         <div className="text-center max-w-full mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Digital Transformation Services
+            My Digital Transformation Services
           </h2>
           <div className="technoline mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-4xl mx-auto">
-            Comprehensive services tailored specifically for pharmaceutical and healthcare organizations.
+            End-to-end IT project management and consulting tailored specifically to pharmaceutical and healthcare organizations.
           </p>
         </div>
 
