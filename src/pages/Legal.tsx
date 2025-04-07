@@ -107,16 +107,20 @@ const Legal = () => {
                   <h2>Imprint</h2>
                   <h3>Information according to § 5 TMG</h3>
                   <p>
-                    Jan Leinfelder<br />
-                    Singularity Ventures<br />
-                    Mittenwalder Str. 20<br />
-                    10961 Berlin
+                    Jan Kroschinski<br />
+                    Singularity Digital Ventures GmbH<br />
+                    Mariannenstraße 32<br />
+                    10900 Berlin
                   </p>
                   
                   <h3>Contact</h3>
                   <p>
-                    Phone: +49 172 1099765<br />
                     E-Mail: jan@singularity-ventures.com
+                  </p>
+
+                  <h3>Commercial Register Number</h3>
+                  <p>
+                  244042B District Court of Charlottenburg
                   </p>
                   
                   <h3>VAT ID</h3>
@@ -125,22 +129,10 @@ const Legal = () => {
                     DE361328526
                   </p>
                   
-                  <h3>Professional information</h3>
-                  <p>
-                    Professional title: Business Consultant<br />
-                    Responsible Chamber: Chamber of Industry and Commerce Berlin<br />
-                    The following professional regulations apply: German Trade Regulation
-                  </p>
-                  
-                  <h2>EU Dispute Resolution</h2>
+                  <h3>EU Dispute Resolution</h2>
                   <p>
                     The European Commission provides a platform for online dispute resolution (OS): https://ec.europa.eu/consumers/odr/.<br />
                     You can find our email address in the imprint above.
-                  </p>
-                  
-                  <h2>Consumer Dispute Resolution</h2>
-                  <p>
-                    We are not willing or obligated to participate in dispute resolution proceedings before a consumer arbitration board.
                   </p>
                   
                   <h3>Liability for Content</h3>
