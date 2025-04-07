@@ -2,13 +2,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/" || location.pathname === "";
   const isLegalPage = location.pathname.includes("/legal");
 
@@ -48,8 +49,8 @@ const Navbar = () => {
   const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
     e.preventDefault();
     
-    // Only apply scroll behavior if we're on the home page
     if (isHomePage) {
+      // If we're already on the homepage, just scroll to the section
       const section = document.getElementById(sectionId);
       if (section) {
         window.scrollTo({
@@ -59,8 +60,22 @@ const Navbar = () => {
         setIsMenuOpen(false); // Close mobile menu if open
       }
     } else {
-      // If we're not on the homepage, navigate to homepage and then scroll
-      // The hash in the URL will handle this automatically
+      // If we're not on the homepage, navigate to homepage with hash
+      // and handle scrolling after navigation
+      navigate(`/#${sectionId}`);
+      setIsMenuOpen(false); // Close mobile menu if open
+      
+      // Give a small delay to allow the navigation to complete
+      // before attempting to scroll to the element
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          window.scrollTo({
+            top: section.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
   };
 
