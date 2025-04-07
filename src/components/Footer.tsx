@@ -57,6 +57,7 @@ const Footer = () => {
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Model Ideation</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Model Validation</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Venture Building / Go-To-Market</a></li>
+                <li><a href="#ai-focus" className="text-gray-400 hover:text-white transition-colors">AI Strategy & Implementation</a></li>
               </ul>
             </div>
             
