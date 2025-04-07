@@ -80,9 +80,9 @@ const ExpertiseSection = () => {
           <div className="order-1 lg:order-2 flex">
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full h-[95%]">
               <img 
-                alt="Professional using a transparent touchscreen showing compliance dashboard" 
+                alt="Medical technology and healthcare innovation" 
                 className="w-full h-full object-cover" 
-                src="/lovable-uploads/14bcafcb-07fb-44b0-a5e8-24ba221039d5.png" 
+                src="/lovable-uploads/c23dfbf6-b5bc-42e9-b68b-12f67aadb072.png" 
               />
             </div>
           </div>
