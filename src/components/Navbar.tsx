@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/" || location.pathname === "";
   const isLegalPage = location.pathname.includes("/legal");
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const Navbar = () => {
       }
       
       // Hero section height detection - only on main page
-      if (!isLegalPage) {
+      if (isHomePage) {
         const heroSection = document.getElementById('hero');
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
@@ -34,17 +35,18 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isLegalPage]);
+  }, [isHomePage]);
 
-  // If on legal page, always show the background
+  // If not on home page or on legal page, always show the background
   useEffect(() => {
-    if (isLegalPage) {
+    if (!isHomePage || isLegalPage) {
       setIsPastHero(true);
     }
-  }, [isLegalPage]);
+  }, [isHomePage, isLegalPage]);
 
+  // Create nav links that work from any page
   const navItems = [
-    { name: "Home", href: isLegalPage ? "/" : "#hero" },
+    { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
     { name: "About", href: "/#about" },
   ];
