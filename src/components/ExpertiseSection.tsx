@@ -1,5 +1,5 @@
 
-import { Check, Award, Lightbulb, CircleDot } from "lucide-react";
+import { Check, Award, Lightbulb, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ExpertiseSection = () => {
@@ -19,13 +19,13 @@ const ExpertiseSection = () => {
 
   const challengePoints = [{
     text: "Stringent regulations (GxP, GDPR, EU AI Act)",
-    icon: <CircleDot className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Circle className="h-5 w-5 text-green-600 mr-2 mt-0.5 fill-green-600" />
   }, {
     text: "Patient safety concerns",
-    icon: <CircleDot className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Circle className="h-5 w-5 text-green-600 mr-2 mt-0.5 fill-green-600" />
   }, {
     text: "Constant pressure to innovate and deliver faster",
-    icon: <CircleDot className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Circle className="h-5 w-5 text-green-600 mr-2 mt-0.5 fill-green-600" />
   }];
 
   return <section id="expertise" className="section bg-white py-12">
@@ -52,10 +52,10 @@ const ExpertiseSection = () => {
                   Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:
                 </p>
                 
-                <ul className="space-y-3 pl-2 mb-6">
+                <ul className="space-y-0 pl-2 mb-6">
                   {challengePoints.map((point, index) => <li key={index} className="flex items-start p-3">
                       {point.icon}
-                      <span className="text-gray-700">{point.text}</span>
+                      <span className="text-gray-700 text-lg">{point.text}</span>
                     </li>)}
                 </ul>
                 
@@ -72,10 +72,10 @@ const ExpertiseSection = () => {
                     </div>
                     My Expertise
                   </h3>
-                  <ul className="space-y-3 pl-2">
+                  <ul className="space-y-0 pl-2">
                     {expertisePoints.map((point, index) => <li key={index} className="flex items-start p-3">
                         {point.icon}
-                        <span className="text-gray-700">{point.text}</span>
+                        <span className="text-gray-700 text-lg">{point.text}</span>
                       </li>)}
                   </ul>
                 </div>
