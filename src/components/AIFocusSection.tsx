@@ -73,9 +73,9 @@ const AIArea = ({ title, description, icon, items }: AIAreaProps) => {
 const AIFocusSection = () => {
   const quotes = [
     {
-      text: "This is the single most powerful force of our time.",
-      author: "Alex Thavoronko",
-      position: "Insilico Medicine"
+      text: "Artificial intelligence and generative AI may be the most important technology of any lifetime.",
+      author: "Marc Benioff",
+      position: "Salesforce"
     },
     {
       text: "AI is the solution, enhancing every stage of patient care from research and discovery to diagnosis and therapy selection.",
@@ -92,15 +92,15 @@ const AIFocusSection = () => {
   const aiAreas = [
     { 
       title: "AI Strategy", 
-      description: "Define your AI vision and roadmap", 
+      description: "Define your AI vision and roadmap with respect to Technology, Processes and People", 
       icon: <Target size={24} />, 
-      items: ["Needs Assessment", "Solution Design", "Implementation Roadmap", "Technology Selection"],
+      items: ["AI Maturity Assessment", "AI Strategy", "Implementation Roadmap", "Technology Selection"],
     },
     { 
       title: "AI Implementation", 
       description: "Execute your AI initiatives effectively", 
       icon: <Wrench size={24} />, 
-      items: ["Vendor Selection", "Regulatory Compliance", "Technical Integration", "Deployment"],
+      items: ["Solution Design", "Regulatory Compliance", "Technical Integration", "Regulatory Compliance"],
     },
     { 
       title: "Processes", 
@@ -127,7 +127,7 @@ const AIFocusSection = () => {
             </h2>
             <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-7xl mx-auto">
-              Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate, from research and development to patient care. Strategic implementation is key to balancing innovation with compliance in these regulated industries.
+              Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate - from pharma R&D to in-hospital patient care, AI will impact every single process in the next years.
             </p>
           </div>
         </div>
