@@ -59,7 +59,7 @@ const ExpertiseSection = () => {
                 </div>
                 
                 <Button asChild className="bg-green-600 hover:bg-green-700 shadow-lg shadow-green-700/20">
-                  <a href="#contact">Schedule a free consultation</a>
+                  <a href="#contact">Schedule a Free Consultation</a>
                 </Button>
               </div>
             </div>
