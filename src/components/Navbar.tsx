@@ -44,11 +44,12 @@ const Navbar = () => {
     }
   }, [isHomePage, isLegalPage]);
 
-  // Create nav links that work from any page
+  // Create nav links that ensure navigation to homepage sections from any page
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
     { name: "About", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -84,9 +85,6 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button asChild className="bg-green-600 hover:bg-green-700 font-raleway">
-              <Link to="/#contact">Contact</Link>
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -116,13 +114,6 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button 
-                asChild 
-                className="bg-green-600 hover:bg-green-700 w-full font-raleway"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Link to="/#contact">Contact</Link>
-              </Button>
             </nav>
           </div>
         </div>
