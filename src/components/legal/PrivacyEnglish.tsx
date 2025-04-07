@@ -120,6 +120,16 @@ const PrivacyEnglish = () => {
           https://policies.google.com/privacy?hl=en
         </a>
       </p>
+
+      <h4>Lovable</h4>
+      <p>
+      We use Lovable to enhance the design and user experience of our website. Lovable may process limited user interaction data to personalize content and analyze user engagement. No personally identifiable information (PII) is collected or stored unless explicitly provided by the user. All data handled by Lovable adheres to current data protection regulations.
+      </p>
+
+      <h4>Netlify</h4>
+      <p>
+      Our website is hosted on Netlify, a cloud platform that delivers fast and secure web experiences. When you visit our site, Netlify may automatically collect technical data such as your IP address, browser type, and device information to ensure optimal performance and security. This data is stored securely and used solely for operational and diagnostic purposes.
+      </p>
       
       <h4>Spotify Widget</h4>
       <p>
@@ -128,6 +138,12 @@ const PrivacyEnglish = () => {
           https://www.spotify.com/de/legal/privacy-policy/
         </a>
       </p>
+      
+      <h4>Supabase</h4>
+      <p>
+      Supabase is our backend service provider, responsible for managing our database and authentication processes. When you interact with our site—for example, by signing up or logging in—Supabase securely processes and stores your information. We ensure that all data transmitted to and from Supabase is encrypted and managed in compliance with GDPR and other relevant data privacy laws
+      </p>
+      
     </div>
   );
 };
