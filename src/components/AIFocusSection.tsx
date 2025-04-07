@@ -128,7 +128,7 @@ const AIFocusSection = () => {
             <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-7xl mx-auto">
               Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate -<br />
-              from pharma R&D to in-hospital patient care, AI will impact every single process in the next years. <br />
+              from pharma R&D to in-hospital patient care, AI will impact every single process. <br />
               Let me help you evolve into an AI-driven organization:
             </p>
           </div>
