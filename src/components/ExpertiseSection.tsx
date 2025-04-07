@@ -1,5 +1,5 @@
 
-import { Check, Award, Lightbulb } from "lucide-react";
+import { Check, Award, Lightbulb, CircleDot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ExpertiseSection = () => {
@@ -15,6 +15,17 @@ const ExpertiseSection = () => {
   }, {
     text: "Healthcare Data Protection & GDPR Compliance",
     icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }];
+
+  const challengePoints = [{
+    text: "Stringent regulations (GxP, GDPR, EU AI Act)",
+    icon: <CircleDot className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }, {
+    text: "Patient safety concerns",
+    icon: <CircleDot className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+  }, {
+    text: "Constant pressure to innovate and deliver faster",
+    icon: <CircleDot className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
   }];
 
   return <section id="expertise" className="section bg-white py-12">
@@ -38,11 +49,15 @@ const ExpertiseSection = () => {
                 </h3>
                 
                 <p className="text-lg text-gray-700 mb-6">
-                  Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
-                 <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
-                 <li>Patient safety concerns</li>
-                 <li>Constant pressure to innovate and deliver faster</li>
+                  Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:
                 </p>
+                
+                <ul className="space-y-3 pl-2 mb-6">
+                  {challengePoints.map((point, index) => <li key={index} className="flex items-start p-3">
+                      {point.icon}
+                      <span className="text-gray-700">{point.text}</span>
+                    </li>)}
+                </ul>
                 
                 <p className="text-lg text-gray-700 mb-6">
                  This combination of importance and complexity makes these projects both challenging and deeply meaningful. With my extensive experience in both domains, I help teams navigate these complexities.
