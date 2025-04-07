@@ -44,10 +44,6 @@ const CreateBusinessTab = () => {
       <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
         How I can help you to create new business
       </h3>
-      <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-        Strategic guidance and operational support for launching healthcare and life science ventures — from ideation, over concept validation to market entry.
-      </p>
-
       {/* Service Cards - Vertical layout matching TransformBusinessTab */}
       <div className="space-y-6">
         {createServices.map((service, index) => (
