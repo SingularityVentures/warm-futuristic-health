@@ -44,7 +44,7 @@ const Navbar = () => {
     }
   }, [isHomePage, isLegalPage]);
 
-  // Create nav links - ensure they all properly point to the homepage sections
+  // Create nav links - make sure they match the exact IDs of the sections on the homepage
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
