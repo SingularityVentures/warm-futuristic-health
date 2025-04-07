@@ -1,5 +1,5 @@
 
-import { Check } from "lucide-react";
+import { Check, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ExpertiseSection = () => {
@@ -46,7 +46,7 @@ const ExpertiseSection = () => {
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold mb-4 text-green-700 flex items-center">
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                      <Check className="h-5 w-5 text-green-700" />
+                      <Award className="h-5 w-5 text-green-700" />
                     </div>
                     My Expertise
                   </h3>
