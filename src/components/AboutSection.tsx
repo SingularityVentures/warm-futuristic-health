@@ -33,15 +33,15 @@ const AboutSection = () => {
                       <Target className="h-5 w-5 text-green-600" />
                     </div>
                     <h3 className="text-xl font-bold text-green-600">
-                      Dedicated to Driving Digital Innovation in Healthcare
+                      Hi, I'm Jan Kroschinski
                     </h3>
                   </div>
                   
                   <p className="text-gray-700">
-                    With over a decade of experience in digital transformation specifically 
-                    tailored to pharmaceutical and healthcare sectors, I bring a unique 
-                    combination of technical expertise and deep industry knowledge to 
-                    every project.
+                    I'm a freelancer, entrepreneur, and technology enthusiast. 
+                    What drives me is a deep passion for technology, 
+                    the joy of collaborating with exceptional people, 
+                    and ultimately to positively affect people's lives.
                   </p>
                 </div>
                 
@@ -57,10 +57,10 @@ const AboutSection = () => {
                   </div>
                   
                   <p className="text-gray-700">
-                    My background spans project management, regulatory compliance, 
-                    and technological implementation—allowing me to bridge the gap 
-                    between innovative digital solutions and the strict regulatory 
-                    requirements of healthcare environments.
+                    Growing up in a medical family, I considered becoming a doctor — 
+                    but chose to study business at Rotterdam School of Management.
+                    Since then, I’ve been fortunate to launch a venture that reached over a million users and
+                    to lead a variety of transformation projects across startups, SMEs, and Fortune 500 companies.
                   </p>
                 </div>
                 
@@ -76,10 +76,8 @@ const AboutSection = () => {
                   </div>
                   
                   <p className="text-gray-700">
-                    My background spans project management, regulatory compliance, 
-                    and technological implementation—allowing me to bridge the gap 
-                    between innovative digital solutions and the strict regulatory 
-                    requirements of healthcare environments.
+                    I strive to deliver the quality and strategic insight of a top-tier consultancy — 
+                    while staying more hands-on, approachable, and human in my approach.  
                   </p>
                 </div>
                 
