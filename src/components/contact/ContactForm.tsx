@@ -47,24 +47,9 @@ const ContactForm = () => {
         
       if (error) throw error;
       
-      // Format the email body with the form data for the mailto link
-      const subject = `New contact form submission from ${formData.name}`;
-      const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-
-Message:
-${formData.message}
-      `;
-      
-      // Open mailto link
-      const mailtoLink = `mailto:jan@singularity-ventures.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoLink, '_blank');
-      
       toast({
         title: "Message Sent Successfully",
-        description: "Your message has been saved and email client opened.",
+        description: "Thank you for your message. We'll get back to you soon!",
       });
       
       // Reset form
