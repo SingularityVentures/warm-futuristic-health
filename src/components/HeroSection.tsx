@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const HeroSection = () => {
+  const { scrollToSection } = useScrollToSection();
+  
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background with gradient overlay */}
@@ -44,11 +47,20 @@ const HeroSection = () => {
             Project Manager | Consultant | Technologist
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg shadow-lg shadow-green-700/30 font-raleway">
-              <a href="#services">My Services</a>
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-green-600 hover:bg-green-700 text-lg shadow-lg shadow-green-700/30 font-raleway"
+            >
+              <a href="#services" onClick={scrollToSection("services")}>My Services</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white/20 text-lg font-raleway">
-              <a href="#contact">Contact Me</a>
+            <Button 
+              asChild 
+              size="lg" 
+              variant="outline" 
+              className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white/20 text-lg font-raleway"
+            >
+              <a href="#contact" onClick={scrollToSection("contact")}>Contact Me</a>
             </Button>
           </div>
         </div>
@@ -56,7 +68,11 @@ const HeroSection = () => {
       
       {/* Animated scroll down indicator */}
       <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20">
-        <a href="#achievements" className="text-white flex flex-col items-center group">
+        <a 
+          href="#achievements" 
+          className="text-white flex flex-col items-center group"
+          onClick={scrollToSection("achievements")}
+        >
           <span className="text-sm mb-2 opacity-80 group-hover:opacity-100 transition-opacity font-raleway">Scroll to explore</span>
           <div className="w-10 h-10 rounded-full border border-white/50 flex items-center justify-center animate-bounce">
             <ChevronDown className="h-5 w-5" />

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 interface ServiceCardProps {
   service: {
@@ -26,6 +27,8 @@ const ServiceCard = ({
   onMouseEnter,
   onMouseLeave
 }: ServiceCardProps) => {
+  const { scrollToSection } = useScrollToSection();
+  
   return (
     <Card 
       className={`border-l-4 border-l-green-600 rounded-xl transition-all duration-300 h-[240px]
@@ -79,7 +82,7 @@ const ServiceCard = ({
                 className="bg-green-600 hover:bg-green-700 text-white transition-colors"
                 asChild
               >
-                <a href="#contact">
+                <a href="#contact" onClick={scrollToSection("contact")}>
                   Learn more
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </a>

@@ -1,73 +1,9 @@
-
 import { ArrowUp } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Footer = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isHomePage = location.pathname === "/" || location.pathname === "";
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  // Handle section navigation
-  const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    
-    if (isHomePage) {
-      // If we're already on the homepage, just scroll to the section
-      const section = document.getElementById(sectionId);
-      if (section) {
-        window.scrollTo({
-          top: section.offsetTop - 80, // Offset for the navbar
-          behavior: 'smooth'
-        });
-      }
-    } else {
-      // If we're not on the homepage, navigate to homepage with hash
-      // and handle scrolling after navigation
-      navigate(`/#${sectionId}`);
-      
-      // Give a small delay to allow the navigation to complete
-      // before attempting to scroll to the element
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          window.scrollTo({
-            top: section.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
-    }
-  };
-
-  // Handle "Home" click to go to top of home page
-  const handleHomeClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    
-    if (isHomePage) {
-      // If already on homepage, scroll to top
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      // Navigate to homepage
-      navigate("/");
-      // After navigation, ensure we're at the top of the page
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    }
-  };
+  const { scrollToSection, scrollToTop, isHomePage } = useScrollToSection();
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -110,23 +46,23 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-green-400">Services</h3>
               <ul className="space-y-2">
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">IT Project Management (GxP)</a></li>
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">Business Process Transformation</a></li>
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">Change Management</a></li>
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">Business Model Ideation</a></li>
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">Business Model Validation</a></li>
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">Venture Building / Go-To-Market</a></li>
-                <li><a href="#ai" onClick={handleSectionClick("ai")} className="text-gray-400 hover:text-white transition-colors">AI Strategy & Implementation</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">IT Project Management (GxP)</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">Business Process Transformation</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">Change Management</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">Business Model Ideation</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">Business Model Validation</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">Venture Building / Go-To-Market</a></li>
+                <li><a href="#ai" onClick={scrollToSection("ai")} className="text-gray-400 hover:text-white transition-colors">AI Strategy & Implementation</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold mb-4 text-green-400">Learn More</h3>
               <ul className="space-y-2">
-                <li><a href="#services" onClick={handleSectionClick("services")} className="text-gray-400 hover:text-white transition-colors">My Services</a></li>
-                <li><a href="#expertise" onClick={handleSectionClick("expertise")} className="text-gray-400 hover:text-white transition-colors">Industry Expertise</a></li>
-                <li><a href="#ai" onClick={handleSectionClick("ai")} className="text-gray-400 hover:text-white transition-colors">AI's Potential in Pharma & Healthcare</a></li>
-                <li><a href="#about" onClick={handleSectionClick("about")} className="text-gray-400 hover:text-white transition-colors">About Me</a></li>
+                <li><a href="#services" onClick={scrollToSection("services")} className="text-gray-400 hover:text-white transition-colors">My Services</a></li>
+                <li><a href="#expertise" onClick={scrollToSection("expertise")} className="text-gray-400 hover:text-white transition-colors">Industry Expertise</a></li>
+                <li><a href="#ai" onClick={scrollToSection("ai")} className="text-gray-400 hover:text-white transition-colors">AI's Potential in Pharma & Healthcare</a></li>
+                <li><a href="#about" onClick={scrollToSection("about")} className="text-gray-400 hover:text-white transition-colors">About Me</a></li>
               </ul>
             </div>
             

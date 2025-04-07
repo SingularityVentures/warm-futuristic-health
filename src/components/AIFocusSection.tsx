@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Wrench, Database, Users } from "lucide-react";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 interface QuoteProps {
   text: string;
@@ -13,7 +13,6 @@ interface QuoteProps {
 const Quote = ({ text, author, position }: QuoteProps) => {
   return (
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white rounded-lg border border-gray-100 relative">
-      {/* Hexagonal background pattern similar to achievements cards */}
       <div className="absolute -right-6 -bottom-6 w-32 h-32 opacity-5">
         <svg viewBox="0 0 100 100" fill="currentColor" className="text-gray-900">
           <path d="M50 0L93.3 25V75L50 100L6.7 75V25L50 0z" />
@@ -71,6 +70,8 @@ const AIArea = ({ title, description, icon, items }: AIAreaProps) => {
 };
 
 const AIFocusSection = () => {
+  const { scrollToSection } = useScrollToSection();
+  
   const quotes = [
     {
       text: "Artificial intelligence and generative AI may be the most important technology of any lifetime.",
@@ -119,7 +120,6 @@ const AIFocusSection = () => {
   return (
     <section id="ai" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-16 pb-12">
       <div className="container mx-auto px-4">
-        {/* Main section heading in separate div - restructured to match other sections */}
         <div className="max-w-full mx-auto mb-10">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
@@ -134,7 +134,6 @@ const AIFocusSection = () => {
           </div>
         </div>
         
-        {/* Quotes section with enhanced design */}
         <div className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {quotes.map((quote, index) => (
@@ -148,7 +147,6 @@ const AIFocusSection = () => {
           </div>
         </div>
         
-        {/* AI Areas */}
         <div className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiAreas.map((area, index) => (
@@ -163,10 +161,13 @@ const AIFocusSection = () => {
           </div>
         </div>
         
-        {/* Centered CTA */}
         <div className="text-center mt-8">
-          <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 px-8 py-6 text-base">
-            <a href="#contact">Discuss Your AI Strategy</a>
+          <Button 
+            asChild 
+            size="lg" 
+            className="bg-green-600 hover:bg-green-700 px-8 py-6 text-base"
+          >
+            <a href="#contact" onClick={scrollToSection("contact")}>Discuss Your AI Strategy</a>
           </Button>
         </div>
       </div>

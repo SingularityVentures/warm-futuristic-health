@@ -1,8 +1,10 @@
-
 import { Check, Award, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const ExpertiseSection = () => {
+  const { scrollToSection } = useScrollToSection();
+  
   const expertisePoints = [{
     text: "IT Project Management for Regulated Industries",
     icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
@@ -71,8 +73,11 @@ const ExpertiseSection = () => {
                 </div>
               </div>
               
-              <Button asChild className="bg-green-600 hover:bg-green-700 shadow-lg shadow-green-700/20">
-                <a href="#contact">Schedule a Free Consultation</a>
+              <Button 
+                asChild 
+                className="bg-green-600 hover:bg-green-700 shadow-lg shadow-green-700/20"
+              >
+                <a href="#contact" onClick={scrollToSection("contact")}>Schedule a Free Consultation</a>
               </Button>
             </div>
           </div>

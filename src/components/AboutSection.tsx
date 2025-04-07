@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Linkedin, BookOpen, Lightbulb } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const AboutSection = () => {
+  const { scrollToSection } = useScrollToSection();
+  
   return (
     <section id="about" className="section bg-gray-50 pt-12 pb-24">
       <div className="container mx-auto px-4">
@@ -87,7 +90,7 @@ const AboutSection = () => {
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button asChild className="bg-green-600 hover:bg-green-700">
-                    <a href="#contact">Contact Me</a>
+                    <a href="#contact" onClick={scrollToSection("contact")}>Contact Me</a>
                   </Button>
                   <Button 
                     variant="outline" 
