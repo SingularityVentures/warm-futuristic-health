@@ -44,10 +44,6 @@ const TransformBusinessTab = () => {
       <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
         How I can help you to transform your existing business
       </h3>
-      <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-        Digital success depends on more than just tech. I help you align technology, processes, and people — offering targeted support for each or an integrated solution for all three.
-      </p>
-
       {/* Service Cards */}
       <div className="space-y-6">
         {transformServices.map((service, index) => (
