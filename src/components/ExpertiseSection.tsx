@@ -29,7 +29,7 @@ const ExpertiseSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div className="order-2 lg:order-1 flex flex-col">
-            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between h-[69.1%]">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between h-full">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-green-700 flex items-center">
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
@@ -78,7 +78,7 @@ const ExpertiseSection = () => {
           </div>
           
           <div className="order-1 lg:order-2 flex">
-            <div className="rounded-2xl overflow-hidden shadow-2xl w-full h-[69.1%]">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full h-full">
               <img 
                 alt="Compliance dashboard displaying 100% compliance with project timelines and checklists" 
                 className="w-full h-full object-cover" 
