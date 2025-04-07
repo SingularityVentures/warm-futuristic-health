@@ -119,14 +119,17 @@ const AIFocusSection = () => {
   return (
     <section id="ai-focus" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            Unlocking AI's Potential in Pharma and Healthcare
-          </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg mx-auto px-4 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
-            Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate, from research and development to patient care. Strategic implementation is key to balancing innovation with compliance in these regulated industries.
-          </p>
+        {/* Main section heading in separate div - restructured to match other sections */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
+              Unlocking AI's Potential in Pharma and Healthcare
+            </h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate, from research and development to patient care. Strategic implementation is key to balancing innovation with compliance in these regulated industries.
+            </p>
+          </div>
         </div>
         
         {/* Quotes section with enhanced design */}
