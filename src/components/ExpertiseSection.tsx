@@ -34,15 +34,20 @@ const ExpertiseSection = () => {
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
                     <Lightbulb className="h-5 w-5 text-green-700" />
                   </div>
-                  Why it matters
+                  Why It Matters
                 </h3>
                 
                 <p className="text-lg text-gray-700 mb-6">
-                  Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
-                 <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
-                 <li>Patient safety concerns</li>
-                 <li>Constant pressure to innovate and deliver faster</li>
+                  Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:
                 </p>
+                
+                <ul className="space-y-3 pl-2">
+                  <li className="flex items-start p-3">
+                    <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
+                    <li>Patient safety concerns</li>
+                    <li>Constant pressure to innovate and deliver faster</li>
+                  </li>
+                </ul>
                 
                 <p className="text-lg text-gray-700 mb-6">
                  This combination of importance and complexity makes these projects both challenging and deeply meaningful. With my extensive experience in both domains, I help teams navigate these complexities.
