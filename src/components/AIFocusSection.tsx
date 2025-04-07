@@ -98,21 +98,21 @@ const AIFocusSection = () => {
     },
     { 
       title: "AI Implementation", 
-      description: "Execute your AI initiatives effectively", 
+      description: "Execute your AI initiatives effectively and compliantly", 
       icon: <Wrench size={24} />, 
-      items: ["Solution Design", "Regulatory Compliance", "Technical Integration", "Regulatory Compliance"],
+      items: ["Solution Design", "Implementation", "Project Management", "Regulatory Compliance"],
     },
     { 
       title: "Processes", 
-      description: "Optimize workflows for AI integration", 
+      description: "Improve your workflows through AI", 
       icon: <Database size={24} />, 
-      items: ["Process Mapping", "Workflow Optimization", "Automation Potential", "Quality Management"],
+      items: ["Process Mapping", "Process Redesign", "AI Automation", "AI Tools"],
     },
     { 
       title: "Organizational Change", 
-      description: "Prepare your teams for AI transformation", 
+      description: "Prepare your organization to harness the power of AI", 
       icon: <Users size={24} />, 
-      items: ["Workforce Training", "Process Redesign", "Adoption Management", "Stakeholder Management"],
+      items: ["AI CoE", "Leadership Workshops", "Workforce Training", "Change Management"],
     }
   ];
   
@@ -127,7 +127,8 @@ const AIFocusSection = () => {
             </h2>
             <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-7xl mx-auto">
-              Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate - from pharma R&D to in-hospital patient care, AI will impact every single process in the next years.
+              Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate -<br />
+              from pharma R&D to in-hospital patient care, AI will impact every single process in the next years.
             </p>
           </div>
         </div>
