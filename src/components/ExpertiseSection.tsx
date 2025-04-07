@@ -75,11 +75,11 @@ const ExpertiseSection = () => {
             </div>
           </div>
           
-          <div className="order-1 lg:order-2">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <div className="order-1 lg:order-2 flex items-center h-full">
+            <div className="rounded-2xl overflow-hidden shadow-2xl h-full w-full">
               <img 
                 alt="Compliance dashboard showing 100% compliance with project timelines, checklists, and audit reports" 
-                className="w-full h-auto object-cover" 
+                className="w-full h-full object-cover" 
                 src="/lovable-uploads/58b03ce5-a7a6-465f-8f0a-76560d128060.png" 
               />
             </div>
