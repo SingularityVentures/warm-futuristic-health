@@ -120,7 +120,7 @@ const AIFocusSection = () => {
     <section id="ai-focus" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-20">
       <div className="container mx-auto px-4">
         {/* Main section heading in separate div - restructured to match other sections */}
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="max-w-full mx-auto mb-16">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
               Unlocking AI's Potential in Pharma and Healthcare
