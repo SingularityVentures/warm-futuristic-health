@@ -77,7 +77,7 @@ const AboutSection = () => {
                   
                   <p className="text-gray-700">
                     I strive to deliver the quality and strategic insight of a top-tier consultancy — 
-                    while staying more hands-on, approachable, and human in my approach.  
+                    while staying more hands-on, and human in my approach.  
                   </p>
                 </div>
                 
