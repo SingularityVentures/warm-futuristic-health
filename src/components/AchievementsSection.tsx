@@ -98,7 +98,7 @@ const AchievementsSection = () => {
             Results-as-a-Service
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg mx-auto px-4 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
+          <p className="text-gray-600 text-lg mx-auto max-w-7xl">
             For 10+ years, I've been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             <br /> 
             My clients span <b>startups</b>, <b>SMEs</b> and <b>global Fortune 500 companies</b>
