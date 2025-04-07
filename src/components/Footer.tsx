@@ -21,7 +21,7 @@ const Footer = () => {
           
           <div className="flex space-x-4">
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/jankroschinski/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gray-800 p-2 rounded-full hover:bg-green-700 transition-colors"
@@ -47,37 +47,31 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4 text-green-400">Services</h3>
               <ul className="space-y-2">
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">AI and Automation</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">GxP Software Implementation</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Change Management</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Go-To-Market</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-green-400">Expertise</h3>
-              <ul className="space-y-2">
-                <li><a href="#expertise" className="text-gray-400 hover:text-white transition-colors">Regulatory Knowledge</a></li>
-                <li><a href="#expertise" className="text-gray-400 hover:text-white transition-colors">GxP Compliance</a></li>
-                <li><a href="#expertise" className="text-gray-400 hover:text-white transition-colors">GDPR</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">IT Project Management (GxP)</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Process Transformation</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Change Management & Organizational Change</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Model Ideation</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Model Validation</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Venture Building and Go-To-Market</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold mb-4 text-green-400">Learn More</h3>
               <ul className="space-y-2">
-                <li><a href="#ai-focus" className="text-gray-400 hover:text-white transition-colors">AI Focus</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                <li><a href="#expertise" className="text-gray-400 hover:text-white transition-colors">Industry Expertise</a></li>
+                <li><a href="#ai-focus" className="text-gray-400 hover:text-white transition-colors">AI's Potential in Pharma / Healthcare</a></li>
                 <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Me</a></li>
-                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-green-400">Contact Us</h3>
+              <h3 className="text-lg font-semibold mb-4 text-green-400">Contact Me</h3>
               <address className="not-italic text-gray-400">
                 <p>Berlin, Germany</p>
                 <p className="mt-2">Email: jan@singularity-ventures.com</p>
