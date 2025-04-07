@@ -12,7 +12,7 @@ const TransformBusinessTab = () => {
       id: "technology",
       title: "Technology",
       subtitle: "IT Project Management (GxP)",
-      description: "End-to-end project management for implementing and validating GxP-compliant IT systems. From vendor selection, over deployment to post-launch support, I ensure smooth implementation and stakeholder satisfication.",
+      description: "End-to-end project management for implementing and validating GxP-compliant IT systems. From vendor selection to post-launch support, I ensure smooth implementation and stakeholder satisfication.",
       badges: ["End-To-End Project Management", "IT Project Management", "Software Implementation", "Stakeholder Management", "Validation", "Qualification", "Compliance", "GxP"],
       imageSrc: "/lovable-uploads/387031f2-b62f-42f7-88f6-51955a71c962.png"
     },
