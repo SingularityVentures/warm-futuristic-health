@@ -17,43 +17,43 @@ const ExpertiseSection = () => {
     icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
   }];
 
-  return <section id="expertise" className="section bg-white py-12">
+  return <section id="expertise" className="section bg-white py-8">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
+        <div className="text-center max-w-3xl mx-auto mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 heading-gradient">
             My Focus - IT in Pharma and Healthcare
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch h-full">
           <div className="order-2 lg:order-1 flex flex-col">
-            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between h-full">
+            <div className="p-5 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between h-full">
               <div>
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-base text-gray-700 mb-4">
                   Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
                  <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
                  <li>Patient safety concerns</li>
                  <li>Constant pressure to innovate and deliver faster</li>
                 </p>
                 
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-base text-gray-700 mb-4">
                  This combination of importance and complexity makes these projects both challenging and deeply meaningful. With my extensive experience in both domains, I help teams navigate these complexities.
                 </p>
               </div>
               
               <div>
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-4 text-green-700 flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                      <Check className="h-5 w-5 text-green-700" />
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-3 text-green-700 flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                      <Check className="h-4 w-4 text-green-700" />
                     </div>
                     My Expertise
                   </h3>
-                  <ul className="space-y-3 pl-2">
-                    {expertisePoints.map((point, index) => <li key={index} className="flex items-start bg-white p-3 rounded-lg shadow-sm border border-gray-50">
+                  <ul className="space-y-2 pl-2">
+                    {expertisePoints.map((point, index) => <li key={index} className="flex items-start bg-white p-2 rounded-lg shadow-sm border border-gray-50">
                         {point.icon}
-                        <span className="text-gray-700">{point.text}</span>
+                        <span className="text-gray-700 text-sm">{point.text}</span>
                       </li>)}
                   </ul>
                 </div>
