@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Wrench, Database, Users } from "lucide-react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface QuoteProps {
   text: string;
@@ -71,6 +73,7 @@ const AIArea = ({ title, description, icon, items }: AIAreaProps) => {
 
 const AIFocusSection = () => {
   const { scrollToSection } = useScrollToSection();
+  const isMobile = useIsMobile();
   
   const quotes = [
     {
@@ -134,18 +137,21 @@ const AIFocusSection = () => {
           </div>
         </div>
         
-        <div className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {quotes.map((quote, index) => (
-              <Quote
-                key={index}
-                text={quote.text}
-                author={quote.author}
-                position={quote.position}
-              />
-            ))}
+        {/* Only show quotes on desktop */}
+        {!isMobile && (
+          <div className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {quotes.map((quote, index) => (
+                <Quote
+                  key={index}
+                  text={quote.text}
+                  author={quote.author}
+                  position={quote.position}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         
         <div className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
