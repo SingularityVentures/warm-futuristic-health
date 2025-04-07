@@ -289,7 +289,7 @@ const Legal = () => {
                 <div className="prose max-w-none">
                   <h2>Privacy Policy</h2>
                   
-                  <<h3>General Information and Mandatory Disclosures</h3>
+                  <h3>General Information and Mandatory Disclosures</h3>
                   <h4>Responsible Entity</h4>
                   <p>The responsible entity for data processing on this website is:</p>
                   <p>
@@ -401,7 +401,7 @@ const Legal = () => {
                   
                   <h4>Spotify Widget</h4>
                   <p>
-                    For the display and playback of music content, this website may use plugins from Spotify AB. When visiting a page containing a Spotify plugin, a connection to Spotify’s servers is established. Spotify will know which pages you visited. Even if you are not logged in to Spotify, Spotify may still collect your IP address. More information about Spotify’s privacy policy can be found here:<br />
+                    For the display and playback of music content, this website may use plugins from Spotify AB. When visiting a page containing a Spotify plugin, a connection to Spotify’s servers is established. Spotify will know which pages you visited. Even if you are not logged in to Spotify, Spotify may still collect your IP address. More information about Spotify's privacy policy can be found here:<br />
                     <a href="https://www.spotify.com/de/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">
                       https://www.spotify.com/de/legal/privacy-policy/
                     </a>
