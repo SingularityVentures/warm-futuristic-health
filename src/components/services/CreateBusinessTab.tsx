@@ -41,9 +41,6 @@ const CreateBusinessTab = () => {
 
   return (
     <div className="mb-12">
-      <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-        How I can help you to create new business
-      </h3>
       {/* Service Cards - Vertical layout matching TransformBusinessTab */}
       <div className="space-y-6">
         {createServices.map((service, index) => (
