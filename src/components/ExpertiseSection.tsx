@@ -37,7 +37,7 @@ const ExpertiseSection = () => {
                 </h3>
                 
                 <p className="text-lg text-gray-700 mb-6">
-                  Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
+                  Healthcare and Life Sciences are among the world's most vital industries, but their high stakes create unique challenges. IT projects and new business venturs in these sectors face significant hurdles:<br />
                  <ul className="pl-8 list-disc px-[44px]">
                    <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
                    <li>Patient safety concerns</li>
