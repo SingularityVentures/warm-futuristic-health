@@ -5,10 +5,10 @@ import CreateBusinessTab from "./services/CreateBusinessTab";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section py-12 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
+    <section id="services" className="section py-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         {/* Section header */}
-        <div className="text-center max-w-full mx-auto mb-8">
+        <div className="text-center max-w-full mx-auto mb-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             My Digital Transformation Services
           </h2>
@@ -20,7 +20,7 @@ const ServicesSection = () => {
 
         {/* Services tabs - using shadcn Tabs for better accessibility and styling */}
         <Tabs defaultValue="transform" className="w-full">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4">
             <TabsList className="bg-green-50 p-2 gap-4 h-auto w-full max-w-xl flex">
               <TabsTrigger 
                 value="transform" 
@@ -37,7 +37,7 @@ const ServicesSection = () => {
             </TabsList>
           </div>
 
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-sm mb-4">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-sm mb-0">
             <TabsContent value="transform" className="animate-fade-in mt-0">
               <TransformBusinessTab />
             </TabsContent>

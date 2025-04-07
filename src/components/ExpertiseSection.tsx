@@ -18,7 +18,7 @@ const ExpertiseSection = () => {
   }];
   
   return (
-    <section id="expertise" className="section bg-white py-12">
+    <section id="expertise" className="section bg-white pt-4 pb-12">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
