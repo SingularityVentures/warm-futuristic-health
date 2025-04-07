@@ -53,10 +53,10 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">IT Project Management (GxP)</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Process Transformation</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Change Management & Organizational Change</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Change Management</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Model Ideation</a></li>
                 <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Business Model Validation</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Venture Building and Go-To-Market</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Venture Building / Go-To-Market</a></li>
               </ul>
             </div>
             

@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Linkedin, Target, BookOpen, Lightbulb } from "lucide-react";
+import { Linkedin, BookOpen, Lightbulb, WavingHand } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const AboutSection = () => {
@@ -30,7 +30,7 @@ const AboutSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
                     <div className="p-2 rounded-full bg-green-100">
-                      <Target className="h-5 w-5 text-green-600" />
+                      <WavingHand className="h-5 w-5 text-green-600" />
                     </div>
                     <h3 className="text-xl font-bold text-green-600">
                       Hi, I'm Jan Kroschinski
@@ -59,7 +59,7 @@ const AboutSection = () => {
                   <p className="text-gray-700">
                     Growing up in a medical family, I considered becoming a doctor — 
                     but chose to study business at Rotterdam School of Management.
-                    Since then, I’ve been fortunate to launch a venture that reached over a million users and
+                    Since then, I've been fortunate to launch a venture that reached over a million users and
                     to lead a variety of transformation projects across startups, SMEs, and Fortune 500 companies.
                   </p>
                 </div>
