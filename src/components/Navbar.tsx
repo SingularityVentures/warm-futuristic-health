@@ -44,7 +44,7 @@ const Navbar = () => {
     }
   }, [isHomePage, isLegalPage]);
 
-  // Create nav links that work from any page
+  // Create nav links - ensure they all properly point to the homepage sections
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
