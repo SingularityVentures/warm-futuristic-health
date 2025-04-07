@@ -51,42 +51,33 @@ const Legal = () => {
                   <h2>Impressum</h2>
                   <h3>Angaben gemäß § 5 TMG</h3>
                   <p>
-                    Jan Leinfelder<br />
-                    Singularity Ventures<br />
-                    Mittenwalder Str. 20<br />
-                    10961 Berlin
+                    Jan Kroschinski<br />
+                    Singularity Digital Ventures GmbH<br />
+                    Mariannenstraße 32<br />
+                    10999 Berlin <br/ >                    
                   </p>
                   
                   <h3>Kontakt</h3>
                   <p>
-                    Telefon: +49 172 1099765<br />
                     E-Mail: jan@singularity-ventures.com
+                  </p>
+                   <h3>Handelresgister-Nummer</h3>
+                  <p> 
+                    244042B Amtsgericht Charlottenburg
                   </p>
                   
                   <h3>Umsatzsteuer-ID</h3>
                   <p>
                     Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                    DE361328526
+                    DE307669743
                   </p>
-                  
-                  <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
-                  <p>
-                    Berufsbezeichnung: Unternehmensberater<br />
-                    Zuständige Kammer: Industrie- und Handelskammer zu Berlin<br />
-                    Es gelten folgende berufsrechtliche Regelungen: Gewerbeordnung
-                  </p>
-                  
-                  <h2>Hinweis zur EU-Streitschlichtung</h2>
+                                   
+                  <h3>Hinweis zur EU-Streitschlichtung</h2>
                   <p>
                     Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/.<br />
                     Unsere E-Mail-Adresse finden Sie oben im Impressum.
                   </p>
-                  
-                  <h2>Verbraucherstreitbeilegung/ Universalschlichtungsstelle</h2>
-                  <p>
-                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-                  </p>
-                  
+                                   
                   <h3>Haftung für Inhalte</h3>
                   <p>
                     Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
