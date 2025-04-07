@@ -1,20 +1,21 @@
 
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 const ExpertiseSection = () => {
   const expertisePoints = [{
     text: "IT Project Management for Regulated Industries",
-    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Check className="h-5 w-5 text-green-600" />
   }, {
     text: "In-depth Knowledge of Pharma & Healthcare Value Chains",
-    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Check className="h-5 w-5 text-green-600" />
   }, {
     text: "Computer System Validation (CSV) & GxP Expertise",
-    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Check className="h-5 w-5 text-green-600" />
   }, {
     text: "Healthcare Data Protection & GDPR Compliance",
-    icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
+    icon: <Check className="h-5 w-5 text-green-600" />
   }];
 
   return <section id="expertise" className="section bg-white py-12">
@@ -50,12 +51,20 @@ const ExpertiseSection = () => {
                     </div>
                     My Expertise
                   </h3>
-                  <ul className="space-y-3 pl-2">
-                    {expertisePoints.map((point, index) => <li key={index} className="flex items-start bg-white p-3 rounded-lg shadow-sm border border-gray-50">
-                        {point.icon}
-                        <span className="text-gray-700">{point.text}</span>
-                      </li>)}
-                  </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {expertisePoints.map((point, index) => (
+                      <Card key={index} className="border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <CardContent className="p-4">
+                          <div className="flex items-center">
+                            <div className="rounded-full bg-green-50 p-2 mr-3 flex-shrink-0">
+                              {point.icon}
+                            </div>
+                            <span className="text-gray-700 font-medium">{point.text}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
                 
                 <Button asChild className="bg-green-600 hover:bg-green-700 shadow-lg shadow-green-700/20">
