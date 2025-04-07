@@ -43,11 +43,10 @@ const Navbar = () => {
     }
   }, [isLegalPage]);
 
-  // Updated to always include the root path for services and about links
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" },
-    { name: "About", href: "/#about" },
+    { name: "Home", href: isLegalPage ? "/" : "#hero" },
+    { name: "Services", href: isLegalPage ? "/#services" : "#services" },
+    { name: "About", href: isLegalPage ? "/#about" : "#about" },
   ];
 
   return (
@@ -84,7 +83,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Button asChild className="bg-green-600 hover:bg-green-700 font-raleway">
-              <Link to="/#contact">Contact</Link>
+              <Link to={isLegalPage ? "/#contact" : "#contact"}>Contact</Link>
             </Button>
           </nav>
 
@@ -120,7 +119,7 @@ const Navbar = () => {
                 className="bg-green-600 hover:bg-green-700 w-full font-raleway"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <Link to="/#contact">Contact</Link>
+                <Link to={isLegalPage ? "/#contact" : "#contact"}>Contact</Link>
               </Button>
             </nav>
           </div>
