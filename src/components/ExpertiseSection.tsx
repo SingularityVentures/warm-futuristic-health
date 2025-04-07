@@ -58,7 +58,7 @@ const ExpertiseSection = () => {
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
                       <Award className="h-5 w-5 text-green-700" />
                     </div>
-                    My Expertise
+                    My Industry Expertise
                   </h3>
                   <ul className="space-y-0.5 pl-2">
                     {expertisePoints.map((point, index) => (
