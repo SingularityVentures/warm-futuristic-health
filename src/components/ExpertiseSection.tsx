@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const ExpertiseSection = () => {
   const expertisePoints = [{
-    text: "IT Project Management in Regulated Industries",
+    text: "IT Project Management for Regulated Industries",
     icon: <Check className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
   }, {
     text: "In-depth Knowledge of Pharma & Healthcare Value Chains",
@@ -21,7 +21,7 @@ const ExpertiseSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
-            My Focus - IT in Pharma and Healthcare
+            My Expertise: IT in Pharma and Healthcare
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
         </div>
