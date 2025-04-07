@@ -44,11 +44,31 @@ const Navbar = () => {
     }
   }, [isHomePage, isLegalPage]);
 
+  // Handle scroll to section
+  const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Only apply scroll behavior if we're on the home page
+    if (isHomePage) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop - 80, // Offset for the navbar
+          behavior: 'smooth'
+        });
+        setIsMenuOpen(false); // Close mobile menu if open
+      }
+    } else {
+      // If we're not on the homepage, navigate to homepage and then scroll
+      // The hash in the URL will handle this automatically
+    }
+  };
+
   // Create nav links - make sure they match the exact IDs of the sections on the homepage
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" },
-    { name: "About", href: "/#about" },
+    { name: "Home", href: "/", sectionId: "" },
+    { name: "Services", href: "/#services", sectionId: "services" },
+    { name: "About", href: "/#about", sectionId: "about" },
   ];
 
   return (
@@ -76,16 +96,30 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="font-raleway text-white hover:text-green-300 transition-colors text-sm font-medium"
-              >
-                {item.name}
-              </Link>
+              item.sectionId ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={handleSectionClick(item.sectionId)}
+                  className="font-raleway text-white hover:text-green-300 transition-colors text-sm font-medium"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="font-raleway text-white hover:text-green-300 transition-colors text-sm font-medium"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
-            <Button asChild className="bg-green-600 hover:bg-green-700 font-raleway">
-              <Link to="/#contact">Contact</Link>
+            <Button 
+              asChild 
+              className="bg-green-600 hover:bg-green-700 font-raleway"
+            >
+              <a href="/#contact" onClick={handleSectionClick("contact")}>Contact</a>
             </Button>
           </nav>
 
@@ -107,22 +141,33 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="font-raleway text-white hover:text-green-300 transition-colors py-2 text-sm font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.sectionId ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={handleSectionClick(item.sectionId)}
+                    className="font-raleway text-white hover:text-green-300 transition-colors py-2 text-sm font-medium"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="font-raleway text-white hover:text-green-300 transition-colors py-2 text-sm font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
-              <Button 
-                asChild 
-                className="bg-green-600 hover:bg-green-700 w-full font-raleway"
-                onClick={() => setIsMenuOpen(false)}
+              <a 
+                href="/#contact" 
+                onClick={handleSectionClick("contact")}
+                className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded text-center font-raleway text-sm font-medium"
               >
-                <Link to="/#contact">Contact</Link>
-              </Button>
+                Contact
+              </a>
             </nav>
           </div>
         </div>
