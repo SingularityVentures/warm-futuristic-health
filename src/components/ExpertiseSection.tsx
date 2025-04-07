@@ -39,9 +39,11 @@ const ExpertiseSection = () => {
                 
                 <p className="text-lg text-gray-700 mb-6">
                   Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
-                 <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
-                 <li>Patient safety concerns</li>
-                 <li>Constant pressure to innovate and deliver faster</li>
+                 <ul className="pl-8">
+                   <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
+                   <li>Patient safety concerns</li>
+                   <li>Constant pressure to innovate and deliver faster</li>
+                 </ul>
                 </p>
                 
                 <p className="text-lg text-gray-700 mb-6">
