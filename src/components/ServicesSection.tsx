@@ -15,7 +15,7 @@ const ServicesSection = () => {
           </h2>
           <div className="technoline mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-4xl mx-auto">
-            End-to-end IT project management and consulting tailored specifically to pharmaceutical and healthcare organizations.
+            End-to-end IT project management (GxP) and consulting tailored specifically to pharmaceutical and healthcare organizations.
           </p>
         </div>
 
