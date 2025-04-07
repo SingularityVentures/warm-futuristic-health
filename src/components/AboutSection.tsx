@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Linkedin, BookOpen, Lightbulb, WavingHand } from "lucide-react";
+import { Linkedin, BookOpen, Lightbulb, Hand } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const AboutSection = () => {
@@ -30,7 +30,7 @@ const AboutSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
                     <div className="p-2 rounded-full bg-green-100">
-                      <WavingHand className="h-5 w-5 text-green-600" />
+                      <Hand className="h-5 w-5 text-green-600" />
                     </div>
                     <h3 className="text-xl font-bold text-green-600">
                       Hi, I'm Jan Kroschinski
