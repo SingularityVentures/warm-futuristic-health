@@ -26,9 +26,9 @@ const ExpertiseSection = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div className="order-2 lg:order-1 flex flex-col">
-            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between h-full">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between" style={{ height: "85%" }}>
               <div>
                 <p className="text-lg text-gray-700 mb-6">
                   Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
@@ -66,7 +66,7 @@ const ExpertiseSection = () => {
           </div>
           
           <div className="order-1 lg:order-2 flex">
-            <div className="rounded-2xl overflow-hidden shadow-2xl w-full h-full">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full" style={{ height: "85%" }}>
               <img 
                 alt="Medical technology and healthcare innovation" 
                 className="w-full h-full object-cover"
