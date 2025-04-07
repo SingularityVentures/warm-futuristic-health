@@ -34,7 +34,7 @@ const ExpertiseSection = () => {
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
                     <Lightbulb className="h-5 w-5 text-green-700" />
                   </div>
-                  Why it matters
+                  Why It Matters
                 </h3>
                 
                 <p className="text-lg text-gray-700 mb-6">
