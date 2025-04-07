@@ -103,14 +103,14 @@ const AIFocusSection = () => {
       items: ["Solution Design", "Implementation", "Project Management", "Regulatory Compliance"],
     },
     { 
-      title: "Processes", 
-      description: "Improve your workflows through AI", 
+      title: "Process Automation", 
+      description: "Improve your workflows through AI automation", 
       icon: <Database size={24} />, 
       items: ["Process Mapping", "Process Redesign", "AI Automation", "AI Tools"],
     },
     { 
       title: "Organizational Change", 
-      description: "Prepare your organization to harness the power of AI", 
+      description: "Enable your organization to harness the full power of AI", 
       icon: <Users size={24} />, 
       items: ["AI CoE", "Leadership Workshops", "Workforce Training", "Change Management"],
     }
@@ -149,7 +149,7 @@ const AIFocusSection = () => {
         
         {/* How I can help heading */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-green-700">How I Can Help</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-green-700">How I Can Help You To Become an AI Organization</h3>
           <div className="h-1 w-16 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-3 mb-8"></div>
         </div>
         
