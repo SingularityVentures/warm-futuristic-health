@@ -10,7 +10,7 @@ const CreateBusinessTab = () => {
       id: "innovation",
       title: "Ideate",
       subtitle: "Business Model Ideation",
-      description: "I help you to create bold, digital-first business model ideas that fuel growth and impact the bottom line",
+      description: "I help you to create bold, digital-first business model ideas that fuel growth and impact the bottom line.",
       badges: ["Ideation", "Business Model Canvas", "Design Thinking", "Workshops"],
       imageSrc: "/lovable-uploads/8439b94e-c0a4-4705-a4c1-0fbbfb9a281d.png",
     },
@@ -26,7 +26,7 @@ const CreateBusinessTab = () => {
       id: "scaling",
       title: "Build",
       subtitle: "Venture Building and Go-To-Market",
-      description: "As a former entrepreneur, I know how to build and launch ventures from scratch — crafting go-to-market strategies, setting up scalable operations, and handing over a ready-to-run busines",
+      description: "As a former entrepreneur, I know how to build and launch ventures from scratch — crafting go-to-market strategies, setting up scalable operations, and handing over a ready-to-run business.",
       badges: ["Go-To-Market", "GTM", "Venture Building", "Startup", "Market Expansion"],
       imageSrc: "/lovable-uploads/b1c71173-7634-447b-b0f3-2552fea88d8e.png",
     }
