@@ -101,7 +101,7 @@ const AchievementsSection = () => {
           <p className="text-gray-600 text-lg mx-auto max-w-7xl">
             For 10+ years, I've been delivering <b>digital solutions</b> that actually ship — as both an entrepreneur and freelance project manager.
             <br /> 
-            My clients span <b>startups</b>, <b>SMEs</b> and <b>global Fortune 500 companies</b>
+            My clients span <b>startups</b>, <b>SMEs</b> and <b>global Fortune 500 companies.</b>
           </p>
         </div>
 
