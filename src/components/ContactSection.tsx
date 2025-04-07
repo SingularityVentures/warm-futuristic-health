@@ -1,85 +1,8 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Calendar } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import ContactInfo from "./contact/ContactInfo";
+import ContactForm from "./contact/ContactForm";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Save the contact data to Supabase
-      const { error } = await supabase
-        .from('contacts')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            message: formData.message
-          }
-        ]);
-        
-      if (error) throw error;
-      
-      // Format the email body with the form data for the mailto link
-      const subject = `New contact form submission from ${formData.name}`;
-      const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-
-Message:
-${formData.message}
-      `;
-      
-      // Open mailto link
-      const mailtoLink = `mailto:jan@singularity-ventures.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoLink, '_blank');
-      
-      toast({
-        title: "Message Sent Successfully",
-        description: "Your message has been saved and email client opened.",
-      });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error("Error submitting contact form:", error);
-      toast({
-        title: "Error",
-        description: "There was a problem sending your message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="contact" className="section bg-white">
       <div className="container mx-auto px-4">
@@ -94,115 +17,11 @@ ${formData.message}
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md h-full">
-              <h3 className="text-xl font-bold text-green-700 mb-6">
-                Get In Touch
-              </h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <Mail className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600">jan@singularity-ventures.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <MapPin className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Location</h4>
-                    <p className="text-gray-600">Berlin, Germany</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <Calendar className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Available for</h4>
-                    <p className="text-gray-600">Projects, Workshops, Speaker Engagements</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ContactInfo />
           </div>
           
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name *
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="border-gray-300 focus:ring-green-500 focus:border-green-500"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email *
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="border-gray-300 focus:ring-green-500 focus:border-green-500"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone
-                </label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="border-gray-300 focus:ring-green-500 focus:border-green-500"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message *
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="border-gray-300 focus:ring-green-500 focus:border-green-500"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-green-600 hover:bg-green-700" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
