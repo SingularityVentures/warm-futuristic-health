@@ -126,7 +126,7 @@ const AIFocusSection = () => {
               Unlocking AI's Potential in Pharma and Healthcare
             </h2>
             <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-7xl mx-auto">
               Artificial intelligence is transforming how pharmaceutical and healthcare organizations operate, from research and development to patient care. Strategic implementation is key to balancing innovation with compliance in these regulated industries.
             </p>
           </div>
