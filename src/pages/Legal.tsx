@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Languages, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
@@ -54,14 +53,15 @@ const Legal = () => {
                     Jan Kroschinski<br />
                     Singularity Digital Ventures GmbH<br />
                     Mariannenstraße 32<br />
-                    10999 Berlin <br/ >                    
+                    10999 Berlin
                   </p>
                   
                   <h3>Kontakt</h3>
                   <p>
                     E-Mail: jan@singularity-ventures.com
                   </p>
-                   <h3>Handelresgister-Nummer</h3>
+                  
+                  <h3>Handelsregister-Nummer</h3>
                   <p> 
                     244042B Amtsgericht Charlottenburg
                   </p>
@@ -72,7 +72,7 @@ const Legal = () => {
                     DE307669743
                   </p>
                                    
-                  <h3>Hinweis zur EU-Streitschlichtung</h2>
+                  <h3>Hinweis zur EU-Streitschlichtung</h3>
                   <p>
                     Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/.<br />
                     Unsere E-Mail-Adresse finden Sie oben im Impressum.
@@ -110,7 +110,7 @@ const Legal = () => {
                     Jan Kroschinski<br />
                     Singularity Digital Ventures GmbH<br />
                     Mariannenstraße 32<br />
-                    10900 Berlin
+                    10999 Berlin
                   </p>
                   
                   <h3>Contact</h3>
@@ -120,16 +120,16 @@ const Legal = () => {
 
                   <h3>Commercial Register Number</h3>
                   <p>
-                  244042B District Court of Charlottenburg
+                    244042B District Court of Charlottenburg
                   </p>
                   
                   <h3>VAT ID</h3>
                   <p>
                     VAT identification number according to § 27 a of the German VAT law:<br />
-                    DE361328526
+                    DE307669743
                   </p>
                   
-                  <h3>EU Dispute Resolution</h2>
+                  <h3>EU Dispute Resolution</h3>
                   <p>
                     The European Commission provides a platform for online dispute resolution (OS): https://ec.europa.eu/consumers/odr/.<br />
                     You can find our email address in the imprint above.
