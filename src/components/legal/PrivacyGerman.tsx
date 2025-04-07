@@ -47,6 +47,11 @@ const PrivacyGerman = () => {
         Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie z. B. Anfragen, die Sie an uns als Betreiber der Website senden, verwendet diese Website eine SSL- bzw. TLS-Verschlüsselung. Dies gewährleistet, dass die übermittelten Daten für Dritte nicht lesbar sind. Eine verschlüsselte Verbindung erkennen Sie an dem Schloss-Symbol in der Browserzeile.
       </p>
       
+      <h4>Internationale Datenübermittlungen</h4>
+      <p>
+      Einige der von uns genutzten Drittanbieter-Dienste (wie Netlify, Supabase und Lovable) können Daten auf Servern in den Vereinigten Staaten oder in anderen Ländern außerhalb des Europäischen Wirtschaftsraums (EWR) verarbeiten. In solchen Fällen stellen wir sicher, dass geeignete Schutzmaßnahmen getroffen werden – etwa durch den Einsatz von Standardvertragsklauseln (SCCs) oder die Einhaltung eines Angemessenheitsbeschlusses –, um Ihre Daten gemäß den Anforderungen der Datenschutz-Grundverordnung (DSGVO) zu schützen.
+      </p>
+      
       <h4>Server-Log-Dateien</h4>
       <p>
         Der Provider der Website erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt. Dazu gehören:
@@ -116,6 +121,16 @@ const PrivacyGerman = () => {
         </a>
       </p>
       
+      <h4>Lovable</h4>
+      <p>
+      Wir verwenden Lovable, um das Design und die Benutzererfahrung unserer Website zu verbessern. Lovable kann in begrenztem Umfang Nutzungsdaten verarbeiten, um Inhalte zu personalisieren und die Nutzerinteraktion zu analysieren. Es werden keine personenbezogenen Daten erhoben oder gespeichert, es sei denn, diese werden vom Nutzer ausdrücklich bereitgestellt. Sämtliche durch Lovable verarbeiteten Daten unterliegen den geltenden Datenschutzbestimmungen.
+      </p>
+
+      <h4>Netlify</h4>
+      <p>
+      Unsere Website wird über Netlify gehostet, eine Cloud-Plattform, die schnelle und sichere Web-Erlebnisse ermöglicht. Beim Besuch unserer Website kann Netlify automatisch technische Daten wie Ihre IP-Adresse, den Browsertyp und Geräteinformationen erfassen, um eine optimale Leistung und Sicherheit zu gewährleisten. Diese Daten werden sicher gespeichert und ausschließlich zu betrieblichen und diagnostischen Zwecken verwendet.
+      </p>  
+
       <h4>Spotify Widget</h4>
       <p>
         Für die Darstellung und Wiedergabe von Musik-Inhalten verwendet diese Website ggf. Plugins von Spotify AB. Bei Aufruf einer Seite mit einem Spotify-Plugin wird eine Verbindung zu den Spotify-Servern hergestellt. Dabei erfährt Spotify, welche Seiten Sie besucht haben. Selbst wenn Sie nicht bei Spotify eingeloggt sind, kann Spotify möglicherweise Ihre IP-Adresse erfassen. Weitere Informationen zu den Datenschutzbestimmungen von Spotify finden Sie hier:<br />
@@ -123,6 +138,12 @@ const PrivacyGerman = () => {
           https://www.spotify.com/de/legal/privacy-policy/
         </a>
       </p>
+
+      <h4>Supabase</h4>
+      <p>
+      Supabase ist unser Backend-Dienstleister und verantwortlich für die Verwaltung unserer Datenbank- und Authentifizierungsprozesse. Wenn Sie mit unserer Website interagieren – etwa durch eine Registrierung oder Anmeldung – verarbeitet und speichert Supabase Ihre Daten sicher. Wir stellen sicher, dass alle Datenübertragungen zu und von Supabase verschlüsselt erfolgen und gemäß der DSGVO sowie anderer relevanter Datenschutzgesetze verwaltet werden.
+      </p>  
+      
     </div>
   );
 };
