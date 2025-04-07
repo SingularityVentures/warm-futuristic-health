@@ -77,9 +77,12 @@ const ServiceCard = ({
             <div>
               <Button 
                 className="bg-green-600 hover:bg-green-700 text-white transition-colors"
+                asChild
               >
-                Learn more
-                <ArrowRight className="ml-1 h-4 w-4" />
+                <a href="#contact">
+                  Learn more
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>

@@ -2,7 +2,6 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import TransformBusinessTab from "./services/TransformBusinessTab";
 import CreateBusinessTab from "./services/CreateBusinessTab";
-import CallToAction from "./services/CallToAction";
 
 const ServicesSection = () => {
   return (
@@ -46,9 +45,6 @@ const ServicesSection = () => {
             <TabsContent value="create" className="animate-fade-in mt-0">
               <CreateBusinessTab />
             </TabsContent>
-
-            {/* CTA - Now inside the same container */}
-            <CallToAction />
           </div>
         </Tabs>
       </div>
