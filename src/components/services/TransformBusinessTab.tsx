@@ -11,9 +11,9 @@ const TransformBusinessTab = () => {
     {
       id: "technology",
       title: "Technology",
-      subtitle: "(GxP) Software Implementation",
-      description: "Specialized support for implementing and validating GxP-compliant systems. From vendor selection to deployment, I ensure alignment with regulatory standards.",
-      badges: ["Validation", "Qualification", "Compliance", "GxP", "Stakeholder Mgmt", "End-To-End"],
+      subtitle: "IT Project Management (GxP)",
+      description: "End-to-end project management for implementing and validating GxP-compliant IT systems. From vendor selection, over deployment to post-launch support, I ensure smooth implementation and stakeholder satisfication.",
+      badges: ["End-To-End Project Management", "IT Project Management", "Software Implementation", "Stakeholder Management", "Validation", "Qualification", "Compliance", "GxP"],
       imageSrc: "/lovable-uploads/387031f2-b62f-42f7-88f6-51955a71c962.png"
     },
     {
@@ -21,15 +21,15 @@ const TransformBusinessTab = () => {
       title: "Processes",
       subtitle: "Business Process Transformation",
       description: "Redesign of core workflows, systems, and operations to improve efficiency, reduce costs, and enhance customer value by leveraging technology (AI) and data analytics.",
-      badges: ["AI", "RPA", "Automation"],
+      badges: ["Artificial Intelligence","AI", "RPA", "Automation", "Business Process Design"],
       imageSrc: "/lovable-uploads/dd7b86f5-cc61-4c8c-b907-db217cdce5eb.png"
     },
     {
       id: "people",
       title: "People",
       subtitle: "Change Management & Organizational Change",
-      description: "Transitioning individuals, teams, and organizations from a current state to a desired future state while minimizing resistance and maximizing adoption.",
-      badges: ["Trainings", "Workshops", "Communication", "Multiplier"],
+      description: "Bridging the gap between people and technology through effective Change Management. Preparing healthcare and pharma organizations to successfully adopt innovations like AI.",
+      badges: ["Change Management", "Communication","Trainings", "Workshops", "AI CoE", "AI Champions"],
       imageSrc: "/lovable-uploads/d0421a57-955d-4a3d-95fa-8c11795966d5.png"
     },
   ];
@@ -41,11 +41,10 @@ const TransformBusinessTab = () => {
   return (
     <div className="mb-12">
       <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-        How I help you to transform your existing business
+        How I can help you to transform your existing business
       </h3>
       <p className="text-center text-gray-600 max-w-4xl mx-auto mb-8">
-        Successful digital transformation needs to encompass all of the three sections: Technology, Processes and People. 
-        I offer services to do each individual section or all of the three combined.
+        Digital success depends on more than just tech. I help you align technology, processes, and people — offering targeted support for each or an integrated solution for all three.
       </p>
 
       {/* Service Cards */}
