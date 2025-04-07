@@ -18,7 +18,7 @@ const ExpertiseSection = () => {
   }];
   
   return (
-    <section id="expertise" className="section bg-white py-12">
+    <section id="expertise" className="section bg-white py-10">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
@@ -27,9 +27,9 @@ const ExpertiseSection = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6"></div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          <div className="order-2 lg:order-1 flex flex-col">
-            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between h-[69.1%]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <div className="order-2 lg:order-1">
+            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm h-full">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-green-700 flex items-center">
                   <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
@@ -38,29 +38,29 @@ const ExpertiseSection = () => {
                   Why It Matters
                 </h3>
                 
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-lg text-gray-700 mb-4">
                   Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:
                 </p>
-                <ul className="pl-8 list-disc mb-6 text-lg text-gray-700">
+                <ul className="pl-8 list-disc mb-4 text-lg text-gray-700">
                   <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
                   <li>Patient safety concerns</li>
                   <li>Constant pressure to innovate and deliver faster</li>
                 </ul>
                 
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-lg text-gray-700 mb-4">
                   With my extensive experience in healthcare, pharma and IT, I help teams navigate these complexities.
                 </p>
               </div>
               
               <div>
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-3 text-green-700 flex items-center">
+                <div className="mb-4">
+                  <h3 className="text-xl font-semibold mb-2 text-green-700 flex items-center">
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
                       <Award className="h-5 w-5 text-green-700" />
                     </div>
                     My Expertise
                   </h3>
-                  <ul className="space-y-1 pl-2">
+                  <ul className="space-y-0.5 pl-2">
                     {expertisePoints.map((point, index) => (
                       <li key={index} className="flex items-start p-1">
                         {point.icon}
@@ -77,8 +77,8 @@ const ExpertiseSection = () => {
             </div>
           </div>
           
-          <div className="order-1 lg:order-2 flex">
-            <div className="rounded-2xl overflow-hidden shadow-2xl w-full h-[69.1%]">
+          <div className="order-1 lg:order-2">
+            <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
                 alt="Compliance dashboard displaying 100% compliance with project timelines and checklists" 
                 className="w-full h-full object-cover" 
