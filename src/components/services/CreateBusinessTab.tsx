@@ -12,7 +12,7 @@ const CreateBusinessTab = () => {
       subtitle: "Venture Building & Go-To-Market",
       description: "I help you to create bold ideas that can turn into digital, scalable business models and validate them. Finally, I create go-to-market strategies and execute them. I build, launch, and scale ventures that win markets.",
       badges: ["Ideation", "Design Thinking", "Hypothesis Testing", "Go-To-Market", "Venture Building"],
-      imageSrc: "/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png",
+      imageSrc: "/lovable-uploads/8439b94e-c0a4-4705-a4c1-0fbbfb9a281d.png",
     },
     {
       id: "mvp",
