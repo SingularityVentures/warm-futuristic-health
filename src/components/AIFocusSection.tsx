@@ -47,20 +47,20 @@ interface AIAreaProps {
 
 const AIArea = ({ title, description, icon, items }: AIAreaProps) => {
   return (
-    <div className="bg-white rounded-xl border border-green-200 shadow-sm relative overflow-hidden">
+    <div className="bg-white rounded-xl border border-green-200 shadow-sm relative overflow-hidden h-full flex flex-col">
       <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col h-full">
         <div className="flex items-center gap-3 mb-3">
           <div className="p-2 rounded-lg bg-green-100 text-green-600">
             {icon}
           </div>
           <h3 className="text-xl font-bold text-green-800">{title}</h3>
         </div>
-        <p className="text-gray-600 mb-4 text-sm">{description}</p>
-        <div className="space-y-2">
+        <p className="text-gray-600 mb-6 text-sm">{description}</p>
+        <div className="space-y-2 mt-auto">
           {items.map((item, i) => (
             <div key={i} className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-green-500" />
+              <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
               <span className="text-gray-700 text-sm">{item}</span>
             </div>
           ))}
