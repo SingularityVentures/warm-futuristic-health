@@ -1,5 +1,5 @@
 
-import { Check, Award } from "lucide-react";
+import { Check, Award, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ExpertiseSection = () => {
@@ -30,6 +30,13 @@ const ExpertiseSection = () => {
           <div className="order-2 lg:order-1 flex flex-col">
             <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100 shadow-sm flex flex-col justify-between" style={{ height: "90%" }}>
               <div>
+                <h3 className="text-xl font-semibold mb-4 text-green-700 flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                    <Lightbulb className="h-5 w-5 text-green-700" />
+                  </div>
+                  Why it matters
+                </h3>
+                
                 <p className="text-lg text-gray-700 mb-6">
                   Healthcare and Life Sciences are the world's most vital industries, but their high stakes create unique challenges. IT projects in these sectors face significant hurdles:<br />
                  <li>Stringent regulations (GxP, GDPR, EU AI Act)</li>
