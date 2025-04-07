@@ -28,7 +28,7 @@ const CreateBusinessTab = () => {
       subtitle: "From MVP to Market Leader",
       description: "Once your concept is validated, I help scale your solution to reach its full market potential. This includes optimizing product-market fit, establishing operational excellence, and creating sustainable growth engines.",
       badges: ["Growth Strategy", "Operations Scaling", "Product Refinement", "Market Expansion", "Investor Readiness"],
-      imageSrc: "/lovable-uploads/dd7b86f5-cc61-4c8c-b907-db217cdce5eb.png",
+      imageSrc: "/lovable-uploads/b1c71173-7634-447b-b0f3-2552fea88d8e.png",
     }
   ];
 
