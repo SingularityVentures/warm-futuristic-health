@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section bg-gray-50 pt-8 pb-24">
+    <section id="about" className="section bg-gray-50 pt-12 pb-24">
       <div className="container mx-auto px-4">
         <div className="text-center mx-auto mb-10">
           <h2 className="text-4xl font-bold text-green-600 mb-2">

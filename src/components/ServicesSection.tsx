@@ -5,7 +5,7 @@ import CreateBusinessTab from "./services/CreateBusinessTab";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section py-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
+    <section id="services" className="section py-8 pb-12 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center max-w-full mx-auto mb-6">

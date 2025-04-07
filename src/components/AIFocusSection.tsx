@@ -117,7 +117,7 @@ const AIFocusSection = () => {
   ];
   
   return (
-    <section id="ai-focus" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-12 pb-8">
+    <section id="ai-focus" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-16 pb-12">
       <div className="container mx-auto px-4">
         {/* Main section heading in separate div - restructured to match other sections */}
         <div className="max-w-full mx-auto mb-10">
