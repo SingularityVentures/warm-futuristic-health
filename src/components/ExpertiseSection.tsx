@@ -60,7 +60,7 @@ const ExpertiseSection = () => {
                   <ul className="space-y-3 pl-2">
                     {expertisePoints.map((point, index) => <li key={index} className="flex items-start p-3">
                         {point.icon}
-                        <span className="text-gray-700">{point.text}</span>
+                        <span className="text-lg text-gray-700">{point.text}</span>
                       </li>)}
                   </ul>
                 </div>
