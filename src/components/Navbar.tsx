@@ -45,8 +45,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: isLegalPage ? "/" : "#hero" },
-    { name: "Services", href: isLegalPage ? "/#services" : "#services" },
-    { name: "About", href: isLegalPage ? "/#about" : "#about" },
+    { name: "Services", href: "/#services" },
+    { name: "About", href: "/#about" },
   ];
 
   return (
@@ -83,7 +83,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Button asChild className="bg-green-600 hover:bg-green-700 font-raleway">
-              <Link to={isLegalPage ? "/#contact" : "#contact"}>Contact</Link>
+              <Link to="/#contact">Contact</Link>
             </Button>
           </nav>
 
@@ -119,7 +119,7 @@ const Navbar = () => {
                 className="bg-green-600 hover:bg-green-700 w-full font-raleway"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <Link to={isLegalPage ? "/#contact" : "#contact"}>Contact</Link>
+                <Link to="/#contact">Contact</Link>
               </Button>
             </nav>
           </div>
