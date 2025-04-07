@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Calendar } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -26,7 +27,21 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Format the email body with the form data
+      // Save the contact data to Supabase
+      const { error } = await supabase
+        .from('contacts')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            message: formData.message
+          }
+        ]);
+        
+      if (error) throw error;
+      
+      // Format the email body with the form data for the mailto link
       const subject = `New contact form submission from ${formData.name}`;
       const body = `
 Name: ${formData.name}
@@ -37,15 +52,13 @@ Message:
 ${formData.message}
       `;
       
-      // Create mailto link
+      // Open mailto link
       const mailtoLink = `mailto:jan@singularity-ventures.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      
-      // Open the user's email client
       window.open(mailtoLink, '_blank');
       
       toast({
-        title: "Message Ready to Send",
-        description: "Your email client has been opened with the message details.",
+        title: "Message Sent Successfully",
+        description: "Your message has been saved and email client opened.",
       });
       
       // Reset form
@@ -56,10 +69,10 @@ ${formData.message}
         message: "",
       });
     } catch (error) {
-      console.error("Error preparing email:", error);
+      console.error("Error submitting contact form:", error);
       toast({
         title: "Error",
-        description: "There was a problem preparing your message. Please try again.",
+        description: "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
     } finally {
