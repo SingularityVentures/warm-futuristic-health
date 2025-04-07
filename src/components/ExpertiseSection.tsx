@@ -48,7 +48,7 @@ const ExpertiseSection = () => {
                 </ul>
                 
                 <p className="text-lg text-gray-700 mb-6">
-                  This combination of importance and complexity makes these projects both challenging and deeply meaningful. With my extensive experience in both domains, I help teams navigate these complexities.
+                  With my extensive experience in healthcare, pharma and IT, I help teams navigate these complexities.
                 </p>
               </div>
               
