@@ -41,9 +41,6 @@ const TransformBusinessTab = () => {
 
   return (
     <div className="mb-12">
-      <h3 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-4">
-        How I can help you to transform your existing business
-      </h3>
       {/* Service Cards */}
       <div className="space-y-6">
         {transformServices.map((service, index) => (
