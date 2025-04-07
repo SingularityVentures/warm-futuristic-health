@@ -79,6 +79,31 @@ const Navbar = () => {
     }
   };
 
+  // Handle logo or home button click 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    if (isHomePage) {
+      // If already on homepage, scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Navigate to homepage
+      navigate("/");
+      // After navigation, ensure we're at the top of the page
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+    
+    setIsMenuOpen(false); // Close mobile menu if open
+  };
+
   // Create nav links - make sure they match the exact IDs of the sections on the homepage
   const navItems = [
     { name: "Home", href: "/", sectionId: "" },
@@ -94,7 +119,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
+          <a 
+            href="/" 
+            onClick={handleHomeClick} 
+            className="flex items-center space-x-2"
+          >
             <img 
               src="/lovable-uploads/fe98110a-0afd-4d76-929c-a08b9e6e2884.png" 
               alt="Singularity Ventures Logo" 
@@ -106,7 +135,7 @@ const Navbar = () => {
               <span className="text-green-600">V</span>
               <span>ENTURES</span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -121,13 +150,14 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ) : (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
+                  onClick={handleHomeClick}
                   className="font-raleway text-white hover:text-green-300 transition-colors text-sm font-medium"
                 >
                   {item.name}
-                </Link>
+                </a>
               )
             ))}
             <Button 
@@ -166,14 +196,14 @@ const Navbar = () => {
                     {item.name}
                   </a>
                 ) : (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
+                    onClick={handleHomeClick}
                     className="font-raleway text-white hover:text-green-300 transition-colors py-2 text-sm font-medium"
-                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 )
               ))}
               <a 
