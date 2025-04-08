@@ -5,6 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Wrench, Database, Users } from "lucide-react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface QuoteProps {
   text: string;
@@ -154,17 +161,46 @@ const AIFocusSection = () => {
         )}
         
         <div className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aiAreas.map((area, index) => (
-              <AIArea 
-                key={index}
-                title={area.title}
-                description={area.description}
-                icon={area.icon}
-                items={area.items}
-              />
-            ))}
-          </div>
+          {isMobile ? (
+            <div className="relative px-4">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {aiAreas.map((area, index) => (
+                    <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                      <AIArea 
+                        title={area.title}
+                        description={area.description}
+                        icon={area.icon}
+                        items={area.items}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="flex justify-center gap-2 mt-4">
+                  <CarouselPrevious className="static translate-y-0 ml-0" />
+                  <CarouselNext className="static translate-y-0 mr-0" />
+                </div>
+              </Carousel>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {aiAreas.map((area, index) => (
+                <AIArea 
+                  key={index}
+                  title={area.title}
+                  description={area.description}
+                  icon={area.icon}
+                  items={area.items}
+                />
+              ))}
+            </div>
+          )}
         </div>
         
         <div className="text-center mt-8">
