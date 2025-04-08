@@ -58,9 +58,9 @@ const ServiceCard = ({
                 {/* Added grey overlay for all images to improve text readability */}
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
-                  <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{displayImageTitle}</h4>
+                  <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
                   <div className="w-20 h-0.5 bg-green-400 my-3"></div>
-                  <p className="text-lg mt-2 text-center max-w-[90%] text-shadow font-medium">{service.subtitle}</p>
+                  <p className="text-lg mt-2 text-center max-w-[90%] text-shadow font-medium">{displayImageTitle}</p>
                 </div>
               </div>
             ) : (
