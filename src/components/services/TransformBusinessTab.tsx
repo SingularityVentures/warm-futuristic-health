@@ -20,7 +20,7 @@ const TransformBusinessTab = () => {
     {
       id: "processes",
       title: "Processes",
-      imageTitle: "Business Process", // Title shown on the image 
+      imageTitle: "Process Transformation", // Title shown on the image 
       subtitle: "Business Process Transformation", // Title shown in the card content
       description: "Redesign of core workflows, systems, and operations to improve efficiency, reduce costs, and enhance customer value by leveraging technology (AI) and data analytics.",
       badges: ["Artificial Intelligence","AI", "RPA", "Automation", "Business Process Design"],
