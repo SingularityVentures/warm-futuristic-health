@@ -11,6 +11,7 @@ interface ServiceCardProps {
     id: string;
     title: string;
     subtitle: string;
+    imageTitle?: string; // New prop for the title shown on the image
     description: string;
     badges: string[];
     imageSrc?: string;
@@ -30,6 +31,9 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   const { scrollToSection } = useScrollToSection();
   const isMobile = useIsMobile();
+  
+  // Use imageTitle if provided, otherwise fall back to subtitle
+  const displayImageTitle = service.imageTitle || service.title;
   
   return (
     <Card 
@@ -54,14 +58,14 @@ const ServiceCard = ({
                 {/* Added grey overlay for all images to improve text readability */}
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6">
-                  <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{service.title}</h4>
+                  <h4 className="text-2xl font-bold uppercase tracking-wider text-shadow">{displayImageTitle}</h4>
                   <div className="w-20 h-0.5 bg-green-400 my-3"></div>
                   <p className="text-lg mt-2 text-center max-w-[90%] text-shadow font-medium">{service.subtitle}</p>
                 </div>
               </div>
             ) : (
               <div className={`bg-green-50 p-3 flex flex-col items-center justify-center h-full border-r border-green-100 ${isMobile ? 'rounded-t-lg' : 'rounded-l-lg'}`}>
-                <h4 className="font-bold text-lg text-green-800">{service.title}</h4>
+                <h4 className="font-bold text-lg text-green-800">{displayImageTitle}</h4>
               </div>
             )}
           </div>
