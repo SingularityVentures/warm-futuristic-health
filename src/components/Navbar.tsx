@@ -164,7 +164,7 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-[#243949] to-[#517fa4]">
+        <div className="md:hidden bg-gradient-to-r from-black/70 to-green-950/70">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
