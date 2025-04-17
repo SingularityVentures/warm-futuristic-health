@@ -129,7 +129,7 @@ const Navbar = () => {
               alt="Singularity Ventures Logo" 
               className="h-10 w-10"
             />
-            <div className="hidden md:block font-oswald font-bold text-2xl text-white tracking-wider letter-spacing-wide">
+            <div className={`font-oswald font-bold text-2xl text-white tracking-wider letter-spacing-wide hidden md:block`}>
               <span className="text-green-600">S</span>
               <span>INGULARITY </span>
               <span className="text-green-600">V</span>
@@ -180,9 +180,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu with solid background */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-black to-green-950 shadow-lg animate-fade-in">
+        <div className="md:hidden bg-green-950">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (

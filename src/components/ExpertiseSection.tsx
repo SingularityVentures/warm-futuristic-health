@@ -1,3 +1,4 @@
+
 import { Check, Award, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
@@ -82,7 +83,7 @@ const ExpertiseSection = () => {
             </div>
           </div>
           
-          <div className="order-1 lg:order-2 hidden lg:flex items-center h-full">
+          <div className="order-1 lg:order-2 hidden md:flex items-center h-full">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full w-full">
               <img 
                 alt="Compliance dashboard showing 100% compliance with project timelines, checklists, and audit reports" 
