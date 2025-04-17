@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,17 +15,19 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Basic scroll detection
       if (window.scrollY > 10) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
       
+      // Hero section height detection - only on main page
       if (isHomePage) {
         const heroSection = document.getElementById('hero');
         if (heroSection) {
           const heroHeight = heroSection.offsetHeight;
-          setIsPastHero(window.scrollY > heroHeight - 100);
+          setIsPastHero(window.scrollY > heroHeight - 100); // -100 for a slight overlap
         }
       }
     };
@@ -35,28 +38,35 @@ const Navbar = () => {
     };
   }, [isHomePage]);
 
+  // If not on home page or on legal page, always show the background
   useEffect(() => {
     if (!isHomePage || isLegalPage) {
       setIsPastHero(true);
     }
   }, [isHomePage, isLegalPage]);
 
+  // Handle scroll to section
   const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
     e.preventDefault();
     
     if (isHomePage) {
+      // If we're already on the homepage, just scroll to the section
       const section = document.getElementById(sectionId);
       if (section) {
         window.scrollTo({
-          top: section.offsetTop - 80,
+          top: section.offsetTop - 80, // Offset for the navbar
           behavior: 'smooth'
         });
-        setIsMenuOpen(false);
+        setIsMenuOpen(false); // Close mobile menu if open
       }
     } else {
+      // If we're not on the homepage, navigate to homepage with hash
+      // and handle scrolling after navigation
       navigate(`/#${sectionId}`);
-      setIsMenuOpen(false);
+      setIsMenuOpen(false); // Close mobile menu if open
       
+      // Give a small delay to allow the navigation to complete
+      // before attempting to scroll to the element
       setTimeout(() => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -69,16 +79,20 @@ const Navbar = () => {
     }
   };
 
+  // Handle logo or home button click 
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     
     if (isHomePage) {
+      // If already on homepage, scroll to top
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     } else {
+      // Navigate to homepage
       navigate("/");
+      // After navigation, ensure we're at the top of the page
       setTimeout(() => {
         window.scrollTo({
           top: 0,
@@ -87,9 +101,10 @@ const Navbar = () => {
       }, 100);
     }
     
-    setIsMenuOpen(false);
+    setIsMenuOpen(false); // Close mobile menu if open
   };
 
+  // Create nav links - make sure they match the exact IDs of the sections on the homepage
   const navItems = [
     { name: "Home", href: "/", sectionId: "" },
     { name: "Services", href: "/#services", sectionId: "services" },
@@ -114,7 +129,7 @@ const Navbar = () => {
               alt="Singularity Ventures Logo" 
               className="h-10 w-10"
             />
-            <div className={`font-oswald font-bold text-2xl text-white tracking-wider letter-spacing-wide hidden md:block`}>
+            <div className={`font-oswald font-bold text-2xl text-white tracking-wider letter-spacing-wide`}>
               <span className="text-green-600">S</span>
               <span>INGULARITY </span>
               <span className="text-green-600">V</span>
@@ -122,6 +137,7 @@ const Navbar = () => {
             </div>
           </a>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               item.sectionId ? (
@@ -152,6 +168,7 @@ const Navbar = () => {
             </Button>
           </nav>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -163,8 +180,9 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-black/70 to-green-950/70">
+        <div className="md:hidden bg-gradient-to-r from-black/70 to-green-950/70 shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
