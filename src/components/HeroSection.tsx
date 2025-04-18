@@ -1,11 +1,11 @@
-
+import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
-
 const HeroSection = () => {
-  const { scrollToSection } = useScrollToSection();
-  
+  const {
+    scrollToSection
+  } = useScrollToSection();
   return <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
@@ -14,6 +14,8 @@ const HeroSection = () => {
           <source src="/20250406_2107_Precision in High-Tech Lab_simple_compose_01jr67z47kegkvzd75d7bnpydm.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        
+        {/* Removed the tech overlay pattern with tiles */}
       </div>
 
       {/* Content */}
@@ -32,6 +34,14 @@ const HeroSection = () => {
           </h2>
           <Separator className="h-1 w-24 md:w-32 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6" />
           <p className="text-xl md:text-2xl mb-12 text-gray-100 font-light font-raleway">Project Manager | Consultant | Venture Builder</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg shadow-lg shadow-green-700/30 font-raleway">
+              <a href="#services" onClick={scrollToSection("services")}>My Services</a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white/20 text-lg font-raleway">
+              <a href="#contact" onClick={scrollToSection("contact")}>Contact Me</a>
+            </Button>
+          </div>
         </div>
       </div>
       
@@ -46,5 +56,4 @@ const HeroSection = () => {
       </div>
     </section>;
 };
-
 export default HeroSection;
