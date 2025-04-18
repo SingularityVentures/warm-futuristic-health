@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Wrench, Database, Users } from "lucide-react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import {
   Carousel,
   CarouselContent,
