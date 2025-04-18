@@ -85,7 +85,7 @@ export const AnimatedTestimonials = ({
                   <img
                     src={tile.src}
                     alt="AI Focus Area"
-                    className="h-full w-full rounded-xl object-cover object-center shadow-lg"
+                    className="h-full w-full rounded-xl object-cover object-center"
                   />
                 </motion.div>
               ))}
@@ -115,16 +115,16 @@ export const AnimatedTestimonials = ({
           >
             {tiles[active]?.content}
           </motion.div>
-          <div className="flex gap-4 pt-12 justify-center md:justify-start">
+          <div className="flex gap-4 pt-6 md:pt-0 justify-center md:justify-start">
             <button
               onClick={handlePrev}
-              className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-colors"
+              className="h-8 w-8 rounded-full bg-green-50 flex items-center justify-center group/button"
             >
               <IconArrowLeft className="h-5 w-5 text-green-700 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
-              className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-colors"
+              className="h-8 w-8 rounded-full bg-green-50 flex items-center justify-center group/button"
             >
               <IconArrowRight className="h-5 w-5 text-green-700 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
@@ -134,4 +134,3 @@ export const AnimatedTestimonials = ({
     </div>
   );
 };
-
