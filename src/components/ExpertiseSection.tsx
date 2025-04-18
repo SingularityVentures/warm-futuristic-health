@@ -10,12 +10,12 @@ const ExpertiseSection = () => {
   } = useScrollToSection();
   const isMobile = useIsMobile();
   const expertisePoints = [{
-    title: "IT Project Management",
-    description: "Specialized in regulated industries with focus on compliance and efficiency",
+    title: "IT Project Management Expertise",
+    description: "Specialized in IT Project Management for regulated industries, balancing innovation and compliance",
     icon: <BarChart4 className="h-6 w-6 text-green-600" />
   }, {
     title: "Pharma & Healthcare Knowledge",
-    description: "In-depth understanding of the complete value chain and business processes",
+    description: "In-depth understanding of pharma and healthcare value chains and business processes",
     icon: <Shield className="h-6 w-6 text-green-600" />
   }, {
     title: "Computer System Validation",
@@ -23,7 +23,7 @@ const ExpertiseSection = () => {
     icon: <Check className="h-6 w-6 text-green-600" />
   }, {
     title: "Data Protection & GDPR",
-    description: "Implementing healthcare data protection and privacy requirements",
+    description: "Well-versed in healthcare data protection and privacy compliance",
     icon: <Award className="h-6 w-6 text-green-600" />
   }];
   return <section id="expertise" className="py-16 md:py-24 relative overflow-hidden">
@@ -38,7 +38,8 @@ const ExpertiseSection = () => {
           </h2>
           <div className="technoline mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-4xl mx-auto">
-            Healthcare and Life Sciences face unique challenges for IT projects due to stringent regulations, patient safety concerns, and innovation pressure. My expertise helps navigate these complexities.
+            Healthcare and Life Sciences face unique challenges for IT projects due to stringent regulations and patient safety concerns.
+            I use my experience in healthcare, pharma, and IT to help companies handle these complex issues.
           </p>
         </div>
         
