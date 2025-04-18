@@ -1,5 +1,5 @@
 
-import { Check, Award, Lightbulb, ArrowRight, Shield, BarChart4 } from "lucide-react";
+import { Shield, FileCheck, ProjectorIcon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
@@ -13,22 +13,22 @@ const ExpertiseSection = () => {
     {
       title: "IT Project Management Expertise",
       description: "Specialized in IT Project Management for regulated industries, balancing innovation and compliance",
-      icon: <BarChart4 className="h-6 w-6 text-green-600" />
+      icon: <ProjectorIcon className="h-7 w-7 text-green-600" />
     },
     {
       title: "Pharma & Healthcare Knowledge",
       description: "In-depth understanding of pharma and healthcare value chains and business processes",
-      icon: <Shield className="h-6 w-6 text-green-600" />
+      icon: <Shield className="h-7 w-7 text-green-600" />
     },
     {
       title: "Computer System Validation",
       description: "GxP expertise to ensure regulatory compliance for critical systems",
-      icon: <Check className="h-6 w-6 text-green-600" />
+      icon: <Award className="h-7 w-7 text-green-600" />
     },
     {
       title: "Data Protection & GDPR",
       description: "Well-versed in healthcare data protection and privacy compliance",
-      icon: <Award className="h-6 w-6 text-green-600" />
+      icon: <FileCheck className="h-7 w-7 text-green-600" />
     }
   ];
 
@@ -50,12 +50,12 @@ const ExpertiseSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
           {expertisePoints.map((point, index) => (
             <Card key={index} className="border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardContent className="p-6">
+              <CardContent className="p-8">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 mr-4 p-2 bg-green-50 rounded-lg">
+                  <div className="flex-shrink-0 mr-4 p-3 bg-green-50 rounded-lg">
                     {point.icon}
                   </div>
                   <div>
