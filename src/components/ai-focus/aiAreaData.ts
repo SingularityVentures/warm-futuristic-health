@@ -14,7 +14,7 @@ export interface AIArea {
 export const aiAreas: AIArea[] = [
   { 
     title: "AI Strategy", 
-    description: "Define a holistic AI strategy and roadmap", 
+    description: "Define a holistic AI strategy and implementation roadmap", 
     icon: Target, 
     items: ["AI Maturity Assessment", "AI Strategy", "Implementation Roadmap", "Technology Selection"],
     image: "/lovable-uploads/387031f2-b62f-42f7-88f6-51955a71c962.png"
