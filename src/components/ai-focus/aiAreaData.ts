@@ -1,11 +1,12 @@
 
 import { Target, Wrench, Database, Users } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import React from 'react';
 
 export interface AIArea {
   title: string;
   description: string;
-  icon: React.ComponentType<{ size?: number }>;
+  icon: LucideIcon;
   items: string[];
   image: string;
 }
