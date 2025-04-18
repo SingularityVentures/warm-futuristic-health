@@ -1,4 +1,3 @@
-
 import { Target, Wrench, Database, Users } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import React from 'react';
@@ -17,7 +16,7 @@ export const aiAreas: AIArea[] = [
     description: "Define a holistic AI strategy and implementation roadmap", 
     icon: Target, 
     items: ["AI Maturity Assessment", "AI Strategy", "Implementation Roadmap", "Technology Selection"],
-    image: "/lovable-uploads/387031f2-b62f-42f7-88f6-51955a71c962.png"
+    image: "/lovable-uploads/80b04863-723e-401b-9137-bbde71aae030.png"
   },
   { 
     title: "AI Implementation", 
