@@ -12,7 +12,7 @@ const ExpertiseSection = () => {
   const expertisePoints = [
     {
       title: "IT Project Management Expertise",
-      description: "Specialized in IT Project Management for regulated industries, balancing innovation and compliance",
+      description: "Specialized in IT Project Management for regulated industries, both agile and classic",
       icon: <Laptop className="h-7 w-7 text-green-600" />
     },
     {
