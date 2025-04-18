@@ -1,4 +1,3 @@
-
 import { Shield, FileCheck, Laptop, ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,34 +32,33 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section id="expertise" className="py-16 md:py-24 relative overflow-hidden">
-      {/* Background Effect */}
+    <section id="expertise" className="py-8 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-white -z-10"></div>
       <div className="absolute inset-0 molecular-bg opacity-5 -z-10"></div>
       
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
+        <div className="max-w-4xl mx-auto mb-8 md:mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 heading-gradient">
             I specialize in IT for Pharma and Healthcare
           </h2>
-          <div className="technoline mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg max-w-4xl mx-auto">
-            Strict regulations and patient safety make IT projects in Healthcare and Life Sciences uniquely challenging.<br/>
+          <div className="technoline mx-auto mb-4 md:mb-6"></div>
+          <p className="text-gray-600 text-base md:text-lg max-w-4xl mx-auto">
+            Strict regulations and patient safety make IT projects in Healthcare and Life Sciences uniquely challenging.<br className="hidden md:block"/>
             I use my experience in healthcare, pharma, and IT to help companies handle these complex issues.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto mb-8 md:mb-12">
           {expertisePoints.map((point, index) => (
             <Card key={index} className="border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-6 h-full">
+              <CardContent className="p-4 md:p-6 h-full">
                 <div className="flex items-start h-full">
-                  <div className="flex-shrink-0 mr-4 p-3 bg-green-50 rounded-lg">
+                  <div className="flex-shrink-0 mr-3 md:mr-4 p-2 md:p-3 bg-green-50 rounded-lg">
                     {point.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-green-700 mb-2">{point.title}</h3>
-                    <p className="text-gray-600 text-base">{point.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-green-700 mb-1 md:mb-2">{point.title}</h3>
+                    <p className="text-sm md:text-base text-gray-600">{point.description}</p>
                   </div>
                 </div>
               </CardContent>
