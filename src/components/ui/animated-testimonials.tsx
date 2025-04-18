@@ -46,10 +46,10 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-12", className)}>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+    <div className={cn("max-w-6xl md:max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12", className)}>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-[420px] w-full">
             <AnimatePresence>
               {tiles.map((tile, index) => (
                 <motion.div
@@ -85,7 +85,7 @@ export const AnimatedTestimonials = ({
                   <img
                     src={tile.src}
                     alt="AI Focus Area"
-                    className="h-full w-full rounded-xl object-cover object-center"
+                    className="h-full w-full rounded-xl object-cover object-center shadow-lg"
                   />
                 </motion.div>
               ))}
