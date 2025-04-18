@@ -51,9 +51,10 @@ interface AIAreaProps {
   description: string;
   icon: React.ReactNode;
   items: string[];
+  image: string;
 }
 
-const AIArea = ({ title, description, icon, items }: AIAreaProps) => {
+const AIArea = ({ title, description, icon, items, image }: AIAreaProps) => {
   return (
     <div className="bg-white rounded-xl border border-green-200 shadow-sm relative overflow-hidden h-full flex flex-col">
       <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
@@ -106,47 +107,40 @@ const AIFocusSection = () => {
       description: "Define a holistic AI strategy and roadmap", 
       icon: <Target size={24} />, 
       items: ["AI Maturity Assessment", "AI Strategy", "Implementation Roadmap", "Technology Selection"],
+      image: "/lovable-uploads/387031f2-b62f-42f7-88f6-51955a71c962.png"
     },
     { 
       title: "AI Implementation", 
       description: "Execute your AI initiatives effectively and compliantly", 
       icon: <Wrench size={24} />, 
       items: ["Solution Design", "Implementation", "Project Management", "Regulatory Compliance"],
+      image: "/lovable-uploads/bfbb1e1e-799a-4916-9f0b-f26f853aa17b.png"
     },
     { 
       title: "Process Automation", 
       description: "Improve your workflows through AI automation", 
       icon: <Database size={24} />, 
       items: ["Process Mapping", "Process Redesign", "AI Automation", "AI Tools"],
+      image: "/lovable-uploads/d0421a57-955d-4a3d-95fa-8c11795966d5.png"
     },
     { 
       title: "Organizational Change", 
       description: "Enable your organization to harness the full power of AI", 
       icon: <Users size={24} />, 
       items: ["AI CoE", "Leadership Workshops", "Workforce Training", "Change Management"],
+      image: "/lovable-uploads/58b03ce5-a7a6-465f-8f0a-76560d128060.png"
     }
   ];
   
-  const testimonials = [
-    {
-      quote: "AI is revolutionizing how we approach healthcare challenges. The potential for improving patient outcomes is unprecedented.",
-      name: "Dr. Sarah Chen",
-      designation: "Chief Innovation Officer, HealthTech Solutions",
-      src: "/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png"
-    },
-    {
-      quote: "The integration of AI in pharmaceutical research has accelerated our drug discovery process significantly.",
-      name: "Michael Rodriguez",
-      designation: "Head of R&D, PharmaTech Innovation",
-      src: "/lovable-uploads/8439b94e-c0a4-4705-a4c1-0fbbfb9a281d.png"
-    },
-    {
-      quote: "AI-driven automation has transformed our clinical trials, making them more efficient and data-driven than ever before.",
-      name: "Emily Watson",
-      designation: "Clinical Research Director, BioInnovate",
-      src: "/lovable-uploads/fe98110a-0afd-4d76-929c-a08b9e6e2884.png"
-    }
-  ];
+  const animatedTiles = aiAreas.map(area => ({
+    content: <AIArea 
+      title={area.title}
+      description={area.description}
+      icon={area.icon}
+      items={area.items}
+    />,
+    src: area.image
+  }));
 
   return (
     <section id="ai" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-16 pb-12">
@@ -164,7 +158,6 @@ const AIFocusSection = () => {
           </div>
         </div>
         
-        {/* Only show quotes on desktop */}
         {!isMobile && (
           <div className="mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -225,7 +218,7 @@ const AIFocusSection = () => {
         
         <div className="mt-16">
           <AnimatedTestimonials 
-            testimonials={testimonials}
+            tiles={animatedTiles}
             autoplay={true}
             className="bg-white rounded-xl shadow-sm"
           />

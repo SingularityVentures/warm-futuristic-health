@@ -6,30 +6,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-type Testimonial = {
-  quote: string;
-  name: string;
-  designation: string;
+type AnimatedTile = {
+  content: React.ReactNode;
   src: string;
 };
 
 export const AnimatedTestimonials = ({
-  testimonials,
+  tiles,
   autoplay = false,
   className,
 }: {
-  testimonials: Testimonial[];
+  tiles: AnimatedTile[];
   autoplay?: boolean;
   className?: string;
 }) => {
   const [active, setActive] = useState(0);
 
   const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
+    setActive((prev) => (prev + 1) % tiles.length);
   };
 
   const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setActive((prev) => (prev - 1 + tiles.length) % tiles.length);
   };
 
   const isActive = (index: number) => {
@@ -48,14 +46,14 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20", className)}>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-12", className)}>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
+              {tiles.map((tile, index) => (
                 <motion.div
-                  key={testimonial.src}
+                  key={index}
                   initial={{
                     opacity: 0,
                     scale: 0.9,
@@ -69,8 +67,8 @@ export const AnimatedTestimonials = ({
                     rotate: isActive(index) ? 0 : randomRotateY(),
                     zIndex: isActive(index)
                       ? 999
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
+                      : tiles.length + 2 - index,
+                    y: isActive(index) ? [0, -40, 0] : 0,
                   }}
                   exit={{
                     opacity: 0,
@@ -85,9 +83,9 @@ export const AnimatedTestimonials = ({
                   className="absolute inset-0 origin-bottom"
                 >
                   <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    className="h-full w-full rounded-3xl object-cover object-center"
+                    src={tile.src}
+                    alt="AI Focus Area"
+                    className="h-full w-full rounded-xl object-cover object-center"
                   />
                 </motion.div>
               ))}
@@ -113,49 +111,20 @@ export const AnimatedTestimonials = ({
               duration: 0.2,
               ease: "easeInOut",
             }}
+            className="h-full"
           >
-            <h3 className="text-2xl font-bold text-green-700">
-              {testimonials[active].name}
-            </h3>
-            <p className="text-sm text-gray-600">
-              {testimonials[active].designation}
-            </p>
-            <motion.p className="text-lg text-gray-700 mt-8">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-            </motion.p>
+            {tiles[active]?.content}
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex gap-4 pt-6 md:pt-0 justify-center md:justify-start">
             <button
               onClick={handlePrev}
-              className="h-7 w-7 rounded-full bg-green-50 flex items-center justify-center group/button"
+              className="h-8 w-8 rounded-full bg-green-50 flex items-center justify-center group/button"
             >
               <IconArrowLeft className="h-5 w-5 text-green-700 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
-              className="h-7 w-7 rounded-full bg-green-50 flex items-center justify-center group/button"
+              className="h-8 w-8 rounded-full bg-green-50 flex items-center justify-center group/button"
             >
               <IconArrowRight className="h-5 w-5 text-green-700 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
@@ -165,4 +134,3 @@ export const AnimatedTestimonials = ({
     </div>
   );
 };
-
