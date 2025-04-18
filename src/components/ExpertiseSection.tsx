@@ -1,5 +1,4 @@
-
-import { Shield, FileCheck, ProjectorIcon, ArrowRight } from "lucide-react";
+import { Shield, FileCheck, ProjectorIcon, ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
