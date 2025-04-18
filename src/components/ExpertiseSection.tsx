@@ -1,4 +1,3 @@
-
 import { Shield, FileCheck, Laptop, ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -39,7 +38,7 @@ const ExpertiseSection = () => {
       <div className="absolute inset-0 molecular-bg opacity-5 -z-10"></div>
       
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto mb-12 text-center">
+        <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">
             I specialize in IT for Pharma and Healthcare
           </h2>
@@ -50,17 +49,17 @@ const ExpertiseSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
           {expertisePoints.map((point, index) => (
             <Card key={index} className="border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-8 h-full">
+              <CardContent className="p-10 h-full">
                 <div className="flex items-start h-full">
-                  <div className="flex-shrink-0 mr-4 p-3 bg-green-50 rounded-lg">
+                  <div className="flex-shrink-0 mr-6 p-4 bg-green-50 rounded-lg">
                     {point.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-green-700 mb-2">{point.title}</h3>
-                    <p className="text-gray-600">{point.description}</p>
+                    <h3 className="text-2xl font-semibold text-green-700 mb-3">{point.title}</h3>
+                    <p className="text-gray-600 text-lg">{point.description}</p>
                   </div>
                 </div>
               </CardContent>
