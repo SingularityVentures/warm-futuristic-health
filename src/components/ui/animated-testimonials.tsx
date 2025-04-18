@@ -1,3 +1,4 @@
+
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
@@ -91,7 +92,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex justify-between flex-col py-0">
           <motion.div
             key={active}
             initial={{ y: 20, opacity: 0 }}
@@ -102,7 +103,7 @@ export const AnimatedTestimonials = ({
           >
             {tiles[active]?.content}
           </motion.div>
-          <div className="flex gap-4 pt-8 mt-6 justify-center md:justify-start border-t border-green-100">
+          <div className="flex gap-4 pt-6 justify-center md:justify-start border-t border-green-100">
             <button
               onClick={handlePrev}
               className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-all duration-300 hover:shadow-md"
