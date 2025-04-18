@@ -33,13 +33,13 @@ const HeroSection = () => {
             Digital Transformation for Pharma and Healthcare
           </h2>
           <Separator className="h-1 w-24 md:w-32 bg-gradient-to-r from-green-400 to-green-600 mx-auto mb-6" />
-          <p className="text-xl md:text-2xl mb-12 text-gray-100 font-light font-raleway">Project Manager | Consultant | Venture Builder</p>
+          <p className="text-xl md:text-2xl mb-12 text-gray-100 font-light font-raleway">Project Management | Consulting | Venture Building</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-lg shadow-lg shadow-green-700/30 font-raleway">
               <a href="#services" onClick={scrollToSection("services")}>My Services</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white/20 text-lg font-raleway">
-              <a href="#contact" onClick={scrollToSection("contact")}>Contact Me</a>
+              <a href="#contact" onClick={scrollToSection("contact")}>Schedule a call</a>
             </Button>
           </div>
         </div>
