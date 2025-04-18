@@ -1,4 +1,3 @@
-
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
@@ -95,36 +94,24 @@ export const AnimatedTestimonials = ({
         <div className="flex justify-between flex-col py-4">
           <motion.div
             key={active}
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -20,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeInOut",
-            }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
             className="h-full"
           >
             {tiles[active]?.content}
           </motion.div>
-          <div className="flex gap-4 pt-6 md:pt-0 justify-center md:justify-start">
+          <div className="flex gap-4 pt-8 mt-6 justify-center md:justify-start border-t border-green-100">
             <button
               onClick={handlePrev}
-              className="h-8 w-8 rounded-full bg-green-50 flex items-center justify-center group/button"
+              className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-all duration-300 hover:shadow-md"
             >
               <IconArrowLeft className="h-5 w-5 text-green-700 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
-              className="h-8 w-8 rounded-full bg-green-50 flex items-center justify-center group/button"
+              className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-all duration-300 hover:shadow-md"
             >
               <IconArrowRight className="h-5 w-5 text-green-700 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
