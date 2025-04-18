@@ -1,4 +1,5 @@
-import { Shield, FileCheck, ProjectorIcon, ArrowRight, Award } from "lucide-react";
+
+import { Shield, FileCheck, Laptop, ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
@@ -12,7 +13,7 @@ const ExpertiseSection = () => {
     {
       title: "IT Project Management Expertise",
       description: "Specialized in IT Project Management for regulated industries, balancing innovation and compliance",
-      icon: <ProjectorIcon className="h-7 w-7 text-green-600" />
+      icon: <Laptop className="h-7 w-7 text-green-600" />
     },
     {
       title: "Pharma & Healthcare Knowledge",
@@ -51,9 +52,9 @@ const ExpertiseSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
           {expertisePoints.map((point, index) => (
-            <Card key={index} className="border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardContent className="p-8">
-                <div className="flex items-start">
+            <Card key={index} className="border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <CardContent className="p-8 h-full">
+                <div className="flex items-start h-full">
                   <div className="flex-shrink-0 mr-4 p-3 bg-green-50 rounded-lg">
                     {point.icon}
                   </div>
