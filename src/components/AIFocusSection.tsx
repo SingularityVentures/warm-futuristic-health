@@ -1,50 +1,9 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Target, Wrench, Database, Users } from "lucide-react";
+import { Target, Wrench, Database, Users } from "lucide-react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
-interface QuoteProps {
-  text: string;
-  author: string;
-  position?: string;
-}
-
-const Quote = ({ text, author, position }: QuoteProps) => {
-  return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white rounded-lg border border-gray-100 relative">
-      <div className="absolute -right-6 -bottom-6 w-32 h-32 opacity-5">
-        <svg viewBox="0 0 100 100" fill="currentColor" className="text-gray-900">
-          <path d="M50 0L93.3 25V75L50 100L6.7 75V25L50 0z" />
-        </svg>
-      </div>
-      
-      <CardContent className="p-6 relative z-10">
-        <blockquote className="relative">
-          <span className="absolute top-0 left-0 text-7xl font-serif text-green-400 leading-none -translate-x-2 -translate-y-3">"</span>
-          <p className="text-gray-800 italic text-lg md:text-xl relative z-10 pt-6 pl-6 font-medium mb-4">
-            {text}
-          </p>
-          <footer className="mt-4 text-right">
-            <cite className="font-medium text-green-700 not-italic">
-              {author}
-              {position && <span className="block text-sm text-gray-500 mt-1">{position}</span>}
-            </cite>
-          </footer>
-        </blockquote>
-      </CardContent>
-    </Card>
-  );
-};
 
 interface AIAreaProps {
   title: string;
@@ -54,52 +13,8 @@ interface AIAreaProps {
   image: string;
 }
 
-const AIArea = ({ title, description, icon, items, image }: AIAreaProps) => {
-  return (
-    <div className="bg-white rounded-xl border border-green-200 shadow-sm relative overflow-hidden h-full flex flex-col">
-      <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
-      <div className="p-6 flex flex-col h-full">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="p-2 rounded-lg bg-green-100 text-green-600">
-            {icon}
-          </div>
-          <h3 className="text-xl font-bold text-green-800">{title}</h3>
-        </div>
-        <p className="text-gray-600 mb-6 text-sm">{description}</p>
-        <div className="space-y-2 mt-auto">
-          {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
-              <span className="text-gray-700 text-sm">{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const AIFocusSection = () => {
   const { scrollToSection } = useScrollToSection();
-  const isMobile = useIsMobile();
-  
-  const quotes = [
-    {
-      text: "Artificial intelligence and generative AI may be the most important technology of any lifetime.",
-      author: "Marc Benioff",
-      position: "Salesforce"
-    },
-    {
-      text: "AI is the solution, enhancing every stage of patient care from research and discovery to diagnosis and therapy selection.",
-      author: "Ronald M. Razmi",
-      position: "Author"
-    },
-    {
-      text: "AI will not only help to deliver new and cheaper drugs but also expand the possibilities of what medicines can do.",
-      author: "Forbes Technology Council",
-      position: "Forbes"
-    }
-  ];
   
   const aiAreas = [
     { 
@@ -131,14 +46,27 @@ const AIFocusSection = () => {
       image: "/lovable-uploads/58b03ce5-a7a6-465f-8f0a-76560d128060.png"
     }
   ];
-  
+
   const animatedTiles = aiAreas.map(area => ({
-    content: <AIArea 
-      title={area.title}
-      description={area.description}
-      icon={area.icon}
-      items={area.items}
-    />,
+    content: <div className="bg-white rounded-xl border border-green-200 shadow-sm relative overflow-hidden h-full flex flex-col">
+      <div className="absolute top-0 left-0 w-full h-1 bg-green-500"></div>
+      <div className="p-6 flex flex-col h-full">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="p-2 rounded-lg bg-green-100 text-green-600">
+            {area.icon}
+          </div>
+          <h3 className="text-xl font-bold text-green-800">{area.title}</h3>
+        </div>
+        <p className="text-gray-600 mb-6 text-sm">{area.description}</p>
+        <div className="space-y-2 mt-auto">
+          {area.items.map((item, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <span className="text-gray-700 text-sm">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>,
     src: area.image
   }));
 
@@ -156,64 +84,6 @@ const AIFocusSection = () => {
               Let me help you evolve into an AI-driven organization:
             </p>
           </div>
-        </div>
-        
-        {!isMobile && (
-          <div className="mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {quotes.map((quote, index) => (
-                <Quote
-                  key={index}
-                  text={quote.text}
-                  author={quote.author}
-                  position={quote.position}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-        
-        <div className="mb-8">
-          {isMobile ? (
-            <div className="relative px-4">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent>
-                  {aiAreas.map((area, index) => (
-                    <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                      <AIArea 
-                        title={area.title}
-                        description={area.description}
-                        icon={area.icon}
-                        items={area.items}
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <div className="flex justify-center gap-2 mt-4">
-                  <CarouselPrevious className="static translate-y-0 ml-0" />
-                  <CarouselNext className="static translate-y-0 mr-0" />
-                </div>
-              </Carousel>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {aiAreas.map((area, index) => (
-                <AIArea 
-                  key={index}
-                  title={area.title}
-                  description={area.description}
-                  icon={area.icon}
-                  items={area.items}
-                />
-              ))}
-            </div>
-          )}
         </div>
         
         <div className="mt-16">
