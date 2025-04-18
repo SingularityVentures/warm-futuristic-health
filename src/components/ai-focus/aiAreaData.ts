@@ -31,7 +31,7 @@ export const aiAreas: AIArea[] = [
     description: "Improve your workflows through AI automation", 
     icon: Database, 
     items: ["Process Mapping", "Process Redesign", "AI Automation", "AI Tools"],
-    image: "/lovable-uploads/d0421a57-955d-4a3d-95fa-8c11795966d5.png"
+    image: "/lovable-uploads/403f462f-eaae-4c3e-88cb-26873bc3e6af.png"
   },
   { 
     title: "Organizational Change", 
