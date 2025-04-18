@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -127,6 +126,27 @@ const AIFocusSection = () => {
     }
   ];
   
+  const testimonials = [
+    {
+      quote: "AI is revolutionizing how we approach healthcare challenges. The potential for improving patient outcomes is unprecedented.",
+      name: "Dr. Sarah Chen",
+      designation: "Chief Innovation Officer, HealthTech Solutions",
+      src: "/lovable-uploads/66c744b1-0763-459f-82a5-48ff3f186a1c.png"
+    },
+    {
+      quote: "The integration of AI in pharmaceutical research has accelerated our drug discovery process significantly.",
+      name: "Michael Rodriguez",
+      designation: "Head of R&D, PharmaTech Innovation",
+      src: "/lovable-uploads/8439b94e-c0a4-4705-a4c1-0fbbfb9a281d.png"
+    },
+    {
+      quote: "AI-driven automation has transformed our clinical trials, making them more efficient and data-driven than ever before.",
+      name: "Emily Watson",
+      designation: "Clinical Research Director, BioInnovate",
+      src: "/lovable-uploads/fe98110a-0afd-4d76-929c-a08b9e6e2884.png"
+    }
+  ];
+
   return (
     <section id="ai" className="section bg-gradient-to-b from-gray-50 to-white overflow-hidden py-16 pb-12">
       <div className="container mx-auto px-4">
@@ -200,6 +220,14 @@ const AIFocusSection = () => {
               ))}
             </div>
           )}
+        </div>
+        
+        <div className="mt-16">
+          <AnimatedTestimonials 
+            testimonials={testimonials}
+            autoplay={true}
+            className="bg-white rounded-xl shadow-sm"
+          />
         </div>
         
         <div className="text-center mt-8">
