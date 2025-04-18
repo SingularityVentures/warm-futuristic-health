@@ -1,10 +1,14 @@
+
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import TransformBusinessTab from "./services/TransformBusinessTab";
 import CreateBusinessTab from "./services/CreateBusinessTab";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const ServicesSection = () => {
   const isMobile = useIsMobile();
-  return <section id="services" className="section py-8 pb-12 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
+  
+  return (
+    <section id="services" className="section py-8 pb-12 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center max-w-full mx-auto mb-6">
@@ -12,7 +16,7 @@ const ServicesSection = () => {
             My Digital Transformation Services
           </h2>
           <div className="technoline mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg mx-auto max-w-7xl">
+          <p className="text-gray-600 text-lg max-w-4xl mx-auto">
             End-to-end IT project management (GxP) and consulting tailored specifically to pharmaceutical and healthcare organizations.
           </p>
         </div>
@@ -21,10 +25,16 @@ const ServicesSection = () => {
         <Tabs defaultValue="transform" className="w-full">
           <div className="flex justify-center mb-4">
             <TabsList className={`bg-green-50 p-2 gap-4 h-auto w-full ${isMobile ? 'flex-col' : ''} max-w-xl flex`}>
-              <TabsTrigger value="transform" className={`flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 ${isMobile ? 'w-full' : ''}`}>
+              <TabsTrigger 
+                value="transform" 
+                className={`flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 ${isMobile ? 'w-full' : ''}`}
+              >
                 Transform Existing Business
               </TabsTrigger>
-              <TabsTrigger value="create" className={`flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 ${isMobile ? 'w-full' : ''}`}>
+              <TabsTrigger 
+                value="create" 
+                className={`flex-1 px-8 py-4 text-base font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-green-700 data-[state=inactive]:hover:bg-green-100 ${isMobile ? 'w-full' : ''}`}
+              >
                 Create New Business
               </TabsTrigger>
             </TabsList>
@@ -41,6 +51,8 @@ const ServicesSection = () => {
           </div>
         </Tabs>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ServicesSection;
