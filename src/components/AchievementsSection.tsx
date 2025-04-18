@@ -1,5 +1,6 @@
 
 import { useEffect, useState, useRef } from "react";
+import React from "react";
 import { Clock, CheckCircle, BarChart3 } from "lucide-react";
 
 interface CounterProps {
@@ -149,4 +150,3 @@ const AchievementsSection = () => {
 };
 
 export default AchievementsSection;
-
