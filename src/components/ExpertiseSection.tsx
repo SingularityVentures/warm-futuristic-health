@@ -45,7 +45,7 @@ const ExpertiseSection = () => {
           </h2>
           <div className="technoline mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-4xl mx-auto">
-            Strict regulations and patient safety make IT projects in Healthcare and Life Sciences uniquely challenging.
+            Strict regulations and patient safety make IT projects in Healthcare and Life Sciences uniquely challenging.</br>
             I use my experience in healthcare, pharma, and IT to help companies handle these complex issues.
           </p>
         </div>
