@@ -38,6 +38,6 @@ export const aiAreas: AIArea[] = [
     description: "Enable your organization to harness the full power of AI", 
     icon: Users, 
     items: ["AI CoE", "Leadership Workshops", "Workforce Training", "Change Management"],
-    image: "/lovable-uploads/58b03ce5-a7a6-465f-8f0a-76560d128060.png"
+    image: "/lovable-uploads/67d7eee5-4351-4a4c-a5a0-53126a8638de.png"
   }
 ];
