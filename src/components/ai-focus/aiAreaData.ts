@@ -24,7 +24,7 @@ export const aiAreas: AIArea[] = [
     description: "Execute your AI initiatives effectively and compliantly", 
     icon: Wrench, 
     items: ["Solution Design", "Implementation", "Project Management", "Regulatory Compliance"],
-    image: "/lovable-uploads/bfbb1e1e-799a-4916-9f0b-f26f853aa17b.png"
+    image: "/lovable-uploads/63dd6c0f-8f03-4fda-b63f-ce2841f00bea.png"
   },
   { 
     title: "Process Automation", 
