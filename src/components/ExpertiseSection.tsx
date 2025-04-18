@@ -50,17 +50,17 @@ const ExpertiseSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
           {expertisePoints.map((point, index) => (
             <Card key={index} className="border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-              <CardContent className="p-10 h-full">
+              <CardContent className="p-6 h-full">
                 <div className="flex items-start h-full">
-                  <div className="flex-shrink-0 mr-6 p-4 bg-green-50 rounded-lg">
+                  <div className="flex-shrink-0 mr-4 p-3 bg-green-50 rounded-lg">
                     {point.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-green-700 mb-3">{point.title}</h3>
-                    <p className="text-gray-600 text-lg">{point.description}</p>
+                    <h3 className="text-xl font-semibold text-green-700 mb-2">{point.title}</h3>
+                    <p className="text-gray-600 text-base">{point.description}</p>
                   </div>
                 </div>
               </CardContent>
