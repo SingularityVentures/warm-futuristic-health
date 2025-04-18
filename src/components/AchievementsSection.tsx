@@ -1,6 +1,6 @@
-
 import { useEffect, useState, useRef } from "react";
 import { Clock, CheckCircle, BarChart3 } from "lucide-react";
+import { CompanyCarousel } from "./CompanyCarousel";
 
 interface CounterProps {
   end: number;
@@ -140,6 +140,8 @@ const AchievementsSection = () => {
             </div>
           ))}
         </div>
+
+        <CompanyCarousel />
       </div>
     </section>
   );
