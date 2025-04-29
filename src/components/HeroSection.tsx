@@ -14,7 +14,15 @@ const HeroSection = () => {
       {/* Video Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-green-950/70 z-10"></div>
-        <video autoPlay muted loop playsInline className="object-cover w-full h-full">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="metadata"
+          className="object-cover w-full h-full"
+          aria-hidden="true"
+        >
           <source src="/20250406_2107_Precision in High-Tech Lab_simple_compose_01jr67z47kegkvzd75d7bnpydm.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

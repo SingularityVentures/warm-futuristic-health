@@ -23,6 +23,9 @@ const AboutSection = () => {
               src="/lovable-uploads/a68067c5-ca94-4eb4-8c90-b322067b0600.png"
               alt="Jan Kroschinski" 
               className="w-full h-auto max-w-full object-contain mix-blend-multiply"
+              loading="lazy"
+              width="600" 
+              height="800"
             />
           </div>
           

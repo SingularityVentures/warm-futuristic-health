@@ -86,6 +86,9 @@ export const AnimatedCards = ({
                     src={tile.src}
                     alt="AI Focus Area"
                     className="h-full w-full rounded-xl object-cover object-center shadow-lg"
+                    loading="lazy"
+                    width="600"
+                    height="400"
                   />
                 </motion.div>
               ))}
@@ -107,12 +110,14 @@ export const AnimatedCards = ({
             <button
               onClick={handlePrev}
               className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-all duration-300 hover:shadow-md"
+              aria-label="Previous slide"
             >
               <IconArrowLeft className="h-5 w-5 text-green-700 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
               className="h-10 w-10 rounded-full bg-green-50 flex items-center justify-center group/button hover:bg-green-100 transition-all duration-300 hover:shadow-md"
+              aria-label="Next slide"
             >
               <IconArrowRight className="h-5 w-5 text-green-700 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>

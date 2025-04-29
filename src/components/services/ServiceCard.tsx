@@ -54,6 +54,9 @@ const ServiceCard = ({
                   src={service.imageSrc} 
                   alt={service.title} 
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  width="400"
+                  height="240"
                 />
                 {/* Added grey overlay for all images to improve text readability */}
                 <div className="absolute inset-0 bg-black/40"></div>

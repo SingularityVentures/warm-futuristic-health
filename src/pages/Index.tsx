@@ -1,14 +1,24 @@
 
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AchievementsSection from "@/components/AchievementsSection";
-import ExpertiseSection from "@/components/ExpertiseSection";
-import ServicesSection from "@/components/ServicesSection";
-import AIFocusSection from "@/components/AIFocusSection";
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+
+// Lazy load components that are not immediately visible
+const AchievementsSection = lazy(() => import("@/components/AchievementsSection"));
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const ExpertiseSection = lazy(() => import("@/components/ExpertiseSection"));
+const AIFocusSection = lazy(() => import("@/components/AIFocusSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+// Loading placeholders for each section
+const SectionLoading = () => (
+  <div className="w-full py-20 flex items-center justify-center">
+    <div className="w-12 h-12 rounded-full border-4 border-green-200 border-t-green-600 animate-spin"></div>
+  </div>
+);
 
 const Index = () => {
   return (
@@ -16,14 +26,35 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <div className="space-y-0">
-        <AchievementsSection />
-        <ServicesSection />
-        <ExpertiseSection />
-        <AIFocusSection />
-        <AboutSection />
-        <ContactSection />
+        <Suspense fallback={<SectionLoading />}>
+          <AchievementsSection />
+        </Suspense>
+        
+        <Suspense fallback={<SectionLoading />}>
+          <ServicesSection />
+        </Suspense>
+        
+        <Suspense fallback={<SectionLoading />}>
+          <ExpertiseSection />
+        </Suspense>
+        
+        <Suspense fallback={<SectionLoading />}>
+          <AIFocusSection />
+        </Suspense>
+        
+        <Suspense fallback={<SectionLoading />}>
+          <AboutSection />
+        </Suspense>
+        
+        <Suspense fallback={<SectionLoading />}>
+          <ContactSection />
+        </Suspense>
       </div>
-      <Footer />
+      
+      <Suspense fallback={<SectionLoading />}>
+        <Footer />
+      </Suspense>
+      
       <BackToTop />
     </div>
   );
