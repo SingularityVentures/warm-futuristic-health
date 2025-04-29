@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { AnimatedCards } from "@/components/ui/animated-cards";
 import AIFocusSectionHeader from "./ai-focus/AIFocusSectionHeader";
 import AIAreaTile from "./ai-focus/AIAreaTile";
 import { aiAreas } from "./ai-focus/aiAreaData";
@@ -22,7 +22,7 @@ const AIFocusSection = () => {
         </div>
         
         <div className="mt-16">
-          <AnimatedTestimonials 
+          <AnimatedCards 
             tiles={animatedTiles}
             autoplay={true}
             className="bg-white rounded-xl shadow-sm"

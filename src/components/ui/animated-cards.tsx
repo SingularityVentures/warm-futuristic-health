@@ -1,3 +1,4 @@
+
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
@@ -5,17 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-type AnimatedTile = {
+type AnimatedCard = {
   content: React.ReactNode;
   src: string;
 };
 
-export const AnimatedTestimonials = ({
+export const AnimatedCards = ({
   tiles,
   autoplay = false,
   className,
 }: {
-  tiles: AnimatedTile[];
+  tiles: AnimatedCard[];
   autoplay?: boolean;
   className?: string;
 }) => {
