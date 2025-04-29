@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 /**
  * Utility functions to protect email addresses from crawlers
  */
@@ -27,4 +29,3 @@ export const generateMailtoLink = (email: string): string => {
   const encodedEmail = email.replace('@', '&#64;');
   return `mailto:${email}`;
 };
-
