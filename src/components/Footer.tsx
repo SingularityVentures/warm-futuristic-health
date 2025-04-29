@@ -1,10 +1,11 @@
-
 import { ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { obfuscateEmail, generateMailtoLink } from "@/utils/emailProtection";
 
 const Footer = () => {
   const { scrollToSection, scrollToTop, isHomePage, navigateToPage } = useScrollToSection();
+  const contactEmail = "jan@singularity-ventures.com";
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -30,7 +31,7 @@ const Footer = () => {
               </svg>
             </a>
             <a 
-              href="mailto:jan@singularity-ventures.com" 
+              href={generateMailtoLink(contactEmail)}
               className="bg-gray-800 p-2 rounded-full hover:bg-green-700 transition-colors"
               aria-label="Email"
             >
@@ -71,7 +72,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4 text-green-400">Contact Me</h3>
               <address className="not-italic text-gray-400">
                 <p>Berlin, Germany</p>
-                <p className="mt-2">Email: jan@singularity-ventures.com</p>
+                <p className="mt-2">Email: {obfuscateEmail(contactEmail)}</p>
               </address>
             </div>
           </div>

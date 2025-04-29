@@ -1,7 +1,9 @@
-
 import React from "react";
+import { obfuscateEmail, generateMailtoLink } from "@/utils/emailProtection";
 
 const ImprintGerman = () => {
+  const contactEmail = "jan@singularity-ventures.com";
+  
   return (
     <div className="prose max-w-none">
       <h2>Impressum</h2>
@@ -15,7 +17,7 @@ const ImprintGerman = () => {
       
       <h3>Kontakt</h3>
       <p>
-        E-Mail: jan@singularity-ventures.com
+        E-Mail: <a href={generateMailtoLink(contactEmail)}>{obfuscateEmail(contactEmail)}</a>
       </p>
       
       <h3>Handelsregister-Nummer</h3>

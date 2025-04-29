@@ -11,7 +11,22 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Discourage email harvesters
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+# General rule for all bots
 User-agent: *
 Allow: /
 
 Sitemap: https://yourwebsite.com/sitemap.xml
+

@@ -1,7 +1,10 @@
 
 import { Mail, MapPin, Calendar } from "lucide-react";
+import { obfuscateEmail, generateMailtoLink } from "@/utils/emailProtection";
 
 const ContactInfo = () => {
+  const contactEmail = "jan@singularity-ventures.com";
+  
   return (
     <div className="bg-gray-50 p-8 rounded-lg shadow-md h-full">
       <h3 className="text-xl font-bold text-green-700 mb-6">
@@ -15,7 +18,11 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-medium text-gray-900">Email</h4>
-            <p className="text-gray-600">jan@singularity-ventures.com</p>
+            <p className="text-gray-600">
+              <a href={generateMailtoLink(contactEmail)} className="hover:text-green-700">
+                {obfuscateEmail(contactEmail)}
+              </a>
+            </p>
           </div>
         </div>
         
