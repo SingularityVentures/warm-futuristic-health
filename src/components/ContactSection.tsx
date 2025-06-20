@@ -14,8 +14,8 @@ const ContactSection = () => {
           </p>
         </div>
         
-        <div className="flex justify-center max-w-6xl mx-auto">
-          <div className="max-w-md">
+        <div className="flex justify-center max-w-7xl mx-auto">
+          <div className="w-full max-w-4xl">
             <ContactInfo />
           </div>
         </div>
