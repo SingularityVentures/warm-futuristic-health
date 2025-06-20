@@ -1,6 +1,5 @@
 
 import ContactInfo from "./contact/ContactInfo";
-import ContactForm from "./contact/ContactForm";
 
 const ContactSection = () => {
   return (
@@ -15,13 +14,9 @@ const ContactSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
-          <div className="lg:col-span-2">
+        <div className="flex justify-center max-w-6xl mx-auto">
+          <div className="max-w-md">
             <ContactInfo />
-          </div>
-          
-          <div className="lg:col-span-3">
-            <ContactForm />
           </div>
         </div>
       </div>
